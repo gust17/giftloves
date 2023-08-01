@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cartaos', function (Blueprint $table) {
+        Schema::create('categorias', function (Blueprint $table) {
             $table->id();
-            $table->longText('caminho');
             $table->string('name');
-            $table->foreignIdFor(\App\Models\Categoria::class);
-            $table->boolean('customizavel')->default(0);
             $table->timestamps();
         });
     }
@@ -26,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('cartaos');
+        Schema::dropIfExists('categorias');
     }
 };
