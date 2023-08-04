@@ -130,9 +130,9 @@ Author URL: http://w3layouts.com
             @for($i=1;$i<=3;$i++)
                 <div class="item">
                     <li>
-                        <div class="slider-info  bg bg2" style="  background: url({{url('img'.$i.'.jpg')}}) no-repeat center;
+                        <div class="slider-info  bg bg2" style="  background: url({{url('img'.$i.'.png')}}) no-repeat center;
   background-size: cover;
-  min-height: 500px;
+  min-height: 800px;
   position: relative;
   z-index: 0;
   display: grid;
@@ -146,17 +146,9 @@ Author URL: http://w3layouts.com
                                 <h3>SEU PRESENTE DESCOMPLICADO</h3>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<span class="over-para"> Consequuntur hic odio
 									voluptatem tenetur consequatur.</span></p>
-                                <a href="#small-dialog2" class="popup-with-zoom-anim play-view1">
-									<span class="video-play-icon">
-										<span class="fa fa-play"></span>
-									</span>
-                                    <h6>Watch Trailer</h6>
-                                </a>
+
                                 <!-- dialog itself, mfp-hide class is required to make dialog hidden -->
-                                <div id="small-dialog2" class="zoom-anim-dialog mfp-hide">
-                                    <iframe src="https://player.vimeo.com/video/395376850" allow="autoplay; fullscreen"
-                                            allowfullscreen=""></iframe>
-                                </div>
+
                             </div>
                         </div>
                     </li>
