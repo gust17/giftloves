@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $categorias = \App\Models\Categoria::all();
+    return view('site.site',compact('categorias'));
 });
 
 Route::get('testelogin',function (){
