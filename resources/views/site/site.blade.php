@@ -1,4 +1,3 @@
-
 <!--
 Author: W3layouts
 Author URL: http://w3layouts.com
@@ -26,7 +25,8 @@ Author URL: http://w3layouts.com
     <!--/nav-->
     <nav class="navbar navbar-expand-lg navbar-light fill px-lg-0 py-0 px-3">
         <div class="container">
-            <h1><a style="color: white" class="navbar-brand" href="index.html"><img width="50px" src="{{url('logo.svg')}}" alt="">
+            <h1><a style="color: white" class="navbar-brand" href="index.html"><img width="50px"
+                                                                                    src="{{url('logo.svg')}}" alt="">
                     GiftLoves </a></h1>
             <!-- if logo is image enable this
                     <a class="navbar-brand" href="#index.html">
@@ -127,12 +127,12 @@ Author URL: http://w3layouts.com
         <div class="owl-one owl-carousel owl-theme">
 
 
-            @for($i=1;$i<=3;$i++)
+            @for($i=1;$i<=4;$i++)
                 <div class="item">
                     <li>
                         <div class="slider-info  bg bg2" style="  background: url({{url('img'.$i.'.png')}}) no-repeat center;
   background-size: cover;
-  min-height: 800px;
+  min-height: 500px;
   position: relative;
   z-index: 0;
   display: grid;
@@ -144,8 +144,7 @@ Author URL: http://w3layouts.com
   -moz-border-radius: 6px;">
                             <div class="banner-info">
                                 <h3>SEU PRESENTE DESCOMPLICADO</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<span class="over-para"> Consequuntur hic odio
-									voluptatem tenetur consequatur.</span></p>
+
 
                                 <!-- dialog itself, mfp-hide class is required to make dialog hidden -->
 
@@ -176,8 +175,8 @@ Author URL: http://w3layouts.com
                     </div>
 
 
-                        <div class="w3l-populohny-grids">
-                            @forelse($categoria->cartaos as $cartao)
+                    <div class="w3l-populohny-grids">
+                        @forelse($categoria->cartaos as $cartao)
                             <div class="item vhny-grid">
                                 <div class="box16">
                                     <a href="genre.html">
@@ -198,14 +197,12 @@ Author URL: http://w3layouts.com
                                 </div>
                             </div>
 
-                            @empty
+                        @empty
 
-                            @endforelse
-
-
-                        </div>
+                        @endforelse
 
 
+                    </div>
 
                 @empty
 
@@ -250,7 +247,7 @@ Author URL: http://w3layouts.com
                             <span class="fa fa-play video-icon" aria-hidden="true"></span>
                         </a>
                     </div>
-                    <h3> <a class="title-gd" href="genre.html">No Time to Die</a></h3>
+                    <h3><a class="title-gd" href="genre.html">No Time to Die</a></h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
                     <div class="button-center text-center mt-4">
                         <a href="genre.html" class="btn watch-button">Watch now</a>
@@ -275,7 +272,7 @@ Author URL: http://w3layouts.com
                             <span class="fa fa-play video-icon" aria-hidden="true"></span>
                         </a>
                     </div>
-                    <h3> <a class="title-gd" href="genre.html">Mulan</a></h3>
+                    <h3><a class="title-gd" href="genre.html">Mulan</a></h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
                     <div class="button-center text-center mt-4">
                         <a href="genre.html" class="btn watch-button">Watch now</a>
@@ -299,7 +296,7 @@ Author URL: http://w3layouts.com
                             <span class="fa fa-play video-icon" aria-hidden="true"></span>
                         </a>
                     </div>
-                    <h3> <a class="title-gd" href="genre.html">Free Guy</a></h3>
+                    <h3><a class="title-gd" href="genre.html">Free Guy</a></h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
                     <div class="button-center text-center mt-4">
                         <a href="genre.html" class="btn watch-button">Watch now</a>
@@ -323,7 +320,7 @@ Author URL: http://w3layouts.com
                             <span class="fa fa-play video-icon" aria-hidden="true"></span>
                         </a>
                     </div>
-                    <h3> <a class="title-gd" href="genre.html">My Spy</a></h3>
+                    <h3><a class="title-gd" href="genre.html">My Spy</a></h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
                     <div class="button-center text-center mt-4">
                         <a href="genre.html" class="btn watch-button">Watch now</a>
@@ -348,7 +345,7 @@ Author URL: http://w3layouts.com
                             <span class="fa fa-play video-icon" aria-hidden="true"></span>
                         </a>
                     </div>
-                    <h3> <a class="title-gd" href="genre.html">Scoob</a></h3>
+                    <h3><a class="title-gd" href="genre.html">Scoob</a></h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
                     <div class="button-center text-center mt-4">
                         <a href="genre.html" class="btn watch-button">Watch now</a>
@@ -372,7 +369,7 @@ Author URL: http://w3layouts.com
                             <span class="fa fa-play video-icon" aria-hidden="true"></span>
                         </a>
                     </div>
-                    <h3> <a class="title-gd" href="genre.html">Downhill</a></h3>
+                    <h3><a class="title-gd" href="genre.html">Downhill</a></h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
                     <div class="button-center text-center mt-4">
                         <a href="genre.html" class="btn watch-button">Watch now</a>
@@ -1032,10 +1029,10 @@ Author URL: http://w3layouts.com
                             <div class="col-md-3 col-sm-6 sub-two-right mt-5">
                                 <h6>Information</h6>
                                 <ul>
-                                    <li><a href="index.html">Home</a> </li>
-                                    <li><a href="about.html">About</a> </li>
-                                    <li><a href="#">Tv Series</a> </li>
-                                    <li><a href="#">Blogs</a> </li>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="#">Tv Series</a></li>
+                                    <li><a href="#">Blogs</a></li>
                                     <li><a href="#">Login</a></li>
                                     <li><a href="contact.html">Contact</a></li>
                                 </ul>
@@ -1151,7 +1148,7 @@ Author URL: http://w3layouts.com
 <script>
     $(document).ready(function () {
         $('.owl-one').owlCarousel({
-            stagePadding:280,
+            stagePadding: 280,
             loop: true,
             margin: 20,
             nav: true,
@@ -1163,17 +1160,17 @@ Author URL: http://w3layouts.com
             responsive: {
                 0: {
                     items: 1,
-                    stagePadding:40,
+                    stagePadding: 40,
                     nav: false
                 },
                 480: {
                     items: 1,
-                    stagePadding:60,
+                    stagePadding: 60,
                     nav: true
                 },
                 667: {
                     items: 1,
-                    stagePadding:80,
+                    stagePadding: 80,
                     nav: true
                 },
                 1000: {

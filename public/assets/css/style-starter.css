@@ -14826,7 +14826,7 @@ header.nav-fixed {
 
 .w3l-main-slider .banner-info-bg {
   max-width: 750px;
-  margin-top: 100px;
+  margin-top: 50px;
   margin: 0 auto;
 }
 
@@ -14906,6 +14906,7 @@ header.nav-fixed {
 .w3l-main-slider .banner-info {
   max-width: 500px;
   padding: 0 60px;
+    margin-top: -300px;
 }
 
 .w3l-main-slider .banner-info h3 {
