@@ -130,7 +130,7 @@ Author URL: http://w3layouts.com
             @for($i=1;$i<=4;$i++)
                 <div class="item">
                     <li>
-                        <div class="slider-info  bg bg2" style="  background: url({{url('img'.$i.'.png')}}) no-repeat center;
+                        <div class="slider-info  bg bg2" style="  background: url({{url('img/img'.$i.'.png')}}) no-repeat center;
   background-size: cover;
   min-height: 500px;
   position: relative;
