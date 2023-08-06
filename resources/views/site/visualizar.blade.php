@@ -20,7 +20,7 @@
                         </div>
                         <div class="row justify-content-center mt-4">
                             <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
-                                <form action="{{url('visualizar')}}" method="POST" class="mbr-form form-with-styler"
+                                <form action="{{url('finalizar')}}" method="POST" class="mbr-form form-with-styler"
                                       data-form-title="Form Name">
                                     @csrf
                                     <input type="hidden" name="cartao_id" value="{{$cartao->id}}">
