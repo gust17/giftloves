@@ -35,7 +35,7 @@
                                     </div>
                                     <div class="dragArea row">
                                         <div class="col-md-12 col-sm-12 form-group mb-3" data-for="name">
-                                            <input disabled type="text" name="name" placeholder="Nome" data-form-field="name"
+                                            <input type="text" name="name" placeholder="Nome" data-form-field="name"
                                                    class="form-control" value="" id="name-form02-10">
                                         </div>
                                         <div class="col-md col-sm-12 form-group mb-3" data-for="email">

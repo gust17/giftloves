@@ -93,7 +93,7 @@
     <div class="row">
         <div style="margin-top: 0" class="col-md-5 mx-auto">
             <center>
-            <img width="30%" style="margin-bottom: 30px" class="img img-fluid" src="{{asset('logo.svg')}}" alt="">
+                <img width="30%" style="margin-bottom: 30px" class="img img-fluid" src="{{asset('logo.svg')}}" alt="">
             </center>
             <div id="first">
                 <div class="myform form ">

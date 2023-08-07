@@ -24,6 +24,11 @@
                                       data-form-title="Form Name">
                                     @csrf
                                     <input type="hidden" name="cartao_id" value="{{$cartao->id}}">
+                                    <input type="hidden" name="name" value="{{$request->name}}">
+                                    <input type="hidden" name="whatsapp" value="{{$request->whatsapp}}">
+                                    <input type="hidden" name="valor" value="{{$request->valor}}">
+                                    <input type="hidden" name="nascimento" value="{{$request->nascimento}}">
+                                    <input type="hidden" name="textarea" value="{{$request->textarea}}">
                                     <div class="row">
                                         <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">
                                             Thanks for filling out the form!
