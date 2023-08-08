@@ -19,7 +19,7 @@
                     <div class="card-wrapper mb-4">
                         <div class="card-box align-center">
                             <h4 class="card-title mbr-fonts-style mb-4 display-2">
-                                <strong>Steps</strong>
+                                <strong>Veja como é Fácil</strong>
                             </h4>
 
 
@@ -36,13 +36,10 @@
 
                         <div class="text-box">
                             <h4 class="icon-title card-title mbr-black mbr-fonts-style display-7">
-                                <strong>Specification</strong>
+                                <strong>Navegue pelo nosso site</strong>
                             </h4>
-                            <h5 class="mbr-text mbr-black mbr-fonts-style display-4">Mobirise is perfect for non-techies
-                                who
-                                are not familiar
-                                with
-                                the intricacies of web development.</h5>
+                            <h5 class="mbr-text mbr-black mbr-fonts-style display-4">Explore a nossa ampla seleção de cartões de presente e escolha o
+                                mais adequado para a ocasião</h5>
                         </div>
                     </div>
                     <!-- <span mbr-icon class="mbr-iconfont mobi-mbri-devices mobi-mbri"></span> -->
@@ -56,13 +53,10 @@
                         </div>
                         <div class="text-box">
                             <h4 class="icon-title card-title mbr-black mbr-fonts-style display-7">
-                                <strong>Project Planning</strong>
+                                <strong>Personalize sua mensagem</strong>
                             </h4>
-                            <h5 class="mbr-text mbr-black mbr-fonts-style display-4">Mobirise is perfect for non-techies
-                                who
-                                are not familiar
-                                with
-                                the intricacies of web development.</h5>
+                            <h5 class="mbr-text mbr-black mbr-fonts-style display-4">Preencha as informações do destinatário (nome, dia/mês de
+                                aniversário e número de WhatsApp).</h5>
                         </div>
                     </div>
                 </div>
@@ -75,13 +69,10 @@
                         </div>
                         <div class="text-box">
                             <h4 class="icon-title card-title mbr-black mbr-fonts-style display-7">
-                                <strong>Deployment</strong>
+                                <strong>Selecione o valor do cartão</strong>
                             </h4>
-                            <h5 class="mbr-text mbr-black mbr-fonts-style display-4">Mobirise is perfect for non-techies
-                                who
-                                are not familiar
-                                with
-                                the intricacies of web development.</h5>
+                            <h5 class="mbr-text mbr-black mbr-fonts-style display-4"> Escolha o valor do cartão de presente que deseja enviar.
+                            </h5>
                         </div>
                     </div>
                 </div>
@@ -94,13 +85,9 @@
                         </div>
                         <div class="text-box">
                             <h4 class="icon-title card-title mbr-black mbr-fonts-style display-7">
-                                <strong>Specification</strong>
+                                <strong>Efetue o pagamento</strong>
                             </h4>
-                            <h5 class="mbr-text mbr-black mbr-fonts-style display-4">Mobirise is perfect for non-techies
-                                who
-                                are not familiar
-                                with
-                                the intricacies of web development.</h5>
+                            <h5 class="mbr-text mbr-black mbr-fonts-style display-4">Finalize a compra com segurança e de forma conveniente.</h5>
                         </div>
                     </div>
                 </div>
