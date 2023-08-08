@@ -54,7 +54,7 @@
                     <li class="nav-item"><a class="nav-link link text-white display-4" href="https://mobiri.se">Contato</a>
                     </li></ul>
 
-                <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="https://mobiri.se">Login</a></div>
+                <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="{{route('login')}}">Login</a></div>
             </div>
         </div>
     </nav>

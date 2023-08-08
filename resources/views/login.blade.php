@@ -103,6 +103,7 @@
                         </div>
                     </div>
                     <form action="" method="post" name="login">
+                        <h1>vai</h1>
                         <div class="form-group">
                             <label for="exampleInputEmail1">CPF</label>
                             <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Digite seu CPF">
@@ -146,7 +147,7 @@
                             </h1>
                         </div>
                     </div>
-                    <form action="#" name="registration">
+                    <form action="{{ route('register') }}" name="registration">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nome Completo</label>
                             <input type="text"  name="name" class="form-control" id="firstname" aria-describedby="emailHelp" placeholder="Digite seu nome completo">
@@ -167,6 +168,10 @@
                         <div class="form-group">
                             <label for="exampleInputEmail1">Senha</label>
                             <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Digite uma senha">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Confirme sua senha</label>
+                            <input type="password" name="password_confirmed" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Confirme sua senha">
                         </div>
                         <div class="col-md-12 text-center mb-3">
                             <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Inscrever-se</button>
