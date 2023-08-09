@@ -2,25 +2,6 @@
 
 @section('miolo')
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <iframe src="{{url('finalizapagamento',$presente->id)}}"></iframe>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn bg-gradient-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="row">
         <div class="col-lg-8">
             <div class="row">
@@ -78,13 +59,13 @@
                         <div class="card-body p-3">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <a href="{{url('finalizapagamento',$presente->id)}}" class="btn btn-primary w-100">PIX</a>
+                                    <a target="_blank" href="{{url('finalizapagamento/'.$presente->id.'/1')}}" class="btn btn-primary w-100">PIX</a>
                                 </div>
                                 <div class="col-md-4">
-                                    <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary w-100">Cartão de Credito/Debito</button>
+                                    <a target="_blank" href="{{url('finalizapagamento/'.$presente->id.'/2')}}" class="btn btn-primary w-100">Cartão de Credito</a>
                                 </div>
                                 <div class="col-md-4">
-                                    <button class="btn btn-primary w-100">Boleto</button>
+                                    <a target="_blank" href="{{url('finalizapagamento/'.$presente->id.'/3')}}" class="btn btn-primary w-100">Cartão de Debito</a>
                                 </div>
                             </div>
                         </div>

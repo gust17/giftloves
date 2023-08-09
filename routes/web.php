@@ -82,10 +82,10 @@ Route::get('pagamento/{id}', function ($id) {
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::get('finalizapagamento/{id}', function ($id) {
+Route::get('finalizapagamento/{id}/{tipo}', function ($id,$tipo) {
 
     $presente = \App\Models\Presente::find($id);
-
+    dd($tipo);
 
     $asaas = new Asaas(env('ASAAS_TOKEN'), env('ASAAS_AMBIENTE'));
 
