@@ -82,10 +82,10 @@ Route::get('pagamento/{id}', function ($id) {
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::get('finalizapagamento/{id}/{tipo}', function ($id,$tipo) {
+Route::get('finalizapagamento/{id}/{tipo}', function ($id,$tipo,\App\Services\AsassService $asassService) {
 
     $presente = \App\Models\Presente::find($id);
-    dd($tipo);
+
 
     $asaas = new Asaas(env('ASAAS_TOKEN'), env('ASAAS_AMBIENTE'));
 
@@ -124,7 +124,7 @@ Route::get('finalizapagamento/{id}/{tipo}', function ($id,$tipo) {
 
         */
 
-        'billingType' => 'UNDEFINED', //required
+        'billingType' => $asassService->opcao($tipo), //required
 
 
         /*
