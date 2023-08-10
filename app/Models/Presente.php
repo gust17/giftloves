@@ -20,11 +20,18 @@ class Presente extends Model
         'user_id',
         'cartao_id',
         'presenteado_id',
+        'asaas_id',
+        'status'
     ];
 
 
     public function cartao()
     {
         return $this->belongsTo(Cartao::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

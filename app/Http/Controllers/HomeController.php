@@ -53,7 +53,11 @@ class HomeController extends Controller
 
             // echo "O valor da sessão 'name' é: " . $valorSessao;
         } else {
-            echo "O valor da sessão 'name' não está definido.";
+            // echo "O valor da sessão 'name' não está definido.";
+        }
+
+        if (Session::has('asaas_id')) {
+            return redirect(url('resgatefinal', Session::get('asaas_id')));
         }
         return view('home');
     }

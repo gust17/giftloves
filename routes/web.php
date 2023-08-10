@@ -67,7 +67,6 @@ Route::post('finalizar', function (\Illuminate\Http\Request $request) {
 // Definir um cookie com o nome "preferencia" e o valor "dark" que expira em 30 dias e está disponível apenas no diretório "/exemplo/".
 
 
-
     }
     return redirect(url('login'));
 });
@@ -80,9 +79,7 @@ Route::get('pagamento/{id}', function ($id) {
     return view('dashboard.pagamento', compact('presente'));
 });
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
-Route::get('finalizapagamento/{id}/{tipo}', function ($id,$tipo,\App\Services\AsassService $asassService) {
+Route::get('finalizapagamento/{id}/{tipo}', function ($id, $tipo, \App\Services\AsassService $asassService) {
 
     $presente = \App\Models\Presente::find($id);
 
@@ -98,18 +95,31 @@ Route::get('finalizapagamento/{id}/{tipo}', function ($id,$tipo,\App\Services\As
         $dadosCliente = [
             'name' => $user->name,
             'cpfCnpj' => $user->cpf,
-            'email'=>$user->email,
+            'email' => $user->email,
         ];
         $clientes = $asaas->Cliente()->create($dadosCliente);
 
-        $user->fill(['asaas_client'=>$clientes->id]);
+        $user->fill(['asaas_client' => $clientes->id]);
         $user->save();
+    }
+
+
+    if ($presente->asaas_id) {
+
+        $dadosCobranca = array(
+            'billingType' => $asassService->opcao($tipo), //required
+        );
+
+        $cobranca = $asaas->Cobranca()->update($presente->asaas_id, $dadosCobranca);
+
+        //dd($cobranca);
+        return redirect($cobranca->invoiceUrl);
     }
 
     $user = \Illuminate\Support\Facades\Auth::user();
 
     $dadosCobranca = array(
-        'customer'=> $user->asaas_client,
+        'customer' => $user->asaas_client,
         'name' => 'Nome do link de pagamentos -> String required',
         'description' => 'Descrição do link de pagamentos -> String',
         'dueDate' => \Carbon\Carbon::now()->addDays(2)->format('Y-m-d'),
@@ -169,8 +179,11 @@ Route::get('finalizapagamento/{id}/{tipo}', function ($id,$tipo,\App\Services\As
 
 
     );
-    //dd($dadosCobranca);
+
     $cobranca = $asaas->Cobranca()->create($dadosCobranca);
+    //dd($cobranca);
+    $presente->fill(['asaas_id' => $cobranca->id]);
+    $presente->save();
     //dd($cobranca);
     return redirect($cobranca->invoiceUrl);
 
@@ -182,5 +195,63 @@ Route::get('consultarcobranca/{id}', function ($id) {
     $cobranca = $asaas->Cobranca()->getById($id);
 
     dd($cobranca);
+});
+
+
+Route::get('receberPresente/{id}', function ($id) {
+    $presente = \App\Models\Presente::where('asaas_id', $id)->first();
+
+    return view('presente.receber', compact('presente'));
+});
+
+Route::get('resgatar/{id}', function ($id) {
+    $presente = \App\Models\Presente::where('id', $id)->first();
+
+    if (Auth::user()) {
+        session_start();// Definir um cookie com o nome "usuario" e o valor "João" que expira em 1 hora.
+        session(['asaas_id' => $presente->asaas_id]);
+
+    } else {
+
+        session_start();// Definir um cookie com o nome "usuario" e o valor "João" que expira em 1 hora.
+        session(['asaas_id' => $presente->asaas_id]);
+
+
+// Definir um cookie com o nome "preferencia" e o valor "dark" que expira em 30 dias e está disponível apenas no diretório "/exemplo/".
+
+
+    }
+    return redirect(url('login'));
+
+});
+
+Route::get('resgatefinal/{id}', function ($id) {
+    $page = 'Resgate';
+    $presente = \App\Models\Presente::where('asaas_id', $id)->first();
+    return view('dashboard.resgate', compact('presente', 'page'));
+
+});
+
+
+Route::post('resgate', function (\Illuminate\Http\Request $request) {
+    $validated = $request->validate([
+        'code' => 'required',
+
+    ]);
+
+    $presente = \App\Models\Presente::where('id', $request->presente_id)->where('code', $request->code)->first();
+    $presente->fill(['status' => 3, 'presenteado' => auth()->user()->id]);
+    $presente->save();
+
+    $grava = [
+        'tipo' => 1,
+        'valor' => $presente->valor,
+        'descricao' => 'Você foi presenteado(a) por ' . $presente->user->name,
+        'user_id' => auth()->user()->id
+
+    ];
+    \App\Models\Extrato::create($grava);
+
+    return redirect()->back()->with('success', 'GiftLove resgatado');
 });
 ///pay_2104150616726039

@@ -59,13 +59,13 @@
                         <div class="card-body p-3">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <a target="_blank" href="{{url('finalizapagamento/'.$presente->id.'/1')}}" class="btn btn-primary w-100">PIX</a>
+                                    <a target="_blank" href="{{url('finalizapagamento/'.$presente->id.'/3')}}" class="btn btn-primary w-100">PIX</a>
                                 </div>
                                 <div class="col-md-4">
                                     <a target="_blank" href="{{url('finalizapagamento/'.$presente->id.'/2')}}" class="btn btn-primary w-100">Cartão de Credito</a>
                                 </div>
                                 <div class="col-md-4">
-                                    <a target="_blank" href="{{url('finalizapagamento/'.$presente->id.'/3')}}" class="btn btn-primary w-100">Cartão de Debito</a>
+                                    <a target="_blank" href="{{url('finalizapagamento/'.$presente->id.'/1')}}" class="btn btn-primary w-100">Boleto</a>
                                 </div>
                             </div>
                         </div>
