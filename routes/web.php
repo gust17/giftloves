@@ -83,7 +83,7 @@ Route::get('pagamento/{id}', function ($id) {
     $presente = \App\Models\Presente::find($id);
 
     return view('dashboard.pagamento', compact('presente', 'page'));
-});
+})->middleware(['auth']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('finalizapagamento/{id}/{tipo}', function ($id, $tipo, \App\Services\AsassService $asassService) {
 
