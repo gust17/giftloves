@@ -113,14 +113,14 @@
             </center>
 
             <div id="first">
-                <form class="myform form ">
+                <form class="myform form " action="{{ route('register') }}" method="post">
                     <div class="logo mb-3">
                         <div class="col-md-12 text-center">
                             <h1>Inscrever-se
                             </h1>
                         </div>
                     </div>
-                    <form action="{{ route('register') }}" method="post" name="registration">
+                    <form  name="registration">
 
                         @csrf
                         <div class="form-group">

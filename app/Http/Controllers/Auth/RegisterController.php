@@ -71,7 +71,7 @@ class RegisterController extends Controller
 
         $cpf = str_pad($cpf, 11, '0', STR_PAD_LEFT);
 
-        $request['whatsapp'] = preg_replace('/\D/', '', $data['whatsapp']);
+        $whatsapp = preg_replace('/\D/', '', $data['whatsapp']);
         // dd($request->all());
 
 
@@ -79,7 +79,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'cpf' => $cpf,
-            'whatsapp' => $data['whatsapp'],
+            'whatsapp' => $whatsapp,
             'nascimento' => $data['nascimento'],
             'password' => Hash::make($data['password']),
         ]);
