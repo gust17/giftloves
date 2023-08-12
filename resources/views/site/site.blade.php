@@ -38,7 +38,7 @@
                         <img src="{{asset('assets/images/logo.svg')}}" alt="Mobirise Website Builder" style="height: 3rem;">
                     </a>
                 </span>
-                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-7" href="https://mobiri.se">GiftLoves</a></span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-7" href="{{url('/')}}">GiftLoves</a></span>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <div class="hamburger">
@@ -50,8 +50,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-white display-4" href="https://mobiri.se">Sobre Nós</a></li>
-                    <li class="nav-item"><a class="nav-link link text-white text-primary display-4" href="page1.html">Categorias</a></li>
-                    <li class="nav-item"><a class="nav-link link text-white display-4" href="https://mobiri.se">Contato</a>
+                    <li class="nav-item"><a class="nav-link link text-white text-primary display-4" href="{{url('/')}}">Categorias</a></li>
+                    <li class="nav-item"><a class="nav-link link text-white display-4" href="{{url('/')}}">Contato</a>
                     </li></ul>
 
                 <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="{{route('login')}}">Login</a></div>
