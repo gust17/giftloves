@@ -44,7 +44,7 @@ class RegisterController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
@@ -62,15 +62,23 @@ class RegisterController extends Controller
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param array $data
      * @return \App\Models\User
      */
     protected function create(array $data)
     {
+        $cpf = preg_replace('/[^a-zA-Z0-9\s]/', '', $data['cpf']);
+
+        $cpf = str_pad($cpf, 11, '0', STR_PAD_LEFT);
+
+        $request['whatsapp'] = preg_replace('/\D/', '', $data['whatsapp']);
+        // dd($request->all());
+
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'cpf' => $data['cpf'],
+            'cpf' => $cpf,
             'whatsapp' => $data['whatsapp'],
             'nascimento' => $data['nascimento'],
             'password' => Hash::make($data['password']),
