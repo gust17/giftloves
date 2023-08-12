@@ -34,8 +34,16 @@ Route::get('testelogin', function () {
 
 Route::post('visualizar', function (\Illuminate\Http\Request $request) {
 
+    $validated = $request->validate([
+        "cartao_id" => 'required',
+        "name" => 'required',
+        "nascimento" => 'required',
+        "whatsapp" => 'required',
+        "valor" => 'required',
+        "textarea" => 'required'
 
-    // dd($request->all());
+    ]);
+    //dd($request->all());
     $user = \App\Models\User::where('whatsapp', $request->whatsapp)->first(['name', 'nascimento', 'id']);
 
     //dd($request->all());
@@ -46,6 +54,10 @@ Route::post('visualizar', function (\Illuminate\Http\Request $request) {
     return view('site.visualizar', compact('cartao', 'request', 'user'));
 });
 Route::post('finalizar', function (\Illuminate\Http\Request $request) {
+    $request['whatsapp'] = preg_replace('/\D/', '', $request->input('whatsapp'));
+    // dd($request->all());
+    $request['valor'] = preg_replace('/[^\d,]/', '', $request->valor);
+    $request['valor'] = (float)str_replace(',', '.', $request['valor']);
     //dd($request->all());
 
     if (Auth::user()) {
@@ -267,7 +279,7 @@ Route::get('dashboard', function () {
     $page = 'Dashboard';
     $cartaos = \App\Models\Cartao::inRandomOrder()->take(10)->get();
 //dd($cartaos);
-    return view('dashboard.dashboard', compact('page','cartaos'));
+    return view('dashboard.dashboard', compact('page', 'cartaos'));
 });
 
 Route::get('enviarwhatsapp/{id}', function ($id, \App\Services\WhatsappService $whatsappService) {

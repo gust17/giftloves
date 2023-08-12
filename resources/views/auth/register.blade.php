@@ -16,6 +16,8 @@
 <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
       integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
+
 <style>
 
     body {
@@ -111,7 +113,7 @@
             </center>
 
             <div id="first">
-                <div class="myform form ">
+                <form class="myform form ">
                     <div class="logo mb-3">
                         <div class="col-md-12 text-center">
                             <h1>Inscrever-se
@@ -128,17 +130,17 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">CPF</label>
-                            <input type="text" name="cpf" class="form-control" id="firstname"
-                                   aria-describedby="emailHelp" placeholder="Digite seu CPF">
+                            <input type="text" name="cpf" class="form-control" id="cpf" placeholder="Digite seu CPF">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Telefone/Whatsapp</label>
-                            <input type="text" name="whatsapp" class="form-control" id="firstname"
-                                   aria-describedby="emailHelp" placeholder="Digite seu telefone ou whatsapp">
+                            <input type="text" name="whatsapp" class="form-control" id="whatsapp"
+                                   placeholder="Digite seu telefone ou whatsapp">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nascimento</label>
-                            <input type="date" name="nascimento"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Data de Nascimento">
+                            <input type="date" name="nascimento" class="form-control" id="email"
+                                   aria-describedby="emailHelp" placeholder="Data de Nascimento">
                         </div>
 
                         <div class="form-group">
@@ -165,86 +167,21 @@
                                     </a></p>
                             </div>
                         </div>
-                </div>
+                    </form>
                 </form>
+
             </div>
         </div>
     </div>
 </div>
 <script>
-    $("#signup").click(function () {
-        $("#first").fadeOut("fast", function () {
-            $("#second").fadeIn("fast");
-        });
+
+    $(document).ready(function () {
+        // Aplicar a máscara de CPF usando o jQuery Inputmask
+        $('#cpf').inputmask('999.999.999-99');
+        $('#whatsapp').inputmask('(99)99999-9999');
     });
 
-    $("#signin").click(function () {
-        $("#second").fadeOut("fast", function () {
-            $("#first").fadeIn("fast");
-        });
-    });
-
-
-    $(function () {
-        $("form[name='login']").validate({
-            rules: {
-
-                email: {
-                    required: true,
-                    email: true
-                },
-                password: {
-                    required: true,
-
-                }
-            },
-            messages: {
-                email: "Please enter a valid email address",
-
-                password: {
-                    required: "Please enter password",
-
-                }
-
-            },
-            submitHandler: function (form) {
-                form.submit();
-            }
-        });
-    });
-
-
-    $(function () {
-
-        $("form[name='registration']").validate({
-            rules: {
-                firstname: "required",
-                lastname: "required",
-                email: {
-                    required: true,
-                    email: true
-                },
-                password: {
-                    required: true,
-                    minlength: 5
-                }
-            },
-
-            messages: {
-                firstname: "Please enter your firstname",
-                lastname: "Please enter your lastname",
-                password: {
-                    required: "Please provide a password",
-                    minlength: "Your password must be at least 5 characters long"
-                },
-                email: "Please enter a valid email address"
-            },
-
-            submitHandler: function (form) {
-                form.submit();
-            }
-        });
-    });
 </script>
 </body>
 </html>

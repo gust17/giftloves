@@ -3,7 +3,7 @@
 @section('miolo')
     <section data-bs-version="5.1" class="article2 cid-tM7banZmvK" id="article02-z">
 
-
+        @include('flash-message2')
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-12 col-lg-5 image-wrapper">
@@ -40,18 +40,17 @@
                                         </div>
                                         <div class="col-md col-sm-12 form-group mb-3" data-for="email">
                                             <input type="text" name="nascimento" placeholder="Nascimento dia/mês"
-                                                   data-form-field="email" class="form-control" value=""
-                                                   id="email-form02-10">
+                                                   class="form-control" value=""
+                                                   id="nascimento">
                                         </div>
                                         <div class="col-12 form-group mb-3" data-for="url">
                                             <input type="text" name="whatsapp" placeholder="Whatsapp"
-                                                   data-form-field="url" class="form-control" value=""
-                                                   id="url-form02-10">
+                                                   class="form-control" value=""
+                                                   id="whatsapp">
                                         </div>
                                         <div class="col-12 form-group mb-3" data-for="url">
                                             <input type="text" name="valor" placeholder="R$ Valor do Cartão Presente"
-                                                   data-form-field="url" class="form-control" value=""
-                                                   id="url-form02-10">
+                                                   class="form-control" id="valor">
                                         </div>
                                         <div class="col-12 form-group mb-3" data-for="textarea">
                                             <textarea name="textarea" placeholder="Mensagem" data-form-field="textarea"
@@ -72,4 +71,29 @@
         </div>
     </section>
 
+@endsection
+@section('js')
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Inclua a biblioteca jQuery Inputmask -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            // Aplicar a máscara de CPF usando o jQuery Inputmask
+            $('#cpf').inputmask('999.999.999-99');
+            $('#nascimento').inputmask('9999');
+            $('#whatsapp').inputmask('(99)99999-9999');
+            $('#valor').inputmask('currency', {
+                prefix: 'R$ ',
+                groupSeparator: '',
+                radixPoint: ',',
+                autoGroup: true,
+                digits: 2,
+                digitsOptional: false,
+                rightAlign: false,
+                allowMinus: false
+            });
+        });
+
+    </script>
 @endsection

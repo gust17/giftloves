@@ -151,7 +151,7 @@
 <script src="assets/mbr-switch-arrow/mbr-switch-arrow.js"></script>
 <script src="assets/theme/js/script.js"></script>
 
-
+@yield('js')
 
 </body>
 </html>
