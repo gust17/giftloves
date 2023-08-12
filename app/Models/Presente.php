@@ -21,7 +21,8 @@ class Presente extends Model
         'cartao_id',
         'presenteado_id',
         'asaas_id',
-        'status'
+        'status',
+        'destinatario_id'
     ];
 
 
@@ -33,5 +34,10 @@ class Presente extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function destinatario()
+    {
+        return $this->belongsTo(User::class,'destinatario_id','id');
     }
 }

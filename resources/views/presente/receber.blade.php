@@ -18,9 +18,12 @@
                         <p class="mbr-text align-left mbr-fonts-style mb-4 display-7">
                             {{$presente->mensagem}}
                         </p>
-                        <div class="mbr-section-btn align-left mt-3"><a class="btn btn-primary display-7"
-                                                                        href="{{url('resgatar',$presente->id)}}">Resgate
-                                R$ {{$presente->valor}}</a></div>
+                        @if($presente->status == 1 )
+                            <div class="mbr-section-btn align-left mt-3"><a class="btn btn-primary display-7"
+                                                                            href="{{url('resgatar',$presente->id)}}">Resgatar
+                                    R$ {{$presente->valor}}</a></div>
+
+                        @endif
                     </div>
 
                 </div>

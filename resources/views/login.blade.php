@@ -166,6 +166,10 @@
                             <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Digite seu email">
                         </div>
                         <div class="form-group">
+                            <label for="exampleInputEmail1">Nascimento</label>
+                            <input type="date" name="nascimento"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Data de Nascimento">
+                        </div>
+                        <div class="form-group">
                             <label for="exampleInputEmail1">Senha</label>
                             <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Digite uma senha">
                         </div>
@@ -174,7 +178,7 @@
                             <input type="password" name="password_confirmed" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Confirme sua senha">
                         </div>
                         <div class="col-md-12 text-center mb-3">
-                            <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Inscrever-se</button>
+                            <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Cadastrar</button>
                         </div>
                         <div class="col-md-12 ">
                             <div class="form-group">

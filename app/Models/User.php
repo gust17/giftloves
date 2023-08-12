@@ -48,6 +48,34 @@ class User extends Authenticatable
 
     public function resgatados()
     {
-        return $this->hasMany(Presente::class, 'presenteado', 'id');
+        return $this->hasMany(Presente::class, 'destinatario_id', 'id');
+    }
+
+    public function envios()
+    {
+        return $this->hasMany(Presente::class);
+    }
+
+    public function extratos()
+    {
+        return $this->hasMany(Extrato::class);
+    }
+
+    public function entradas()
+    {
+        // dd($this->extratos);
+        $busca = $this->extratos->where('tipo', 1)->sum('valor');
+
+        return $busca;
+    }
+
+    public function saidas()
+    {
+        return $this->extratos->where('tipo', 2)->sum('valor');
+    }
+
+    public function saldoTotal()
+    {
+        return $this->entradas() - $this->saidas();
     }
 }

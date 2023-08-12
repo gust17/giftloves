@@ -12,7 +12,13 @@
                             <span class=""></span>
                             <div class="card-body position-relative z-index-1 p-3">
                                 <i class="fas fa-wifi text-white p-2"></i>
-                                <h5 class="text-black mt-4 mb-5 pb-2">{{$presente->presenteado}}</h5>
+                                <h5 style="background-color:#0dcaf0;color: white" class="text-black mt-4 mb-5 pb-2">
+
+
+                                    {{ $presente->destinatario ? $presente->destinatario->name : $presente->presenteado }}
+
+
+                                </h5>
                                 <div class="d-flex">
 
                                     <div class="ms-auto w-20 d-flex align-items-end justify-content-end">
@@ -57,17 +63,30 @@
                             </div>
                         </div>
                         <div class="card-body p-3">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <a target="_blank" href="{{url('finalizapagamento/'.$presente->id.'/3')}}" class="btn btn-primary w-100">PIX</a>
+
+                            @if($presente->status == 0)
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <a target="_blank" href="{{url('finalizapagamento/'.$presente->id.'/3')}}"
+                                           class="btn btn-primary w-100">PIX</a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <a target="_blank" href="{{url('finalizapagamento/'.$presente->id.'/2')}}"
+                                           class="btn btn-primary w-100">Cartão de Credito</a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <a target="_blank" href="{{url('finalizapagamento/'.$presente->id.'/1')}}"
+                                           class="btn btn-primary w-100">Boleto</a>
+                                    </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <a target="_blank" href="{{url('finalizapagamento/'.$presente->id.'/2')}}" class="btn btn-primary w-100">Cartão de Credito</a>
-                                </div>
-                                <div class="col-md-4">
-                                    <a target="_blank" href="{{url('finalizapagamento/'.$presente->id.'/1')}}" class="btn btn-primary w-100">Boleto</a>
-                                </div>
-                            </div>
+                            @else
+                                <button class="btn btn-primary w-100">Pagamento Confirmado</button>
+
+
+                                <a href="{{url('enviarwhatsapp',$presente->id)}}" class="btn btn-primary w-100">Enviar
+                                    WhatsApp</a>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -87,35 +106,65 @@
                 </div>
                 <div class="card-body p-3 pb-0">
                     <ul class="list-group">
-                        <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                            <div class="d-flex flex-column">
-                                <h6 class="mb-1 text-dark font-weight-bold text-sm">Março, 01, 2020</h6>
-                                <span class="text-xs">#MS-415646</span>
-                            </div>
-                            <div class="d-flex align-items-center text-sm">
-                                R$180
-                                <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i
-                                        class="fas fa-file-pdf text-lg me-1"></i> PDF
-                                </button>
-                            </div>
-                        </li>
-                        <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                            <div class="d-flex flex-column">
-                                <h6 class="text-dark mb-1 font-weight-bold text-sm">Fevereiro, 10, 2021</h6>
-                                <span class="text-xs">#RV-126749</span>
-                            </div>
-                            <div class="d-flex align-items-center text-sm">
-                                R$250
-                                <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i
-                                        class="fas fa-file-pdf text-lg me-1"></i> PDF
-                                </button>
-                            </div>
-                        </li>
+
+                        @forelse(auth()->user()->envios->reject(function ($envio) use ($presente) {
+     return $envio->id === $presente->id;
+ }) as $envio)
+                            <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                                <div class="d-flex flex-column">
+                                    <h6 class="mb-1 text-dark font-weight-bold text-sm">Março, 01, 2020</h6>
+                                    <span class="text-xs">#MS-415646</span>
+                                </div>
+                                <div class="d-flex align-items-center text-sm">
+                                    R$180
+                                    <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i
+                                            class="fas fa-file-pdf text-lg me-1"></i> PDF
+                                    </button>
+                                </div>
+                            </li>
+                        @empty
+                        @endforelse
+
 
                     </ul>
                 </div>
             </div>
         </div>
     </div>
+
+@endsection
+
+@section('js')
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    @if($presente->status ==0)
+        <script>
+
+            function verificarStatus(id) {
+                $.ajax({
+                    url: '{{url('api/verifica')}}/' + id,
+                    method: 'GET',
+                    success: function (response) {
+                        if (response.status === 1) {
+                            window.location.reload();
+                        } else {
+                            $('#status').text('Aguardando...');
+                        }
+                    },
+                    error: function () {
+                        console.log('Erro ao verificar o status.');
+                    }
+                });
+            }
+
+            $(document).ready(function () {
+                var id = {{$presente->id}}; // Substitua pelo ID correto que você deseja verificar
+
+                setInterval(function () {
+                    verificarStatus(id);
+                }, 10000); // 10 segundos
+            });
+        </script>
+    @endif
 
 @endsection

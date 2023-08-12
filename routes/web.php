@@ -34,12 +34,16 @@ Route::get('testelogin', function () {
 
 Route::post('visualizar', function (\Illuminate\Http\Request $request) {
 
+
+    // dd($request->all());
+    $user = \App\Models\User::where('whatsapp', $request->whatsapp)->first(['name', 'nascimento', 'id']);
+
     //dd($request->all());
     $cartao = \App\Models\Cartao::find($request->cartao_id);
     $name = $request->name;
 
 
-    return view('site.visualizar', compact('cartao', 'request'));
+    return view('site.visualizar', compact('cartao', 'request', 'user'));
 });
 Route::post('finalizar', function (\Illuminate\Http\Request $request) {
     //dd($request->all());
@@ -74,9 +78,11 @@ Route::post('finalizar', function (\Illuminate\Http\Request $request) {
 Auth::routes();
 
 Route::get('pagamento/{id}', function ($id) {
+
+    $page = 'Finalizar Pagamento';
     $presente = \App\Models\Presente::find($id);
 
-    return view('dashboard.pagamento', compact('presente'));
+    return view('dashboard.pagamento', compact('presente', 'page'));
 });
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('finalizapagamento/{id}/{tipo}', function ($id, $tipo, \App\Services\AsassService $asassService) {
@@ -200,7 +206,9 @@ Route::get('consultarcobranca/{id}', function ($id) {
 
 Route::get('receberPresente/{id}', function ($id) {
     $presente = \App\Models\Presente::where('asaas_id', $id)->first();
-
+    if (!$presente) {
+        return redirect('/');
+    }
     return view('presente.receber', compact('presente'));
 });
 
@@ -240,7 +248,7 @@ Route::post('resgate', function (\Illuminate\Http\Request $request) {
     ]);
 
     $presente = \App\Models\Presente::where('id', $request->presente_id)->where('code', $request->code)->first();
-    $presente->fill(['status' => 3, 'presenteado' => auth()->user()->id]);
+    $presente->fill(['status' => 3, 'destinatario_id' => auth()->user()->id]);
     $presente->save();
 
     $grava = [
@@ -254,4 +262,18 @@ Route::post('resgate', function (\Illuminate\Http\Request $request) {
 
     return redirect()->back()->with('success', 'GiftLove resgatado');
 });
+
+Route::get('dashboard', function () {
+    $page = 'Dashboard';
+    $cartaos = \App\Models\Cartao::inRandomOrder()->take(10)->get();
+//dd($cartaos);
+    return view('dashboard.dashboard', compact('page','cartaos'));
+});
+
+Route::get('enviarwhatsapp/{id}', function ($id, \App\Services\WhatsappService $whatsappService) {
+    $busca = $whatsappService->enviarMensagem($id);
+    $busca = $whatsappService->enviarCode($id);
+
+    return redirect()->back()->with('success', 'GiftLove Enviado com Sucesso');
+})->middleware(['auth']);
 ///pay_2104150616726039

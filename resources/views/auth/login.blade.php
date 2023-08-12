@@ -103,6 +103,7 @@
 </style>
 <body>
 <div class="container">
+    @include('flash-message')
     <div class="row">
         <div style="margin-top: 0" class="col-md-5 mx-auto">
             <center>
@@ -147,66 +148,13 @@
                             </p>
                         </div>
                         <div class="form-group">
-                            <p class="text-center">Não tem conta? <a href="#" id="signup">Cadastre aqui</a></p>
+                            <p class="text-center">Não tem conta? <a href="{{url('register')}}" id="signup">Cadastre aqui</a></p>
                         </div>
                     </form>
 
                 </div>
             </div>
-            <div id="second">
-                <div class="myform form ">
-                    <div class="logo mb-3">
-                        <div class="col-md-12 text-center">
-                            <h1>Inscrever-se
-                            </h1>
-                        </div>
-                    </div>
-                    <form action="{{ route('register') }}" method="post" name="registration">
 
-                        @csrf
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Nome Completo</label>
-                            <input type="text" name="name" class="form-control" id="firstname"
-                                   aria-describedby="emailHelp" placeholder="Digite seu nome completo">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">CPF</label>
-                            <input type="text" name="cpf" class="form-control" id="firstname"
-                                   aria-describedby="emailHelp" placeholder="Digite seu CPF">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Telefone/Whatsapp</label>
-                            <input type="text" name="whatsapp" class="form-control" id="firstname"
-                                   aria-describedby="emailHelp" placeholder="Digite seu telefone ou whatsapp">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Email</label>
-                            <input type="email" name="email" class="form-control" id="email"
-                                   aria-describedby="emailHelp" placeholder="Digite seu email">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Senha</label>
-                            <input type="password" name="password" id="password" class="form-control"
-                                   aria-describedby="emailHelp" placeholder="Digite uma senha">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Confirme sua senha</label>
-                            <input type="password" name="password_confirmation" id="password_confirmation"
-                                   class="form-control" aria-describedby="emailHelp" placeholder="Digite uma senha">
-                        </div>
-                        <div class="col-md-12 text-center mb-3">
-                            <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Inscrever-se</button>
-                        </div>
-                        <div class="col-md-12 ">
-                            <div class="form-group">
-                                <p class="text-center"><a href="#" id="signin">Já tem uma conta?
-                                    </a></p>
-                            </div>
-                        </div>
-                </div>
-                </form>
-            </div>
         </div>
     </div>
 </div>

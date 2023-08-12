@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Presente;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -27,6 +28,9 @@ class HomeController extends Controller
     public function index()
     {
 
+        $user = User::where('whatsapp', Session::get('whatsapp'))->first();
+
+
         //dd($_SESSION['name']);
         if (Session::has('name')) {
             $name = Session::get('name');
@@ -41,6 +45,11 @@ class HomeController extends Controller
                 'code' => str_pad(rand(0, 999999), 6, '0', STR_PAD_LEFT),
                 'user_id' => Auth::user()->id
             ];
+
+
+            if ($user) {
+                $grava['destinatario_id'] = $user->id;
+            }
             //dd($grava);
 
             $presente = Presente::create($grava);
