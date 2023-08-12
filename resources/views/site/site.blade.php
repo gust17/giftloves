@@ -49,7 +49,7 @@
                 </div>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-white display-4" href="https://mobiri.se">Sobre Nós</a></li>
+                <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-white display-4" href="{{url('/')}}">Sobre Nós</a></li>
                     <li class="nav-item"><a class="nav-link link text-white text-primary display-4" href="{{url('/')}}">Categorias</a></li>
                     <li class="nav-item"><a class="nav-link link text-white display-4" href="{{url('/')}}">Contato</a>
                     </li></ul>
