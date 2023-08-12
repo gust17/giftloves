@@ -72,6 +72,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'cpf' => $data['cpf'],
             'whatsapp' => $data['whatsapp'],
+            'nascimento' => $data['nascimento'],
             'password' => Hash::make($data['password']),
         ]);
     }
