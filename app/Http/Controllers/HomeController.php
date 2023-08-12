@@ -67,7 +67,9 @@ class HomeController extends Controller
 
         if (Session::has('asaas_id')) {
             return redirect(url('resgatefinal', Session::get('asaas_id')));
+        }else{
+            return redirect(url('dashboard'));
         }
-        return view('home');
+
     }
 }
