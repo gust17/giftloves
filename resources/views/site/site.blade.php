@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html  >
+<html>
 <head>
     <!-- Site made with Mobirise Website Builder v5.9.0, https://mobirise.com -->
     <meta charset="UTF-8">
@@ -18,11 +18,15 @@
     <link rel="stylesheet" href="{{asset('assets/dropdown/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('assets/socicon/css/styles.css')}}">
     <link rel="stylesheet" href="{{asset('assets/theme/css/style.css')}}">
-    <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-    <link rel="preload" as="style" href="{{asset('assets/mobirise/css/mbr-additional.css')}}"><link rel="stylesheet" href="{{asset('assets/mobirise/css/mbr-additional.css')}}" type="text/css">
-
-
+    <link rel="preload"
+          href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"
+          as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap">
+    </noscript>
+    <link rel="preload" as="style" href="{{asset('assets/mobirise/css/mbr-additional.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/mobirise/css/mbr-additional.css')}}" type="text/css">
 
 
 </head>
@@ -34,13 +38,16 @@
         <div class="container-fluid">
             <div class="navbar-brand">
                 <span class="navbar-logo">
-                    <a href="https://mobiri.se">
-                        <img src="{{asset('assets/images/logo.svg')}}" alt="Mobirise Website Builder" style="height: 3rem;">
+                    <a href="{{url('/')}}">
+                        <img src="{{asset('assets/images/logo.svg')}}" alt="Mobirise Website Builder"
+                             style="height: 3rem;">
                     </a>
                 </span>
                 <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-7" href="{{url('/')}}">GiftLoves</a></span>
             </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse"
+                    data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <div class="hamburger">
                     <span></span>
                     <span></span>
@@ -49,22 +56,24 @@
                 </div>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-white display-4" href="{{url('/')}}">Sobre Nós</a></li>
-                    <li class="nav-item"><a class="nav-link link text-white text-primary display-4" href="{{url('/')}}">Categorias</a></li>
-                    <li class="nav-item"><a class="nav-link link text-white display-4" href="{{url('/')}}">Contato</a>
-                    </li></ul>
+                <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+                    <li class="nav-item"><a class="nav-link link text-white display-4" href="{{url('/')}}">Sobre Nós</a>
+                    </li>
 
-                <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="{{route('login')}}">Login</a></div>
+                    <li class="nav-item"><a class="nav-link link text-white display-4" href="{{url('/')}}">Contato</a>
+                    </li>
+                </ul>
+
+                <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4"
+                                                               href="{{route('login')}}">Login</a></div>
             </div>
         </div>
     </nav>
 </section>
 
-@yield('miolo')
+    @yield('miolo')
+
 <section data-bs-version="5.1" class="footer5 cid-tM72vlFtg3" once="footers" id="footer5-i">
-
-
-
 
 
     <div class="container">
@@ -72,16 +81,15 @@
             <div class="col-md-2 col-6">
                 <div class="media-wrap">
                     <a href="#">
-                        <img src="{{asset('assets/images/logo.svg')}}" alt="Mobirise Website Builder">
+                        <img src="{{asset('assets/images/logo.svg')}}" alt="GiftLoves">
                     </a>
                 </div>
             </div>
             <div class="col-10 col-6">
                 <p class="mbr-text align-right links mbr-fonts-style display-7">
-                    <a href="#" class="text-black">About</a> &nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="#" class="text-black">Terms</a> &nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="#" class="text-black">Careers</a> &nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="#" class="text-black">Contact</a>
+                    <a href="#" class="text-black">Sobre Nós</a> &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="#" class="text-black">Termos</a> &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="#" class="text-black">Contato</a>
                 </p>
             </div>
         </div>

@@ -22,6 +22,12 @@ Route::get('/', function () {
     return view('site.index', compact('categorias', 'categorias_totals','perguntas'));
 });
 
+Route::get('categoria/{id}',function ($id){
+    $categoria = \App\Models\Categoria::find($id);
+
+    return view('site.categoriashow',compact('categoria'));
+});
+
 
 Route::get('show/{id}', function ($id) {
 

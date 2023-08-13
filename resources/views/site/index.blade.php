@@ -178,35 +178,12 @@
                             <div class="embla__container">
 
 
-                                <div class="embla__slide slider-image item active"
-                                     style="margin-left: 1rem; margin-right: 1rem;">
-                                    <div class="slide-content">
-                                        <div class="item-wrapper">
-                                            <div class="item-img">
-                                                <img src="assets/images/gift-marca-1-1200x848.jpg"
-                                                     alt="Mobirise Website Builder" data-slide-to="4"
-                                                     data-bs-slide-to="4">
-                                            </div>
-                                        </div>
-                                        <div class="item-content">
-                                            <h5 class="item-title mbr-fonts-style mb-2 display-5">
-                                                <strong>Unique Styles</strong>
-                                            </h5>
 
-                                            <p class="mbr-text mbr-fonts-style display-7">
-                                                Select the theme that suits you. Each theme in the
-                                                Mobirise Website Software contains a set of unique
-                                                blocks.<br>
-                                            </p>
-                                        </div>
-                                        <div class="mbr-section-btn item-footer mt-3">
-                                            <a href="" class="btn btn-primary item-btn display-7">Learn More</a>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                @forelse($categorias_totals as $categorias_total)
-                                    <div class="embla__slide slider-image item"
+                                @forelse($categorias_totals as $index => $categorias_total)
+
+
+                                    <div class="embla__slide slider-image item {{ $index === 0 ? 'active' : '' }}"
                                          style="margin-left: 1rem; margin-right: 1rem;">
                                         <div class="slide-content">
                                             <div class="item-wrapper">
@@ -226,7 +203,7 @@
                                                 </p>
                                             </div>
                                             <div class="mbr-section-btn item-footer mt-3">
-                                                <a href="" class="btn btn-primary item-btn display-7">Veja Mais</a>
+                                                <a href="{{url('categoria',$categorias_total->id)}}" class="btn btn-primary item-btn display-7">Veja Mais</a>
                                             </div>
                                         </div>
                                     </div>
