@@ -320,141 +320,32 @@
                         </div>
                         <div id="bootstrap-accordion_17" class="panel-group accordionStyles accordion" role="tablist"
                              aria-multiselectable="true">
-                            <div class="card mb-3">
-                                <div class="card-header" role="tab" id="headingOne">
-                                    <a role="button" class="panel-title collapsed" data-toggle="collapse"
-                                       data-bs-toggle="collapse" data-core="" href="#collapse1_17" aria-expanded="false"
-                                       aria-controls="collapse1">
-                                        <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">
-                                            Lorem ipsum dolor sit amet?
-                                        </h6>
-                                        <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
-                                    </a>
-                                </div>
-                                <div id="collapse1_17" class="panel-collapse noScroll collapse" role="tabpanel"
-                                     aria-labelledby="headingOne" data-parent="#accordion"
-                                     data-bs-parent="#bootstrap-accordion_17">
-                                    <div class="panel-body">
-                                        <p class="mbr-fonts-style panel-text display-7">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum
-                                            laoreet tincidunt. Proin et sapien scelerisque, ornare lectus eget, iaculis
-                                            lectus. Pellentesque viverra molestie tortor. Nunc sed interdum est, in
-                                            maximus
-                                            diam. Donec eu tellus dictum, gravida velit et, sagittis arcu. Proin et
-                                            lectus
-                                            dapibus. Cras fringilla elit velit placerat tortor mollis cursus.
-                                        </p>
+
+                            @forelse($perguntas as $pergunta)
+                                <div class="card mb-3">
+                                    <div class="card-header" role="tab" id="headingOne">
+                                        <a role="button" class="panel-title collapsed" data-toggle="collapse"
+                                           data-bs-toggle="collapse" data-core="" href="#collapse1_17" aria-expanded="false"
+                                           aria-controls="collapse1">
+                                            <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">
+                                                {{$pergunta->titulo}}
+                                            </h6>
+                                            <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
+                                        </a>
+                                    </div>
+                                    <div id="collapse1_17" class="panel-collapse noScroll collapse" role="tabpanel"
+                                         aria-labelledby="headingOne" data-parent="#accordion"
+                                         data-bs-parent="#bootstrap-accordion_17">
+                                        <div class="panel-body">
+                                            <p class="mbr-fonts-style panel-text display-7">
+                                                {{$pergunta->resposta}}
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="card mb-3">
-                                <div class="card-header" role="tab" id="headingOne">
-                                    <a role="button" class="panel-title collapsed" data-toggle="collapse"
-                                       data-bs-toggle="collapse" data-core="" href="#collapse2_17" aria-expanded="false"
-                                       aria-controls="collapse2">
-                                        <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">
-                                            Pellentesque nec purus ut massa?
-                                        </h6>
-                                        <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
-                                    </a>
-                                </div>
-                                <div id="collapse2_17" class="panel-collapse noScroll collapse" role="tabpanel"
-                                     aria-labelledby="headingOne" data-parent="#accordion"
-                                     data-bs-parent="#bootstrap-accordion_17">
-                                    <div class="panel-body">
-                                        <p class="mbr-fonts-style panel-text display-7">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum
-                                            laoreet tincidunt. Proin et sapien scelerisque, ornare lectus eget, iaculis
-                                            lectus. Pellentesque viverra molestie tortor. Nunc sed interdum est, in
-                                            maximus
-                                            diam. Donec eu tellus dictum, gravida velit et, sagittis arcu. Proin et
-                                            lectus
-                                            dapibus. Cras fringilla elit velit placerat tortor mollis cursus.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card mb-3">
-                                <div class="card-header" role="tab" id="headingOne">
-                                    <a role="button" class="panel-title collapsed" data-toggle="collapse"
-                                       data-bs-toggle="collapse" data-core="" href="#collapse3_17" aria-expanded="false"
-                                       aria-controls="collapse3">
-                                        <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">
-                                            Mauris porttitor tempor orci vitae?
-                                        </h6>
-                                        <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
-                                    </a>
-                                </div>
-                                <div id="collapse3_17" class="panel-collapse noScroll collapse" role="tabpanel"
-                                     aria-labelledby="headingOne" data-parent="#accordion"
-                                     data-bs-parent="#bootstrap-accordion_17">
-                                    <div class="panel-body">
-                                        <p class="mbr-fonts-style panel-text display-7">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum
-                                            laoreet tincidunt. Proin et sapien scelerisque, ornare lectus eget, iaculis
-                                            lectus. Pellentesque viverra molestie tortor. Nunc sed interdum est, in
-                                            maximus
-                                            diam. Donec eu tellus dictum, gravida velit et, sagittis arcu. Proin et
-                                            lectus
-                                            dapibus. Cras fringilla elit velit placerat tortor mollis cursus.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card mb-3">
-                                <div class="card-header" role="tab" id="headingOne">
-                                    <a role="button" class="panel-title collapsed" data-toggle="collapse"
-                                       data-bs-toggle="collapse" data-core="" href="#collapse4_17" aria-expanded="false"
-                                       aria-controls="collapse4">
-                                        <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">
-                                            Ut ultricies imperdiet volutpat?
-                                        </h6>
-                                        <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
-                                    </a>
-                                </div>
-                                <div id="collapse4_17" class="panel-collapse noScroll collapse" role="tabpanel"
-                                     aria-labelledby="headingOne" data-parent="#accordion"
-                                     data-bs-parent="#bootstrap-accordion_17">
-                                    <div class="panel-body">
-                                        <p class="mbr-fonts-style panel-text display-7">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum
-                                            laoreet tincidunt. Proin et sapien scelerisque, ornare lectus eget, iaculis
-                                            lectus. Pellentesque viverra molestie tortor. Nunc sed interdum est, in
-                                            maximus
-                                            diam. Donec eu tellus dictum, gravida velit et, sagittis arcu. Proin et
-                                            lectus
-                                            dapibus. Cras fringilla elit velit placerat tortor mollis cursus.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card mb-3">
-                                <div class="card-header" role="tab" id="headingOne">
-                                    <a role="button" class="panel-title collapsed" data-toggle="collapse"
-                                       data-bs-toggle="collapse" data-core="" href="#collapse5_17" aria-expanded="false"
-                                       aria-controls="collapse5">
-                                        <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">
-                                            Mauris dui elit porta quis justo?
-                                        </h6>
-                                        <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
-                                    </a>
-                                </div>
-                                <div id="collapse5_17" class="panel-collapse noScroll collapse" role="tabpanel"
-                                     aria-labelledby="headingOne" data-parent="#accordion"
-                                     data-bs-parent="#bootstrap-accordion_17">
-                                    <div class="panel-body">
-                                        <p class="mbr-fonts-style panel-text display-7">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum
-                                            laoreet tincidunt. Proin et sapien scelerisque, ornare lectus eget, iaculis
-                                            lectus. Pellentesque viverra molestie tortor. Nunc sed interdum est, in
-                                            maximus
-                                            diam. Donec eu tellus dictum, gravida velit et, sagittis arcu. Proin et
-                                            lectus
-                                            dapibus. Cras fringilla elit velit placerat tortor mollis cursus.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                            @empty
+                            @endforelse
+
 
                         </div>
                     </div>

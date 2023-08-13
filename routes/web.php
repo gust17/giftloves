@@ -17,8 +17,9 @@ use CodePhix\Asaas\Asaas;
 Route::get('/', function () {
     $categorias = \App\Models\Categoria::all();
     $categorias_totals = \App\Models\Categoria::all();
+    $perguntas = \App\Models\Perguntas::where('principal',1)->get();
 
-    return view('site.index', compact('categorias', 'categorias_totals'));
+    return view('site.index', compact('categorias', 'categorias_totals','perguntas'));
 });
 
 
