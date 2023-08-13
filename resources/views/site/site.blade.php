@@ -57,7 +57,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
-                    <li class="nav-item"><a class="nav-link link text-white display-4" href="{{url('/')}}">Sobre Nós</a>
+                    <li class="nav-item"><a class="nav-link link text-white display-4" href="{{url('/sobrenos')}}">Sobre Nós</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link link text-white display-4" href="{{url('/termos')}}">Termos</a>
                     </li>
 
                     <li class="nav-item"><a class="nav-link link text-white display-4" href="{{url('/')}}">Contato</a>
@@ -87,8 +89,8 @@
             </div>
             <div class="col-10 col-6">
                 <p class="mbr-text align-right links mbr-fonts-style display-7">
-                    <a href="#" class="text-black">Sobre Nós</a> &nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="#" class="text-black">Termos</a> &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="{{url('sobrenos')}}" class="text-black">Sobre Nós</a> &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="{{url('termos')}}" class="text-black">Termos</a> &nbsp;&nbsp;&nbsp;&nbsp;
                     <a href="#" class="text-black">Contato</a>
                 </p>
             </div>
@@ -110,32 +112,32 @@
                 <div class="col-md-6">
                     <div class="social-list align-right">
                         <div class="soc-item">
-                            <a href="https://twitter.com/mobirise" target="_blank">
+                            <a href="#" target="_blank">
                                 <span class="socicon-twitter socicon mbr-iconfont mbr-iconfont-social"></span>
                             </a>
                         </div>
                         <div class="soc-item">
-                            <a href="https://www.facebook.com/pages/Mobirise/1616226671953247" target="_blank">
+                            <a href="#" target="_blank">
                                 <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
                             </a>
                         </div>
                         <div class="soc-item">
-                            <a href="https://www.youtube.com/c/mobirise" target="_blank">
+                            <a href="#" target="_blank">
                                 <span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span>
                             </a>
                         </div>
                         <div class="soc-item">
-                            <a href="https://instagram.com/mobirise" target="_blank">
+                            <a href="#" target="_blank">
                                 <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
                             </a>
                         </div>
                         <div class="soc-item">
-                            <a href="https://www.behance.net/Mobirise" target="_blank">
+                            <a href="#" target="_blank">
                                 <span class="socicon-behance socicon mbr-iconfont mbr-iconfont-social"></span>
                             </a>
                         </div>
                         <div class="soc-item">
-                            <a href="https://vimeo.com/mobirise" target="_blank">
+                            <a href="#" target="_blank">
                                 <span class="socicon-vimeo socicon mbr-iconfont mbr-iconfont-social"></span>
                             </a>
                         </div>

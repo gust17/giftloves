@@ -17,17 +17,29 @@ use CodePhix\Asaas\Asaas;
 Route::get('/', function () {
     $categorias = \App\Models\Categoria::all();
     $categorias_totals = \App\Models\Categoria::all();
-    $perguntas = \App\Models\Perguntas::where('principal',1)->get();
-
-    return view('site.index', compact('categorias', 'categorias_totals','perguntas'));
+    $perguntas = \App\Models\Perguntas::where('principal', 1)->get();
+    $topo = \App\Models\Topo::first();
+    $parceiras = \App\Models\Parceira::where('ativo',1)->get();
+    $centro = \App\Models\Centro::first();
+    return view('site.index', compact('categorias', 'categorias_totals', 'perguntas','topo','parceiras','centro'));
 });
 
-Route::get('categoria/{id}',function ($id){
+Route::get('termos',function (){
+    $termos =  \App\Models\Termo::all();
+
+    return view('site.termos',compact('termos'));
+});
+
+Route::get('categoria/{id}', function ($id) {
     $categoria = \App\Models\Categoria::find($id);
 
-    return view('site.categoriashow',compact('categoria'));
+    return view('site.categoriashow', compact('categoria'));
 });
+Route::get('sobrenos', function () {
+    $sobre = \App\Models\Sobre::first();
 
+    return view('site.about',compact('sobre'));
+});
 
 Route::get('show/{id}', function ($id) {
 

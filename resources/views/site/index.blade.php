@@ -5,7 +5,7 @@
 
 
         <div class="image-block m-auto">
-            <img src="assets/images/whatsapp-image-2023-08-05-at-17.21.59-1600x608.jpg" alt="Mobirise">
+            <img src="{{ $topo ? env('URL_IMG') . $topo->img : '' }}" alt="Mobirise">
 
         </div>
     </section>
@@ -29,7 +29,7 @@
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="item first mbr-flex p-4">
                         <div class="icon-wrap w-100">
-                            <div class="icon-box">
+                            <div style="background-color: #0dcaf0" class="icon-box">
                                 <span class="step-number mbr-fonts-style display-5">1</span>
                             </div>
                         </div>
@@ -38,7 +38,8 @@
                             <h4 class="icon-title card-title mbr-black mbr-fonts-style display-7">
                                 <strong>Navegue pelo nosso site</strong>
                             </h4>
-                            <h5 class="mbr-text mbr-black mbr-fonts-style display-4">Explore a nossa ampla seleção de cartões de presente e escolha o
+                            <h5 class="mbr-text mbr-black mbr-fonts-style display-4">Explore a nossa ampla seleção de
+                                cartões de presente e escolha o
                                 mais adequado para a ocasião</h5>
                         </div>
                     </div>
@@ -55,7 +56,8 @@
                             <h4 class="icon-title card-title mbr-black mbr-fonts-style display-7">
                                 <strong>Personalize sua mensagem</strong>
                             </h4>
-                            <h5 class="mbr-text mbr-black mbr-fonts-style display-4">Preencha as informações do destinatário (nome, dia/mês de
+                            <h5 class="mbr-text mbr-black mbr-fonts-style display-4">Preencha as informações do
+                                destinatário (nome, dia/mês de
                                 aniversário e número de WhatsApp).</h5>
                         </div>
                     </div>
@@ -71,7 +73,8 @@
                             <h4 class="icon-title card-title mbr-black mbr-fonts-style display-7">
                                 <strong>Selecione o valor do cartão</strong>
                             </h4>
-                            <h5 class="mbr-text mbr-black mbr-fonts-style display-4"> Escolha o valor do cartão de presente que deseja enviar.
+                            <h5 class="mbr-text mbr-black mbr-fonts-style display-4"> Escolha o valor do cartão de
+                                presente que deseja enviar.
                             </h5>
                         </div>
                     </div>
@@ -87,7 +90,8 @@
                             <h4 class="icon-title card-title mbr-black mbr-fonts-style display-7">
                                 <strong>Efetue o pagamento</strong>
                             </h4>
-                            <h5 class="mbr-text mbr-black mbr-fonts-style display-4">Finalize a compra com segurança e de forma conveniente.</h5>
+                            <h5 class="mbr-text mbr-black mbr-fonts-style display-4">Finalize a compra com segurança e
+                                de forma conveniente.</h5>
                         </div>
                     </div>
                 </div>
@@ -114,13 +118,14 @@
                         <div class="embla__container">
 
 
-
                             @forelse($categoria->cartaos as $cartao)
-                                <div class="embla__slide slider-image item" style="margin-left: 1rem; margin-right: 1rem;">
+                                <div class="embla__slide slider-image item"
+                                     style="margin-left: 1rem; margin-right: 1rem;">
                                     <div class="slide-content">
                                         <div class="item-wrapper">
                                             <div class="item-img">
-                                                <img src="{{env('URL_IMG').$cartao->caminho}}" alt="Mobirise Website Builder"
+                                                <img src="{{env('URL_IMG').$cartao->caminho}}"
+                                                     alt="Mobirise Website Builder"
                                                      data-slide-to="5" data-bs-slide-to="5">
                                             </div>
                                         </div>
@@ -128,9 +133,10 @@
 
 
                                         </div>
-                                        <div class="mbr-section-btn item-footer mt-2"><a href="{{url('show',$cartao->id)}}"
-                                                                                         class="btn btn-primary item-btn display-7"
-                                                                                        >Veja +
+                                        <div class="mbr-section-btn item-footer mt-2"><a
+                                                href="{{url('show',$cartao->id)}}"
+                                                class="btn btn-primary item-btn display-7"
+                                            >Veja +
                                                 &gt;</a></div>
                                     </div>
                                 </div>
@@ -178,10 +184,7 @@
                             <div class="embla__container">
 
 
-
-
                                 @forelse($categorias_totals as $index => $categorias_total)
-
 
                                     <div class="embla__slide slider-image item {{ $index === 0 ? 'active' : '' }}"
                                          style="margin-left: 1rem; margin-right: 1rem;">
@@ -203,7 +206,8 @@
                                                 </p>
                                             </div>
                                             <div class="mbr-section-btn item-footer mt-3">
-                                                <a href="{{url('categoria',$categorias_total->id)}}" class="btn btn-primary item-btn display-7">Veja Mais</a>
+                                                <a href="{{url('categoria',$categorias_total->id)}}"
+                                                   class="btn btn-primary item-btn display-7">Veja Mais</a>
                                             </div>
                                         </div>
                                     </div>
@@ -236,30 +240,16 @@
 
             </div>
             <div class="row justify-content-center mt-4">
-                <div class="col-md-3 card">
-                    <img src="assets/images/1.png" alt="Mobirise Website Builder">
-                </div>
-                <div class="col-md-3 card">
-                    <img src="assets/images/2.png" alt="Mobirise Website Builder">
-                </div>
-                <div class="col-md-3 card">
-                    <img src="assets/images/3.png" alt="Mobirise Website Builder">
-                </div>
-                <div class="col-md-3 card">
-                    <img src="assets/images/4.png" alt="Mobirise Website Builder">
-                </div>
-                <div class="col-md-3 card">
-                    <img src="assets/images/2.png" alt="Mobirise Website Builder">
-                </div>
-                <div class="col-md-3 card">
-                    <img src="assets/images/3.png" alt="Mobirise Website Builder">
-                </div>
-                <div class="col-md-3 card">
-                    <img src="assets/images/4.png" alt="Mobirise Website Builder">
-                </div>
-                <div class="col-md-3 card">
-                    <img src="assets/images/5.png" alt="Mobirise Website Builder">
-                </div>
+
+                @forelse($parceiras as $parceira)
+
+                    <div class="col-md-3 card">
+                        <img src="{{env('URL_IMG').$parceira->logo}}" alt="Mobirise Website Builder">
+                    </div>
+                @empty
+                @endforelse
+
+
             </div>
         </div>
     </section>
@@ -270,15 +260,17 @@
         <div class="container">
             <div class="row">
                 <div class="content-wrap">
-                    <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-1"><strong>Unlock boundless
-                            possibilities</strong></h1>
+                    @if(isset($centro))
 
-                    <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7">
-                        Mobirise Free Website Maker is perfect for non-techies and great for pro-coders for fast
-                        prototyping and small customers' projects.
-                    </p>
-                    <div class="mbr-section-btn"><a class="btn btn-success display-7" href="https://mobiri.se">Learn
-                            more</a></div>
+                        <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-1"><strong>{{$centro->titulo}}</strong></h1>
+
+                        <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7">
+                           {{$centro->texto}}
+                        </p>
+                        <div  class="mbr-section-btn"><a style="background-color: {{ $centro->cor ? $centro->cor : '#ffba00' }};color: white" class="btn display-7" href="{!! $centro->link !!}">{{$centro->botao}}</a></div>
+
+                    @endif
+
                 </div>
             </div>
         </div>
@@ -302,7 +294,8 @@
                                 <div class="card mb-3">
                                     <div class="card-header" role="tab" id="headingOne">
                                         <a role="button" class="panel-title collapsed" data-toggle="collapse"
-                                           data-bs-toggle="collapse" data-core="" href="#collapse1_17" aria-expanded="false"
+                                           data-bs-toggle="collapse" data-core="" href="#collapse1_17"
+                                           aria-expanded="false"
                                            aria-controls="collapse1">
                                             <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">
                                                 {{$pergunta->titulo}}
