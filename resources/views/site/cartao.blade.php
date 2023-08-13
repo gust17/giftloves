@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-12 col-lg-5 image-wrapper">
-                    <img class="w-100" src="{{$cartao->caminho}}" alt="Mobirise Website Builder">
+                    <img class="w-100" src="{{env('URL_IMG').$cartao->caminho}}" alt="Mobirise Website Builder">
                 </div>
                 <div class="col-12 col-md-12 col-lg">
 

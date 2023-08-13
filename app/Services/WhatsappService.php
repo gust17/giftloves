@@ -17,7 +17,7 @@ class WhatsappService
 
                 "phone" => "55" . $presente->telefone,
                 "message" => "*$presente->presenteado* você ganhou um GiftLove de *$quemenviou*.\n Clique para mais detalhes: https://giftloves.com.br/receberPresente/$presente->asaas_id",
-                "image" => $presente->cartao->caminho,
+                "image" => env('URL_IMG').$presente->cartao->caminho,
                 "linkUrl" => "https://giftloves.com.br/receberPresente/$presente->asaas_id",
                 "title" => "GIFTLOVES",
                 "linkDescription" => "Seu Presente Descomplicado",

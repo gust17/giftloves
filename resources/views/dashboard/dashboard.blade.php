@@ -154,7 +154,7 @@
 
                         @forelse($cartaos as $index => $cartao)
                             <div class="carousel-item h-100 {{ $index === 0 ? 'active' : '' }}"
-                                 style="background-image: url('{{ $cartao->caminho }}'); background-size: 400px;background-repeat: no-repeat">
+                                 style="background-image: url('{{ env('URL_IMG').$cartao->caminho }}'); background-size: 400px;background-repeat: no-repeat">
                                 <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
                                     <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
                                         <i class="ni ni-bulb-61 text-dark opacity-10"></i>

@@ -8,7 +8,7 @@
                 <div class="col-xl-6 mb-xl-0 mb-5 text-center ">
                     <center>
                         <div style="width: 280px" class="card bg-transparent shadow-xl">
-                            <div class="overflow-hidden position-relative border-radius-xl" style="background-image: url('{{url($presente->cartao->caminho)}}');background-repeat: no-repeat;
+                            <div class="overflow-hidden position-relative border-radius-xl" style="background-image: url('{{url(env('URL_IMG').$presente->cartao->caminho)}}');background-repeat: no-repeat;
   background-size: auto 100%;height: 400px;">
                                 <span class=""></span>
                                 <div class="card-body position-relative z-index-1 p-3">
