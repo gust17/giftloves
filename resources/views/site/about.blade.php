@@ -7,7 +7,7 @@
             <div class="row align-items-center">
                 <div class="col-12 col-lg-6">
                     <div class="image-wrapper">
-                        <img src="{{ $sobre->img ? env('URL_IMG').$sobre->img : '' }}{{}}" alt="logo gift">
+                        <img src="{{ $sobre ? env('URL_IMG').$sobre->img : '' }}{{}}" alt="logo gift">
                         <p class="mbr-description mbr-fonts-style pt-2 align-center display-4">
                             GIFTLOVES</p>
                     </div>
