@@ -7,7 +7,7 @@
             <div class="row align-items-center">
                 <div class="col-12 col-lg-6">
                     <div class="image-wrapper">
-                        <img src="{{ $sobre ? env('URL_IMG').$sobre->img : '' }}{{}}" alt="logo gift">
+                        <img src="{{ $sobre ? env('URL_IMG').$sobre->img : '' }}" alt="logo gift">
                         <p class="mbr-description mbr-fonts-style pt-2 align-center display-4">
                             GIFTLOVES</p>
                     </div>
@@ -17,7 +17,7 @@
                         <h3 class="mbr-section-title mbr-fonts-style mb-3 display-5">
                             <strong>Sobre Nós</strong></h3>
                         <p class="mbr-text mbr-fonts-style display-7">
-                            {!! $sobre->texto !!}</p>
+                            {!! $sobre ? $sobre->texto : ''!!}</p>
                     </div>
                 </div>
             </div>
