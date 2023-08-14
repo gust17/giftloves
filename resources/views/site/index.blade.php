@@ -294,7 +294,7 @@
                                 <div class="card mb-3">
                                     <div class="card-header" role="tab" id="headingOne">
                                         <a role="button" class="panel-title collapsed" data-toggle="collapse"
-                                           data-bs-toggle="collapse" data-core="" href="#{{$pergunta->id}}"
+                                           data-bs-toggle="collapse" data-core="" href="#collapse1_17-{{$pergunta->id}}"
                                            aria-expanded="false"
                                            aria-controls="collapse1">
                                             <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">
@@ -303,7 +303,7 @@
                                             <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
                                         </a>
                                     </div>
-                                    <div id="{{$pergunta->id}}" class="panel-collapse noScroll collapse" role="tabpanel"
+                                    <div id="collapse1_17-{{$pergunta->id}}" class="panel-collapse noScroll collapse" role="tabpanel"
                                          aria-labelledby="headingOne" data-parent="#accordion"
                                          data-bs-parent="#bootstrap-accordion_17">
                                         <div class="panel-body">
