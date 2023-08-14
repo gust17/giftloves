@@ -57,6 +57,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+                    <li class="nav-item"><a class="nav-link link text-white display-4" href="{{url('/categorias')}}">Categorias</a>
+                    </li>
                     <li class="nav-item"><a class="nav-link link text-white display-4" href="{{url('/sobrenos')}}">Sobre Nós</a>
                     </li>
                     <li class="nav-item"><a class="nav-link link text-white display-4" href="{{url('/termos')}}">Termos</a>
@@ -89,7 +91,8 @@
             </div>
             <div class="col-10 col-6">
                 <p class="mbr-text align-right links mbr-fonts-style display-7">
-                    <a href="{{url('sobrenos')}}" class="text-black">Sobre Nós</a> &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="{{url('categorias')}}" class="text-black">Categorias</a> &nbsp;&nbsp;
+                    <a href="{{url('sobrenos')}}" class="text-black">Sobre Nós</a> &nbsp;&nbsp;
                     <a href="{{url('termos')}}" class="text-black">Termos</a> &nbsp;&nbsp;&nbsp;&nbsp;
                     <a href="#" class="text-black">Contato</a>
                 </p>

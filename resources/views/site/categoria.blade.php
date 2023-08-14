@@ -3,59 +3,44 @@
 @section('miolo')
     <div class="w3l-ab-grids py-5">
         <div class="container py-lg-4">
-            <div class="row ab-grids-sec align-items-center">
-                <div class="col-lg-6 ab-right">
-                    <img class="img-fluid" src="assets/images/banner1.jpg">
-                </div>
-                <div class="col-lg-6 ab-left pl-lg-4 mt-lg-0 mt-5">
-                    <h3 class="hny-title">Great Entertainment</h3>
-                    <p class="mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam id quisquam ipsam
-                        molestiae ad eius accusantium? Nulla dolorem perferendis inventore! posuere cubilia Curae;
-                        Nunc non risus in justo convallis feugiat.</p>
-                    <div class="ready-more mt-4">
-                        <a href="#" class="btn read-button">Read More <span class="fa fa-angle-double-right ml-2" aria-hidden="true"></span></a>
+
+            <section data-bs-version="5.1" class="features3 cid-tM7qp0HvjO" id="features3-16">
+                <div class="container">
+                    <div class="mbr-section-head">
+                        <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                            <strong>CATEGORIAS</strong></h4>
+
+                    </div>
+                    <div class="row mt-4">
+
+                        @forelse($categorias as $cartao)
+                            <div class="item features-image сol-12 col-md-6 col-lg-3">
+                                <div class="item-wrapper">
+                                    <div class="item-img">
+                                        <img src="{{env('URL_IMG'.$cartao->img)}}" alt="Mobirise Website Builder"
+                                             data-slide-to="0" data-bs-slide-to="0">
+                                    </div>
+                                    <div class="item-content">
+                                        <h5 class="item-title mbr-fonts-style display-7"><strong>{{$cartao->name}}</strong></h5>
+
+
+                                    </div>
+                                    <div class="mbr-section-btn item-footer mt-2">
+                                        <a href="{{url('categoria',$cartao->id)}}"
+                                                                                     class="btn btn-primary item-btn">Veja+
+                                            &gt;</a></div>
+                                </div>
+                            </div>
+
+                        @empty
+
+
+                        @endforelse
+
                     </div>
                 </div>
-            </div>
 
-            <div class="w3l-counter-stats-info text-center">
-                <div class="stats_left">
-                    <div class="counter_grid">
-                        <div class="icon_info">
-                            <p class="counter">65</p>
-                            <h4>Movies</h4>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="stats_left">
-                    <div class="counter_grid">
-                        <div class="icon_info">
-                            <p class="counter">165</p>
-                            <h4>Shows</h4>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="stats_left">
-                    <div class="counter_grid">
-                        <div class="icon_info">
-                            <p class="counter">463</p>
-                            <h4>Members</h4>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="stats_left">
-                    <div class="counter_grid">
-                        <div class="icon_info">
-                            <p class="counter">5063</p>
-                            <h4>Year of Use</h4>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </section>
 
         </div>
     </div>

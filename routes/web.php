@@ -15,19 +15,19 @@ use CodePhix\Asaas\Asaas;
 */
 
 Route::get('/', function () {
-    $categorias = \App\Models\Categoria::where('destaque',1)->get();
+    $categorias = \App\Models\Categoria::where('destaque', 1)->get();
     $categorias_totals = \App\Models\Categoria::all();
     $perguntas = \App\Models\Perguntas::where('principal', 1)->get();
     $topo = \App\Models\Topo::first();
-    $parceiras = \App\Models\Parceira::where('ativo',1)->get();
+    $parceiras = \App\Models\Parceira::where('ativo', 1)->get();
     $centro = \App\Models\Centro::first();
-    return view('site.index', compact('categorias', 'categorias_totals', 'perguntas','topo','parceiras','centro'));
+    return view('site.index', compact('categorias', 'categorias_totals', 'perguntas', 'topo', 'parceiras', 'centro'));
 });
 
-Route::get('termos',function (){
-    $termos =  \App\Models\Termo::all();
+Route::get('termos', function () {
+    $termos = \App\Models\Termo::all();
 
-    return view('site.termos',compact('termos'));
+    return view('site.termos', compact('termos'));
 });
 
 Route::get('categoria/{id}', function ($id) {
@@ -38,7 +38,7 @@ Route::get('categoria/{id}', function ($id) {
 Route::get('sobrenos', function () {
     $sobre = \App\Models\Sobre::first();
 
-    return view('site.about',compact('sobre'));
+    return view('site.about', compact('sobre'));
 });
 
 Route::get('show/{id}', function ($id) {
@@ -307,4 +307,11 @@ Route::get('enviarwhatsapp/{id}', function ($id, \App\Services\WhatsappService $
 
     return redirect()->back()->with('success', 'GiftLove Enviado com Sucesso');
 })->middleware(['auth']);
+
+
+Route::get('categorias', function () {
+    $categorias = \App\Models\Categoria::all();
+
+    return view('site.categoria',compact('categorias'));
+});
 ///pay_2104150616726039
