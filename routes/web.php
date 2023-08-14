@@ -15,7 +15,7 @@ use CodePhix\Asaas\Asaas;
 */
 
 Route::get('/', function () {
-    $categorias = \App\Models\Categoria::all();
+    $categorias = \App\Models\Categoria::where('destaque',1)->get();
     $categorias_totals = \App\Models\Categoria::all();
     $perguntas = \App\Models\Perguntas::where('principal', 1)->get();
     $topo = \App\Models\Topo::first();

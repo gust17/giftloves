@@ -202,7 +202,7 @@
                                                 </h5>
 
                                                 <p class="mbr-text mbr-fonts-style display-7">
-                                                    {{$categoria->descricao}}<br>
+                                                    {{$categorias_total->descricao}}<br>
                                                 </p>
                                             </div>
                                             <div class="mbr-section-btn item-footer mt-3">
