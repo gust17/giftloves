@@ -48,7 +48,7 @@
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="item mbr-flex p-4">
                         <div class="icon-wrap w-100">
-                            <div class="icon-box">
+                            <div style="background-color: #ffbf00" class="icon-box">
                                 <span class="step-number mbr-fonts-style display-5">2</span>
                             </div>
                         </div>
@@ -65,7 +65,7 @@
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="item mbr-flex p-4">
                         <div class="icon-wrap w-100">
-                            <div class="icon-box">
+                            <div style="background-color: #e826cc" class="icon-box">
                                 <span class="step-number mbr-fonts-style display-5">3</span>
                             </div>
                         </div>
@@ -82,7 +82,7 @@
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="item mbr-flex p-4">
                         <div class="icon-wrap w-100">
-                            <div class="icon-box">
+                            <div style="background-color: #ff4c33" class="icon-box">
                                 <span class="step-number mbr-fonts-style display-5">4</span>
                             </div>
                         </div>
