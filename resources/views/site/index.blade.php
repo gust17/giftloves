@@ -191,7 +191,7 @@
                                         <div class="slide-content">
                                             <div class="item-wrapper">
                                                 <div class="item-img">
-                                                    <img src="assets/images/gift-marca-2-1200x848.jpg"
+                                                    <img src="{{env('URL_IMG').$categorias_total->img}}"
                                                          alt="Mobirise Website Builder" data-slide-to="5"
                                                          data-bs-slide-to="5">
                                                 </div>
