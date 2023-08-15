@@ -15,7 +15,7 @@
                     <div class="item features-image сol-12 col-md-6 col-lg-3">
                         <div class="item-wrapper">
                             <div class="item-img">
-                                <img src="{{env('URL_IMG').$cartao->img}}" alt="Mobirise Website Builder"
+                                <img src="{{env('URL_IMG').$cartao->caminho}}" alt="Mobirise Website Builder"
                                      data-slide-to="0" data-bs-slide-to="0">
                             </div>
                             <div class="item-content">
