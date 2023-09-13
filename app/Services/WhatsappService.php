@@ -12,12 +12,12 @@ class WhatsappService
         $presente = Presente::find($id);
         $quemenviou = $presente->user->name;
         $client = new Client();
-        $response = $client->post('https://api.z-api.io/instances/3C1AFB49596C31267677DA9A19F97F83/token/DC525F25CDC4CFAF5D1AD005/send-text', [
+        $response = $client->post('https://api.z-api.io/instances/' . env('INSTANCIA_WHATSAPP') . '/token/' . env('TOKEN_WHATSAPP') . '/send-text', [
             'json' => [
 
                 "phone" => "55" . $presente->telefone,
                 "message" => "*$presente->presenteado* você ganhou um GiftLove de *$quemenviou*.\n Clique para mais detalhes: https://giftloves.com.br/receberPresente/$presente->asaas_id",
-                "image" => env('URL_IMG').$presente->cartao->caminho,
+//                "image" => env('URL_IMG') . $presente->cartao->caminho,
                 "linkUrl" => "https://giftloves.com.br/receberPresente/$presente->asaas_id",
                 "title" => "GIFTLOVES",
                 "linkDescription" => "Seu Presente Descomplicado",
@@ -37,7 +37,7 @@ class WhatsappService
     {
         $presente = Presente::find($id);
         $client = new Client();
-        $response = $client->post('https://api.z-api.io/instances/3C1AFB49596C31267677DA9A19F97F83/token/DC525F25CDC4CFAF5D1AD005/send-text', [
+        $response = $client->post('https://api.z-api.io/instances/' . env('INSTANCIA_WHATSAPP') . '/token/' . env('TOKEN_WHATSAPP') . '/send-text', [
             'json' => [
 
                 "phone" => "55" . $presente->telefone,

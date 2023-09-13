@@ -312,6 +312,53 @@ Route::get('enviarwhatsapp/{id}', function ($id, \App\Services\WhatsappService $
 Route::get('categorias', function () {
     $categorias = \App\Models\Categoria::all();
 
-    return view('site.categoria',compact('categorias'));
+    return view('site.categoria', compact('categorias'));
 });
+
+Route::get('recebidos', function () {
+    $user = auth()->id();
+    $page = 'Recebido';
+    return view('dashboard.recebidos', compact('page'));
+})->middleware('auth');
+Route::get('enviados', function () {
+    $user = auth()->id();
+    $page = 'Enviados';
+    return view('dashboard.enviados', compact('page'));
+})->middleware('auth');
+
+Route::get('recebidos/{id}', function ($id) {
+    $verficar = \App\Models\Presente::where('id', $id)->where('destinatario_id', auth()->user()->id)->exists();
+
+    if ($verficar) {
+
+        $presente = \App\Models\Presente::find($id);
+        $page = "Recebido de " . $presente->user->name;
+        return view('dashboard.visualizar', compact('page', 'presente'));
+    }
+    {
+        return 'acesso não permitido';
+    }
+})->middleware('auth');
+
+Route::get('enviados/{id}', function ($id) {
+    $verficar = \App\Models\Presente::where('id', $id)->where('user_id', auth()->user()->id)->exists();
+
+    if ($verficar) {
+
+        $presente = \App\Models\Presente::find($id);
+        $page = "Enviado para " . $presente->destinatario->name;
+        return view('dashboard.visualizar2', compact('page', 'presente'));
+    }
+    {
+        return 'acesso não permitido';
+    }
+})->middleware('auth');
+
+Route::get('extrato',function (){
+
+
+})->middleware('auth');
+
+
+
 ///pay_2104150616726039

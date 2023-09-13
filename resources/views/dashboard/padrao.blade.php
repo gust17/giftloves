@@ -69,7 +69,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="./pages/tables.html">
+                <a class="nav-link " href="{{url('recebidos')}}">
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
@@ -78,7 +78,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="./pages/billing.html">
+                <a class="nav-link " href="{{url('enviados')}}">
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
@@ -87,7 +87,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="./pages/virtual-reality.html">
+                <a class="nav-link " href="{{url('extrato')}}">
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-app text-info text-sm opacity-10"></i>
