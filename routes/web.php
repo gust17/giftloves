@@ -300,7 +300,7 @@ Route::get('dashboard', function () {
     $cartaos = \App\Models\Cartao::inRandomOrder()->take(10)->get();
 //dd($cartaos);
     return view('dashboard.dashboard', compact('page', 'cartaos'));
-});
+})->middleware('auth');
 
 Route::get('enviarwhatsapp/{id}', function ($id, \App\Services\WhatsappService $whatsappService) {
     $busca = $whatsappService->enviarMensagem($id);

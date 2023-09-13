@@ -54,7 +54,7 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'cpf' => ['required', 'cpf', 'max:255', 'unique:users'],
             'nascimento' => ['required', 'date'],
-            'whatsapp' => ['required', 'string', 'max:255', 'unique:users'],
+            'whatsapp' => ['required', 'string', 'max:255', 'unique:users,whatsapp'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
