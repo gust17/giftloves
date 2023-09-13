@@ -1,6 +1,41 @@
 @extends('dashboard.padrao')
+@section('css')
+    <style>
+        /* Adicione estilos CSS para as caixas de token */
+        .token-box {
+            display: inline-block;
+            border: 1px solid #ccc;
+            padding: 5px;
+            margin-right: 5px;
+        }
+    </style>
+
+@endsection
 
 @section('miolo')
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="myModalLabel">Token Gerado</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <h3 id="tokenText">Aguardando token...</h3>
+                    <div class="progress">
+                        <div class="progress-bar" id="progressBar" style="width: 100%;"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn bg-gradient-primary">Gerar Novo</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="row">
         <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
             <div class="card">
@@ -10,7 +45,7 @@
                             <div class="numbers">
                                 <p class="text-sm mb-0 text-uppercase font-weight-bold">Saldo Atual</p>
                                 <h5 class="font-weight-bolder">
-                                    R$ {{auth()->user()->saldoTotal()}}
+                                    R$ {{ number_format(auth()->user()->saldoTotal(), 2, ',', '.') }}
                                 </h5>
 
                             </div>
@@ -147,38 +182,9 @@
                 </div>
             </div>
         </div>
-        <div style="height: 400px" class="col-lg-3">
-            <div class="card card-carousel overflow-hidden h-100 p-0">
-                <div id="carouselExampleCaptions" class="carousel slide h-100" data-bs-ride="carousel">
-                    <div style="height: 500px" class="carousel-inner border-radius-lg h-100">
-
-                        @forelse($cartaos as $index => $cartao)
-                            <div class="carousel-item h-100 {{ $index === 0 ? 'active' : '' }}"
-                                 style="background-image: url('{{ env('URL_IMG').$cartao->caminho }}'); background-size: 400px;background-repeat: no-repeat">
-                                <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
-                                    <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
-                                        <i class="ni ni-bulb-61 text-dark opacity-10"></i>
-                                    </div>
-                                    <h5 class="text-white mb-1">{{ $cartao->categoria->name }}</h5>
-                                </div>
-                            </div>
-                        @empty
-                        @endforelse
-
-
-                    </div>
-                    <button class="carousel-control-prev w-5 me-3" type="button"
-                            data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next w-5 me-3" type="button"
-                            data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </div>
+        <div style="height: 600px" class="col-lg-3">
+            <button type="button" class="btn btn-warning btn-lg w-100" id="openModalButton">GERAR TOKEN
+            </button>
         </div>
     </div>
 
@@ -186,5 +192,56 @@
 
 @section('js')
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        var interval; // Variável global para o intervalo da contagem regressiva
+
+        function formatToken(token) {
+            // Dividir o token em caixas de 1 caractere com uma classe CSS "token-box"
+            return token.split('').map(char => '<span class="token-box">' + char + '</span>').join('');
+        }
+
+        function gerarToken() {
+            // Solicitação AJAX para a URL "gerartoken"
+            $.ajax({
+                url: 'gerartoken',
+                dataType: 'json',
+                success: function (data) {
+                    // Exibe o token retornado na resposta JSON
+                    $('#tokenText').html(formatToken(data.token));
+                    $('#progressBar').css('width', '100%');
+                    clearInterval(interval);
+                    iniciarContagemRegressiva();
+                },
+                error: function () {
+                    $('#tokenText').text('Erro ao obter o token.');
+                }
+            });
+        }
+
+        function iniciarContagemRegressiva() {
+            var countdown = 60; // 60 segundos (1 minuto)
+            interval = setInterval(function () {
+                countdown--;
+                var percent = (countdown / 60) * 100;
+                $('#progressBar').css('width', percent + '%');
+
+                if (countdown <= 0) {
+                    clearInterval(interval);
+                    $('#tokenText').text('Aguardando token...');
+                    gerarToken();
+                }
+            }, 1000);
+        }
+
+        // Adicione um ouvinte de evento ao botão para abrir o modal
+        $('#openModalButton').click(function () {
+            // Inicia a contagem regressiva e solicita o token quando o modal é mostrado
+            $('#myModal').modal('show');
+            $('#progressBar').css('width', '0%');
+            $('#tokenText').text('Aguardando token...');
+            gerarToken();
+        });
+    </script>
 
 @endsection

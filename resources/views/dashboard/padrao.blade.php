@@ -33,7 +33,9 @@
     <link href="{{asset('dash/assets/css/nucleo-svg.css')}}" rel="stylesheet"/>
     <!-- CSS Files -->
     <link id="pagestyle" href="{{asset('dash/assets/css/argon-dashboard.css?v=2.0.4')}}" rel="stylesheet"/>
+    @yield('css')
 </head>
+
 
 <body class="g-sidenav-show   bg-gray-100">
 <div class="min-height-300 bg-info position-absolute w-100"></div>

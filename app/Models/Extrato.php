@@ -17,4 +17,13 @@ class Extrato extends Model
         'descricao',
         'user_id'
     ];
+
+
+    public function getStatusFormatedAttribute()
+    {
+        if ($this->attributes['tipo'] == 0) {
+            return 'Saida';
+        }
+        return 'Entrada';
+    }
 }

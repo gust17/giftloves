@@ -15,6 +15,7 @@ use CodePhix\Asaas\Asaas;
 */
 
 Route::get('/', function () {
+//    dd('aqui');
     $categorias = \App\Models\Categoria::where('destaque', 1)->get();
     $categorias_totals = \App\Models\Categoria::all();
     $perguntas = \App\Models\Perguntas::where('principal', 1)->get();
@@ -355,9 +356,26 @@ Route::get('enviados/{id}', function ($id) {
 })->middleware('auth');
 
 Route::get('extrato',function (){
-
+    $page = 'Extrato';
+    return view('dashboard.extrato',compact('page'));
 
 })->middleware('auth');
+Route::get('gerartoken', function (Request $request) {
+    $user = auth()->user();
+
+    if ($user) {
+        $token = strval(random_int(10000000, 99999999)); // Gera uma sequência aleatória de 8 caracteres
+
+        return response()->json([
+            'token' => $token,
+            'cpf' => $user->cpf
+        ],\Illuminate\Http\Response::HTTP_OK);
+    }
+
+    return response()->json(['error' => 'Unauthorized'], Response::HTTP_UNAUTHORIZED);
+})->middleware('auth');
+
+
 
 
 

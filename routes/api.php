@@ -21,3 +21,16 @@ Route::get('verifica/{id}', function ($id) {
     $presente = \App\Models\Presente::find($id);
     return ['status' => $presente->status];
 });
+
+Route::get('/gerartoken', function () {
+    if (auth()) {
+
+
+        $token = 123456;
+        return ['token' => $token,
+            'cpf' => auth()->user()->cpf
+        ];
+    }
+
+
+})->middleware(['auth:api']);

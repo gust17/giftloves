@@ -1,7 +1,7 @@
 @extends('dashboard.padrao')
 
 @section('miolo')
-    <div class="col-md-4">
+    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-4 col-xl-4 ">
         <div class="card card-profile">
             <img src="{{env('URL_IMG').$presente->cartao->caminho}}" alt="Image placeholder" class="card-img-top">
             <div class="row justify-content-center">
