@@ -137,7 +137,7 @@
                                                 href="{{url('show',$cartao->id)}}"
                                                 class="btn btn-primary item-btn display-7"
                                             >Quero esse!
-                                                </a></div>
+                                            </a></div>
                                     </div>
                                 </div>
 
@@ -262,12 +262,15 @@
                 <div class="content-wrap">
                     @if(isset($centro))
 
-                        <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-1"><strong>{{$centro->titulo}}</strong></h1>
+                        <h1 class="mbr-fonts-style mbr-text mbr-white mb-4 display-7">
+                            <strong>{{$centro->titulo}}</strong></h1>
 
-                        <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7">
-                           {{$centro->texto}}
+                        <p style="color: white" class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-1">
+                            {{$centro->texto}}
                         </p>
-                        <div  class="mbr-section-btn"><a style="background-color: {{ $centro->cor ? $centro->cor : '#ffba00' }};color: white" class="btn display-7" href="{!! $centro->link !!}">{{$centro->botao}}</a></div>
+                        <div class="mbr-section-btn"><a
+                                style="background-color: {{ $centro->cor ? $centro->cor : '#ffba00' }};color: white"
+                                class="btn display-7" href="{!! $centro->link !!}">{{$centro->botao}}</a></div>
 
                     @endif
 
@@ -303,7 +306,8 @@
                                             <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
                                         </a>
                                     </div>
-                                    <div id="collapse1_17-{{$pergunta->id}}" class="panel-collapse noScroll collapse" role="tabpanel"
+                                    <div id="collapse1_17-{{$pergunta->id}}" class="panel-collapse noScroll collapse"
+                                         role="tabpanel"
                                          aria-labelledby="headingOne" data-parent="#accordion"
                                          data-bs-parent="#bootstrap-accordion_17">
                                         <div class="panel-body">
