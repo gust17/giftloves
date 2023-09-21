@@ -137,7 +137,7 @@
                                                 href="{{url('show',$cartao->id)}}"
                                                 class="btn btn-primary item-btn display-7"
                                             >Quero esse!
-                                                &gt;</a></div>
+                                                </a></div>
                                     </div>
                                 </div>
 
