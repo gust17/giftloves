@@ -21,7 +21,7 @@ class Extrato extends Model
 
     public function getStatusFormatedAttribute()
     {
-        if ($this->attributes['tipo'] == 0) {
+        if ($this->attributes['tipo'] == 2) {
             return 'Saida';
         }
         return 'Entrada';

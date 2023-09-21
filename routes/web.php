@@ -355,21 +355,38 @@ Route::get('enviados/{id}', function ($id) {
     }
 })->middleware('auth');
 
-Route::get('extrato',function (){
+Route::get('extrato', function () {
     $page = 'Extrato';
-    return view('dashboard.extrato',compact('page'));
+    return view('dashboard.extrato', compact('page'));
 
 })->middleware('auth');
 Route::get('gerartoken', function (Request $request) {
     $user = auth()->user();
 
     if ($user) {
-        $token = strval(random_int(10000000, 99999999)); // Gera uma sequência aleatória de 8 caracteres
+
+
+        $lastToken = $user->tokens()
+            ->where('status', 0) // Filtra por tokens com status igual a 0
+            ->latest() // Ordena do mais recente para o mais antigo
+            ->first();
+
+
+        if (!$lastToken) {
+            $token = strval(random_int(10000000, 99999999));
+
+            $registro = \App\Models\Token::create(['user_id' => $user->id, 'token' => $token]);
+
+            $token = $registro->token;
+        } else {
+            $token = $lastToken->token;
+        }
+        // Gera uma sequência aleatória de 8 caracteres
 
         return response()->json([
             'token' => $token,
             'cpf' => $user->cpf
-        ],\Illuminate\Http\Response::HTTP_OK);
+        ], \Illuminate\Http\Response::HTTP_OK);
     }
 
     return response()->json(['error' => 'Unauthorized'], Response::HTTP_UNAUTHORIZED);

@@ -79,4 +79,10 @@ class User extends Authenticatable
     {
         return $this->entradas() - $this->saidas();
     }
+
+    public function tokens()
+    {
+        return $this->hasMany(Token::class);
+
+    }
 }

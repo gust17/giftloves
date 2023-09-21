@@ -26,7 +26,7 @@
                                 </thead>
                                 <tbody>
                                 @forelse(auth()->user()->extratos as $movimento)
-                                    <tr class="@if($movimento->tipo === 0) text-danger @else text-success @endif">
+                                    <tr class="@if($movimento->tipo === 2) text-danger @else text-success @endif">
                                         <td>{{ $movimento->id }}</td>
                                         <td>{{ $movimento->descricao }}</td>
                                         <td>R$ {{ number_format($movimento->valor, 2, ',', '.') }}</td>
