@@ -25,8 +25,7 @@
                             </div>
                             <div class="mbr-section-btn item-footer mt-2"><a href="{{url('show',$cartao->id)}}"
                                                                              class="btn btn-primary item-btn "
-                                                                             target="_blank">Veja+
-                                    &gt;</a></div>
+                                                                             target="_blank">Quero Esse!</a></div>
                         </div>
                     </div>
 
