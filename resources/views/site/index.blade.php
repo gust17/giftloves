@@ -264,7 +264,7 @@
 
                         <h5 class=" mbr-section-title mbr-fonts-style mbr-white mb-4 display-1"><strong>{{$centro->titulo}}</strong></h5>
 
-                        <h3 style="color: white" class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-1">
+                        <h3 style="color: white" class="">
                            {{$centro->texto}}
                         </h3>
                         <div  class="mbr-section-btn"><a style="background-color: {{ $centro->cor ? $centro->cor : '#ffba00' }};color: white" class="btn display-7" href="{!! $centro->link !!}">{{$centro->botao}}</a></div>
