@@ -416,6 +416,7 @@
                                     <div class="card">
                                         <div class="card-body">
                                             <div class="row g-1 mb-3">
+
                                                 <div class="col-6">
                                                     <img src="assets/images/nft/img-06.jpg" alt="" class="img-fluid rounded">
                                                     <img src="https://img.themesbrand.com/velzon/images/img-2.gif" alt="" class="img-fluid rounded mt-1">
