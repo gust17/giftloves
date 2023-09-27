@@ -28,13 +28,16 @@ Route::get('/', function () {
 
 Route::get('/site2', function () {
 //    dd('aqui');
-    $categorias = \App\Models\Categoria::where('destaque', 1)->get();
-    $categorias_totals = \App\Models\Categoria::all();
+    $categorias = \App\Models\Categoria::where('destaque', 1)->first();
+    $categorias_totals = \App\Models\Categoria::withCount('cartaos')
+        ->having('cartaos_count', '>', 2)
+        ->get();
     $perguntas = \App\Models\Perguntas::where('principal', 1)->get();
     $topo = \App\Models\Topo::first();
     $parceiras = \App\Models\Parceira::where('ativo', 1)->get();
     $centro = \App\Models\Centro::first();
-    return view('site.index2', compact('categorias', 'categorias_totals', 'perguntas', 'topo', 'parceiras', 'centro'));
+    $sobre = \App\Models\Sobre::first();
+    return view('site.index2', compact('categorias', 'categorias_totals', 'perguntas', 'topo', 'parceiras', 'centro','sobre'));
 });
 
 

@@ -1,29 +1,30 @@
 <!doctype html>
-<html lang="en" data-layout="semibox" data-sidebar-visibility="show" data-topbar="light" data-sidebar="light" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable">
+<html lang="pt-br" data-layout="semibox" data-sidebar-visibility="show" data-topbar="light" data-sidebar="light"
+      data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable">
 
 <head>
 
-    <meta charset="utf-8" />
-    <title>Landing | Velzon - Admin & Dashboard Template</title>
+    <meta charset="utf-8"/>
+    <title>giftloves | </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-    <meta content="Themesbrand" name="author" />
+    <meta content="GiftLoves seu presente descomplicado" name="description"/>
+    <meta content="Themesbrand" name="author"/>
     <!-- App favicon -->
     <link rel="shortcut icon" href="assets/images/favicon.ico">
 
     <!--Swiper slider css-->
-    <link href="{{asset('novo/assets/libs/swiper/swiper-bundle.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('novo/assets/libs/swiper/swiper-bundle.min.css')}}" rel="stylesheet" type="text/css"/>
 
     <!-- Layout config Js -->
     <script src="{{asset('novo/assets/js/layout.js')}}"></script>
     <!-- Bootstrap Css -->
-    <link href="{{asset('novo/assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('novo/assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
     <!-- Icons Css -->
-    <link href="{{asset('novo/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('novo/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css"/>
     <!-- App Css-->
-    <link href="{{asset('novo/assets/css/app.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('novo/assets/css/app.min.css')}}" rel="stylesheet" type="text/css"/>
     <!-- custom Css-->
-    <link href="{{asset('novo/assets/css/custom.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('novo/assets/css/custom.min.css')}}" rel="stylesheet" type="text/css"/>
 
 </head>
 
@@ -31,37 +32,42 @@
 
 <!-- Begin page -->
 <div class="layout-wrapper landing">
-    <nav style="background-color: #E9427D" class="navbar navbar-expand-lg navbar-landing navbar-light fixed-top" id="navbar">
+    <nav style="background-color: #E9427D" class="navbar navbar-expand-lg navbar-landing navbar-light fixed-top"
+         id="navbar">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="assets/images/logo-dark.png" class="card-logo card-logo-dark" alt="logo dark" height="17">
-                <img src="{{asset('assets/images/logo.svg')}}" class="card-logo card-logo-light" alt="logo light" height="17">
+                <img src="{{asset('assets/images/logo.svg')}}" class="card-logo card-logo-dark" alt="logo dark"
+                     height="17">
+                <img src="{{asset('assets/images/logo.svg')}}" class="card-logo card-logo-light" alt="logo light"
+                     height="17">
             </a>
-            <button class="navbar-toggler py-0 fs-20 text-body" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler py-0 fs-20 text-body" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
                 <i class="mdi mdi-menu"></i>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mt-2 mt-lg-0" id="navbar-example">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#hero">Home</a>
+                        <a class="nav-link active" href="#hero">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#wallet">Wallet</a>
+                        <a class="nav-link" href="#wallet">Sobre Nós</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#marketplace">Marketplace</a>
+                        <a class="nav-link" href="#marketplace">Destaques</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#categories">Categories</a>
+                        <a class="nav-link" href="#categories">Categorias</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#creators">Creators</a>
+                        <a class="nav-link" href="#creators">Duvidas</a>
                     </li>
                 </ul>
 
                 <div class="">
-                    <a href="apps-nft-wallet.html" class="btn btn-primary">Wallet Connect</a>
+                    <a style="background-color: #FDC300FF" href="{{url('login')}}" class="btn btn-warning">Login</a>
                 </div>
             </div>
 
@@ -71,18 +77,24 @@
     <!-- end navbar -->
 
     <!-- start hero section -->
-    <section style="background-image: url('{{ $topo ? env('URL_IMG') . $topo->img : '' }}')" class="section nft-hero" id="hero">
-        <div class="bg-overlay"></div>
+    <section style="background-image: url('{{ $topo ? env('URL_IMG') . $topo->img : '' }}')" class="section nft-hero"
+             id="hero">
+
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-sm-10">
                     <div class="text-center">
-                        <h1 class="display-4 fw-medium mb-4 lh-base text-white">Discover Digital Art & Collect <span class="text-secondary">NFT Marketplace</span></h1>
-                        <p class="lead text-white-50 lh-base mb-4 pb-2">Can artwork be NFT? NFTs (non-fungible tokens) are one-of-a-kind digital assets. Given they're digital in nature, can physical works of art be turned into NFTs?.</p>
+                        <h1 style="color: #FDC300" class="display-4 fw-medium mb-4 lh-base ">Seu Presente Descomplicado <span
+                                class="">giftloves.</span></h1>
+                        <p class="lead text-white-50 lh-base mb-4 pb-2">Can artwork be NFT? NFTs (non-fungible tokens)
+                            are one-of-a-kind digital assets. Given they're digital in nature, can physical works of art
+                            be turned into NFTs?.</p>
 
                         <div class="hstack gap-2 justify-content-center">
-                            <a href="apps-nft-create.html" class="btn btn-primary">Create Own <i class="ri-arrow-right-line align-middle ms-1"></i></a>
-                            <a href="apps-nft-explore.html" class="btn btn-secondary">Explore Now <i class="ri-arrow-right-line align-middle ms-1"></i></a>
+                            <a style="background-color: #FDC300" href="{{url('login')}}" class="btn">Login <i
+                                    class="ri-arrow-right-line align-middle ms-1"></i></a>
+                            <a style="background-color: #E9427D" href="{{url('register')}}" class="btn ]">Cadastro <i
+                                    class="ri-arrow-right-line align-middle ms-1"></i></a>
                         </div>
                     </div>
                 </div><!--end col-->
@@ -91,260 +103,32 @@
     </section><!-- end hero section -->
 
     <!-- start wallet -->
-    <section class="section" id="wallet">
-        <div class="container">
+    <section style="background-color: #23B9D6" class="section" id="wallet">
+        <div class="container text-center">
+            <h2 class="mb-3 fw-semibold lh-base">Sobres Nós</h2>
             <div class="row justify-content-center">
+                <div class="col-lg-4">
+                    <img class="img img-fluid" src="{{env('URL_IMG').$sobre->img}}" alt="">
+                </div>
                 <div class="col-lg-8">
                     <div class="text-center mb-5">
-                        <h2 class="mb-3 fw-semibold lh-base">Connect NFT Marketplace</h2>
-                        <p class="text-muted">A non-fungible token is a non-interchangeable unit of data stored on a blockchain, a form of digital ledger, that can be sold and traded.</p>
+
+                        {!! $sobre->texto !!}
                     </div>
                 </div><!-- end col -->
             </div><!-- end row -->
 
-            <div class="row g-4">
-                <div class="col-lg-4">
-                    <div class="card text-center border shadow-none">
-                        <div class="card-body py-5 px-4">
-                            <img src="assets/images/nft/wallet/metamask.png" alt="" height="55" class="mb-3 pb-2">
-                            <h5>Metamask</h5>
-                            <p class="text-muted pb-1">MetaMask is a popular cryptocurrency wallet known for its ease of use, availability on both desktops.</p>
-                            <a href="#!" class="btn btn-soft-primary">Connect Wallet</a>
-                        </div>
-                    </div>
-                </div><!-- end col -->
-                <div class="col-lg-4">
-                    <div class="card text-center border shadow-none">
-                        <div class="card-body py-5 px-4">
-                            <img src="assets/images/nft/wallet/coinbase.png" alt="" height="55" class="mb-3 pb-2">
-                            <h5>Coinbase Wallet</h5>
-                            <p class="text-muted pb-1">Coinbase Wallet is a self-custody wallet that gives you complete control of your crypto for your Wallet.</p>
-                            <a href="#!" class="btn btn-secondary">Change Wallet</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- end col -->
-                <div class="col-lg-4">
-                    <div class="card text-center border shadow-none">
-                        <div class="card-body py-5 px-4">
-                            <img src="assets/images/nft/wallet/binance.png" alt="" height="55" class="mb-3 pb-2">
-                            <h5>Binance</h5>
-                            <p class="text-muted pb-1">Binance is considered a safe exchange that allows user account protection via the use of Two Authentication.</p>
-                            <a href="#!" class="btn btn-soft-primary">Connect Wallet</a>
-                        </div>
-                    </div>
-                </div><!-- end col -->
-            </div><!-- end row -->
+
         </div><!-- end container -->
     </section><!-- end wallet -->
 
-    <!-- start marketplace -->
-    <section class="section bg-light" id="marketplace">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="text-center mb-5">
-                        <h2 class="mb-3 fw-semibold lh-base">Explore Products</h2>
-                        <p class="text-muted mb-4">Collection widgets specialize in displaying many elements of the same type, such as a collection of pictures from a collection of articles.</p>
-                        <ul class="nav nav-pills filter-btns justify-content-center" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link fw-medium active" type="button" data-filter="all">All Items</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link fw-medium" type="button" data-filter="artwork">Artwork</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link fw-medium" type="button" data-filter="music">Music</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link fw-medium" type="button" data-filter="games">Games</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link fw-medium" type="button" data-filter="crypto-card">Crypto Card</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link fw-medium" type="button" data-filter="3d-style">3d Style</button>
-                            </li>
-                        </ul>
-                    </div>
-                </div><!-- end col -->
-            </div><!-- end row -->
-            <div class="row">
-                <div class="col-lg-4 product-item artwork crypto-card 3d-style">
-                    <div class="card explore-box card-animate">
-                        <div class="bookmark-icon position-absolute top-0 end-0 p-2">
-                            <button type="button" class="btn btn-icon active" data-bs-toggle="button" aria-pressed="true"><i class="mdi mdi-cards-heart fs-16"></i></button>
-                        </div>
-                        <div class="explore-place-bid-img">
-                            <img src="assets/images/nft/img-03.jpg" alt="" class="card-img-top explore-img" />
-                            <div class="bg-overlay"></div>
-                            <div class="place-bid-btn">
-                                <a href="#!" class="btn btn-success"><i class="ri-auction-fill align-bottom me-1"></i> Place Bid</a>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <p class="fw-medium mb-0 float-end"><i class="mdi mdi-heart text-danger align-middle"></i> 19.29k </p>
-                            <h5 class="mb-1"><a href="apps-nft-item-details.html">Creative Filtered Portrait</a></h5>
-                            <p class="text-muted mb-0">Photography</p>
-                        </div>
-                        <div class="card-footer border-top border-top-dashed">
-                            <div class="d-flex align-items-center">
-                                <div class="flex-grow-1 fs-14">
-                                    <i class="ri-price-tag-3-fill text-warning align-bottom me-1"></i> Highest: <span class="fw-medium">75.3ETH</span>
-                                </div>
-                                <h5 class="flex-shrink-0 fs-14 text-primary mb-0">67.36 ETH</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 product-item music crypto-card games">
-                    <div class="card explore-box card-animate">
-                        <div class="bookmark-icon position-absolute top-0 end-0 p-2">
-                            <button type="button" class="btn btn-icon active" data-bs-toggle="button" aria-pressed="true"><i class="mdi mdi-cards-heart fs-16"></i></button>
-                        </div>
-                        <div class="explore-place-bid-img">
-                            <img src="assets/images/nft/img-02.jpg" alt="" class="card-img-top explore-img" />
-                            <div class="bg-overlay"></div>
-                            <div class="place-bid-btn">
-                                <a href="#!" class="btn btn-success"><i class="ri-auction-fill align-bottom me-1"></i> Place Bid</a>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <p class="fw-medium mb-0 float-end"><i class="mdi mdi-heart text-danger align-middle"></i> 23.63k </p>
-                            <h5 class="mb-1"><a href="apps-nft-item-details.html">The Chirstoper</a></h5>
-                            <p class="text-muted mb-0">Music</p>
-                        </div>
-                        <div class="card-footer border-top border-top-dashed">
-                            <div class="d-flex align-items-center">
-                                <div class="flex-grow-1 fs-14">
-                                    <i class="ri-price-tag-3-fill text-warning align-bottom me-1"></i> Highest: <span class="fw-medium">412.30ETH</span>
-                                </div>
-                                <h5 class="flex-shrink-0 fs-14 text-primary mb-0">394.7 ETH</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 product-item artwork music games">
-                    <div class="card explore-box card-animate">
-                        <div class="bookmark-icon position-absolute top-0 end-0 p-2">
-                            <button type="button" class="btn btn-icon active" data-bs-toggle="button" aria-pressed="true"><i class="mdi mdi-cards-heart fs-16"></i></button>
-                        </div>
-                        <div class="explore-place-bid-img">
-                            <img src="https://img.themesbrand.com/velzon/images/img-4.gif" alt="" class="card-img-top explore-img" />
-                            <div class="bg-overlay"></div>
-                            <div class="place-bid-btn">
-                                <a href="#!" class="btn btn-success"><i class="ri-auction-fill align-bottom me-1"></i> Place Bid</a>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <p class="fw-medium mb-0 float-end"><i class="mdi mdi-heart text-danger align-middle"></i> 15.93k </p>
-                            <h5 class="mb-1"><a href="apps-nft-item-details.html">Evolved Reality</a></h5>
-                            <p class="text-muted mb-0">Video</p>
-                        </div>
-                        <div class="card-footer border-top border-top-dashed">
-                            <div class="d-flex align-items-center">
-                                <div class="flex-grow-1 fs-14">
-                                    <i class="ri-price-tag-3-fill text-warning align-bottom me-1"></i> Highest: <span class="fw-medium">2.75ETH</span>
-                                </div>
-                                <h5 class="flex-shrink-0 fs-14 text-primary mb-0">3.167 ETH</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 product-item crypto-card 3d-style">
-                    <div class="card explore-box card-animate">
-                        <div class="bookmark-icon position-absolute top-0 end-0 p-2">
-                            <button type="button" class="btn btn-icon active" data-bs-toggle="button" aria-pressed="true"><i class="mdi mdi-cards-heart fs-16"></i></button>
-                        </div>
-                        <div class="explore-place-bid-img">
-                            <img src="assets/images/nft/img-01.jpg" alt="" class="card-img-top explore-img" />
-                            <div class="bg-overlay"></div>
-                            <div class="place-bid-btn">
-                                <a href="#!" class="btn btn-success"><i class="ri-auction-fill align-bottom me-1"></i> Place Bid</a>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <p class="fw-medium mb-0 float-end"><i class="mdi mdi-heart text-danger align-middle"></i> 14.85k </p>
-                            <h5 class="mb-1"><a href="apps-nft-item-details.html">Abstract Face Painting</a></h5>
-                            <p class="text-muted mb-0">Collectibles</p>
-                        </div>
-                        <div class="card-footer border-top border-top-dashed">
-                            <div class="d-flex align-items-center">
-                                <div class="flex-grow-1 fs-14">
-                                    <i class="ri-price-tag-3-fill text-warning align-bottom me-1"></i> Highest: <span class="fw-medium">122.34ETH</span>
-                                </div>
-                                <h5 class="flex-shrink-0 fs-14 text-primary mb-0">97.8 ETH</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 product-item games music 3d-style">
-                    <div class="card explore-box card-animate">
-                        <div class="bookmark-icon position-absolute top-0 end-0 p-2">
-                            <button type="button" class="btn btn-icon active" data-bs-toggle="button" aria-pressed="true"><i class="mdi mdi-cards-heart fs-16"></i></button>
-                        </div>
-                        <div class="explore-place-bid-img">
-                            <img src="assets/images/nft/img-05.jpg" alt="" class="card-img-top explore-img" />
-                            <div class="bg-overlay"></div>
-                            <div class="place-bid-btn">
-                                <a href="#!" class="btn btn-success"><i class="ri-auction-fill align-bottom me-1"></i> Place Bid</a>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <p class="fw-medium mb-0 float-end"><i class="mdi mdi-heart text-danger align-middle"></i> 64.10k </p>
-                            <h5 class="mb-1"><a href="apps-nft-item-details.html">Long-tailed Macaque</a></h5>
-                            <p class="text-muted mb-0">Artwork</p>
-                        </div>
-                        <div class="card-footer border-top border-top-dashed">
-                            <div class="d-flex align-items-center">
-                                <div class="flex-grow-1 fs-14">
-                                    <i class="ri-price-tag-3-fill text-warning align-bottom me-1"></i> Highest: <span class="fw-medium">874.01ETH</span>
-                                </div>
-                                <h5 class="flex-shrink-0 fs-14 text-primary mb-0">745.14 ETH</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 product-item artwork music crypto-card">
-                    <div class="card explore-box card-animate">
-                        <div class="bookmark-icon position-absolute top-0 end-0 p-2">
-                            <button type="button" class="btn btn-icon active" data-bs-toggle="button" aria-pressed="true"><i class="mdi mdi-cards-heart fs-16"></i></button>
-                        </div>
-                        <div class="explore-place-bid-img">
-                            <img src="assets/images/nft/img-06.jpg" alt="" class="card-img-top explore-img" />
-                            <div class="bg-overlay"></div>
-                            <div class="place-bid-btn">
-                                <a href="#!" class="btn btn-success"><i class="ri-auction-fill align-bottom me-1"></i> Place Bid</a>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <p class="fw-medium mb-0 float-end"><i class="mdi mdi-heart text-danger align-middle"></i> 36.42k </p>
-                            <h5 class="mb-1"><a href="apps-nft-item-details.html">Robotic Body Art</a></h5>
-                            <p class="text-muted mb-0">Artwork</p>
-                        </div>
-                        <div class="card-footer border-top border-top-dashed">
-                            <div class="d-flex align-items-center">
-                                <div class="flex-grow-1 fs-14">
-                                    <i class="ri-price-tag-3-fill text-warning align-bottom me-1"></i> Highest: <span class="fw-medium">41.658 ETH</span>
-                                </div>
-                                <h5 class="flex-shrink-0 fs-14 text-primary mb-0">34.81 ETH</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div><!-- end container -->
-    </section>
-    <!-- end marketplace -->
-
-    <!-- start features -->
     <section class="section">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="text-center mb-5">
-                        <h2 class="mb-3 fw-semibold lh-base">Create and Sell Your NFTs</h2>
-                        <p class="text-muted">The process of creating an NFT may cost less than a dollar, but the process of selling it can cost up to a thousand dollars. For example, Allen Gannett, a software developer.</p>
+                        <h2 class="mb-3 fw-semibold lh-base">Veja como é Fácil</h2>
+                        {{--                        <p class="text-muted">The process of creating an NFT may cost less than a dollar, but the process of selling it can cost up to a thousand dollars. For example, Allen Gannett, a software developer.</p>--}}
                     </div>
                 </div><!-- end col -->
             </div><!-- end row -->
@@ -352,56 +136,133 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="card shadow-none">
-                        <div class="card-body">
-                            <img src="assets/images/nft/wallet.png" alt="" class="avatar-sm">
-                            <h5 class="mt-4">Set up your wallet</h5>
-                            <p class="text-muted">You have to choose whether to use a hot wallet a cold wallet.</p>
-                            <a href="#!" class="link-secondary">Read More <i class="ri-arrow-right-line align-bottom"></i></a>
+                        <div class="card-body text-center align-items-center justify-content-center">
+                            <center>
+                                <div
+                                    style="width: 75px; height: 75px; background-color: #0dcaf0; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-size: 20px; font-weight: bold;">
+                                    1
+                                </div>
+                            </center>
+
+                            <h5 class="mt-4">Navegue pelo nosso site</h5>
+                            <p class="text-muted">Explore a nossa ampla seleção de cartões de presente e escolha o mais
+                                adequado para a ocasião</p>
+
                         </div>
                     </div>
                 </div><!--end col-->
                 <div class="col-lg-3">
                     <div class="card shadow-none">
-                        <div class="card-body">
-                            <img src="assets/images/nft/money.png" alt="" class="avatar-sm">
-                            <h5 class="mt-4">Create your collection</h5>
-                            <p class="text-muted">Create a collection in Opensea and give it a proper art.</p>
-                            <a href="#!" class="link-secondary">Read More <i class="ri-arrow-right-line align-bottom"></i></a>
+                        <div class="card-body text-center">
+                            <center>
+                                <div
+                                    style="width: 75px; height: 75px; background-color: #ffbf00; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-size: 20px; font-weight: bold;">
+                                    2
+                                </div>
+                            </center>
+
+                            <h5 class="mt-4">Personalize sua mensagem</h5>
+                            <p class="text-muted">Preencha as informações do destinatário (nome, dia/mês de aniversário
+                                e número de WhatsApp).</p>
+                            {{--                            <a href="#!" class="link-secondary">Read More <i class="ri-arrow-right-line align-bottom"></i></a>--}}
                         </div>
                     </div>
                 </div><!--end col-->
                 <div class="col-lg-3">
                     <div class="card shadow-none">
-                        <div class="card-body">
-                            <img src="assets/images/nft/add.png" alt="" class="avatar-sm">
-                            <h5 class="mt-4">Add your NFT's</h5>
-                            <p class="text-muted">Go to your profile icon and top right corner creation page.</p>
-                            <a href="#!" class="link-secondary">Read More <i class="ri-arrow-right-line align-bottom"></i></a>
+                        <div class="card-body text-center">
+                            <center>
+                                <div
+                                    style="width: 75px; height: 75px; background-color: #E9427D; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-size: 20px; font-weight: bold;">
+                                    3
+                                </div>
+                            </center>
+                            <h5 class="mt-4">Selecione o valor do cartão</h5>
+                            <p class="text-muted">Escolha o valor do cartão de presente que deseja enviar.</p>
+                            {{--                            <a href="#!" class="link-secondary">Read More <i class="ri-arrow-right-line align-bottom"></i></a>--}}
                         </div>
                     </div>
                 </div><!--end col-->
                 <div class="col-lg-3">
                     <div class="card shadow-none">
-                        <div class="card-body">
-                            <img src="assets/images/nft/sell.png" alt="" class="avatar-sm">
-                            <h5 class="mt-4">Sell Your NFT's</h5>
-                            <p class="text-muted">Create a collection in Opensea and give Add items and art.</p>
-                            <a href="#!" class="link-secondary">Read More <i class="ri-arrow-right-line align-bottom"></i></a>
+                        <div class="card-body text-center">
+                            <center>
+                                <div
+                                    style="width: 75px; height: 75px; background-color: #ff4c33; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-size: 20px; font-weight: bold;">
+                                    4
+                                </div>
+                            </center>
+                            <h5 class="mt-4">Efetue o pagamento</h5>
+                            <p class="text-muted">Finalize a compra com segurança e de forma conveniente.</p>
+                            {{--                            <a href="#!" class="link-secondary">Read More <i class="ri-arrow-right-line align-bottom"></i></a>--}}
                         </div>
                     </div>
                 </div><!--end col-->
             </div><!--end row-->
         </div><!-- end container -->
-    </section><!-- end features -->
+    </section>
 
+    <!-- start marketplace -->
+
+    <!-- end marketplace -->
+
+    <!-- start features -->
+    <!-- end features -->
+    <section class="section bg-light" id="categories">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-lg-5">
+                    <div class="text-center mb-5">
+                        <h2 class="mb-3 fw-semibold lh-base">{{$categorias->name}}</h2>
+                        {{--                        <p class="text-muted">The process of creating an NFT may cost less than a dollar, but the process of selling it can cost up to a thousand dollars. For example, Allen Gannett, a software developer.</p>--}}
+                    </div>
+                </div><!-- end col -->
+            </div><!-- end row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Swiper -->
+                    <div class="swiper mySwiper pb-4">
+                        <div class="swiper-wrapper">
+
+                            @forelse($categorias->cartaos as $cartao)
+                                <div class="swiper-slide">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row g-1 mb-3">
+
+                                                <div class="col-12">
+
+                                                    <img src="{{ env('URL_IMG').$cartao->caminho }}" alt=""
+                                                         class="img-fluid rounded">
+
+                                                </div><!--end col-->
+                                            </div><!--end row-->
+                                            <a href="#!" class="btn btn-outline-warning"> Quero Esse! <i
+                                                    class="ri-arrow-right-line align-bottom"></i></a>
+                                            <h5 class="mb-0 fs-16"><a href="#!"> <span
+                                                        class="badge bg-success-subtle text-success"></span></a></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            @empty
+                            @endforelse
+
+
+                        </div>
+                        <div class="swiper-pagination swiper-pagination-dark"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end container -->
+    </section>
     <!-- start plan -->
     <section class="section bg-light" id="categories">
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-lg-5">
                     <div class="text-center mb-5">
-                        <h2 class="mb-3 fw-semibold lh-base">Trending All Categories</h2>
-                        <p class="text-muted">The process of creating an NFT may cost less than a dollar, but the process of selling it can cost up to a thousand dollars. For example, Allen Gannett, a software developer.</p>
+                        <h2 class="mb-3 fw-semibold lh-base">Veja todas Categorias</h2>
+                        {{--                        <p class="text-muted">The process of creating an NFT may cost less than a dollar, but the process of selling it can cost up to a thousand dollars. For example, Allen Gannett, a software developer.</p>--}}
                     </div>
                 </div><!-- end col -->
             </div><!-- end row -->
@@ -418,94 +279,37 @@
                                             <div class="row g-1 mb-3">
 
                                                 <div class="col-6">
-                                                    <img src="assets/images/nft/img-06.jpg" alt="" class="img-fluid rounded">
-                                                    <img src="https://img.themesbrand.com/velzon/images/img-2.gif" alt="" class="img-fluid rounded mt-1">
+                                                    @php
+                                                        $primeiraMetade = $categorias_total->cartaos->take(2);
+                                                    @endphp
+                                                    @foreach($primeiraMetade as $cartao)
+                                                        <img src="{{ env('URL_IMG').$cartao->caminho }}" alt=""
+                                                             class="img-fluid rounded">
+                                                    @endforeach
                                                 </div><!--end col-->
+
                                                 <div class="col-6">
-                                                    <img src="https://img.themesbrand.com/velzon/images/img-5.gif" alt="" class="img-fluid rounded mb-1">
-                                                    <img src="assets/images/nft/img-03.jpg" alt="" class="img-fluid rounded">
+                                                    @php
+                                                        $segundaMetade = $categorias_total->cartaos->splice(2, 2); // Pula os 2 primeiros e pega os próximos 2
+                                                    @endphp
+                                                    @foreach($segundaMetade as $cartao)
+                                                        <img src="{{ env('URL_IMG').$cartao->caminho }}" alt=""
+                                                             class="img-fluid rounded">
+                                                    @endforeach
                                                 </div><!--end col-->
                                             </div><!--end row-->
-                                            <a href="#!" class="float-end"> View All <i class="ri-arrow-right-line align-bottom"></i></a>
-                                            <h5 class="mb-0 fs-16"><a href="#!">{{$categorias_total->name}} <span class="badge bg-success-subtle text-success">206</span></a></h5>
+                                            <a href="#!" class="float-end"> Veja Mais! <i
+                                                    class="ri-arrow-right-line align-bottom"></i></a>
+                                            <h5 class="mb-0 fs-16"><a href="#!">{{$categorias_total->name}} <span
+                                                        class="badge bg-success-subtle text-success">{{$categorias_total->cartaos->count()}}</span></a>
+                                            </h5>
                                         </div>
                                     </div>
                                 </div>
                             @empty
                             @endforelse
 
-                            <div class="swiper-slide">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="row g-1 mb-3">
-                                            <div class="col-6">
-                                                <img src="assets/images/nft/img-05.jpg" alt="" class="img-fluid rounded">
-                                                <img src="https://img.themesbrand.com/velzon/images/img-1.gif" alt="" class="img-fluid rounded mt-1">
-                                            </div><!--end col-->
-                                            <div class="col-6">
-                                                <img src="https://img.themesbrand.com/velzon/images/img-4.gif" alt="" class="img-fluid rounded mb-1">
-                                                <img src="assets/images/nft/img-04.jpg" alt="" class="img-fluid rounded">
-                                            </div><!--end col-->
-                                        </div><!--end row-->
-                                        <a href="#!" class="float-end"> View All <i class="ri-arrow-right-line align-bottom"></i></a>
-                                        <h5 class="mb-0 fs-16"><a href="#!">Crypto Card <span class="badge bg-success-subtle text-success">743</span></a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="row g-1 mb-3">
-                                            <div class="col-6">
-                                                <img src="assets/images/nft/img-02.jpg" alt="" class="img-fluid rounded">
-                                                <img src="https://img.themesbrand.com/velzon/images/img-3.gif" alt="" class="img-fluid rounded mt-1">
-                                            </div><!--end col-->
-                                            <div class="col-6">
-                                                <img src="https://img.themesbrand.com/velzon/images/img-1.gif" alt="" class="img-fluid rounded mb-1">
-                                                <img src="assets/images/nft/img-01.jpg" alt="" class="img-fluid rounded">
-                                            </div><!--end col-->
-                                        </div><!--end row-->
-                                        <a href="#!" class="float-end"> View All <i class="ri-arrow-right-line align-bottom"></i></a>
-                                        <h5 class="mb-0 fs-16"><a href="#!">Music <span class="badge bg-success-subtle text-success">679</span></a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="row g-1 mb-3">
-                                            <div class="col-6">
-                                                <img src="assets/images/nft/img-03.jpg" alt="" class="img-fluid rounded">
-                                                <img src="https://img.themesbrand.com/velzon/images/img-5.gif" alt="" class="img-fluid rounded mt-1">
-                                            </div><!--end col-->
-                                            <div class="col-6">
-                                                <img src="https://img.themesbrand.com/velzon/images/img-2.gif" alt="" class="img-fluid rounded mb-1">
-                                                <img src="assets/images/nft/img-05.jpg" alt="" class="img-fluid rounded">
-                                            </div><!--end col-->
-                                        </div><!--end row-->
-                                        <a href="#!" class="float-end"> View All <i class="ri-arrow-right-line align-bottom"></i></a>
-                                        <h5 class="mb-0 fs-16"><a href="#!">Games <span class="badge bg-success-subtle text-success">341</span></a></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="row g-1 mb-3">
-                                            <div class="col-6">
-                                                <img src="assets/images/nft/img-02.jpg" alt="" class="img-fluid rounded">
-                                                <img src="https://img.themesbrand.com/velzon/images/img-3.gif" alt="" class="img-fluid rounded mt-1">
-                                            </div><!--end col-->
-                                            <div class="col-6">
-                                                <img src="https://img.themesbrand.com/velzon/images/img-1.gif" alt="" class="img-fluid rounded mb-1">
-                                                <img src="assets/images/nft/img-01.jpg" alt="" class="img-fluid rounded">
-                                            </div><!--end col-->
-                                        </div><!--end row-->
-                                        <a href="#!" class="float-end"> View All <i class="ri-arrow-right-line align-bottom"></i></a>
-                                        <h5 class="mb-0 fs-16"><a href="#!">Photography <span class="badge bg-success-subtle text-success">1452</span></a></h5>
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
                         <div class="swiper-pagination swiper-pagination-dark"></div>
                     </div>
@@ -516,309 +320,89 @@
     <!-- end plan -->
 
     <!-- start Discover Items-->
-    <section class="section">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-12">
-                    <div class="d-flex align-items-center mb-5">
-                        <h2 class="mb-0 fw-semibold lh-base flex-grow-1">Discover Items</h2>
-                        <a href="apps-nft-explore.html" class="btn btn-primary">View All <i class="ri-arrow-right-line align-bottom"></i></a>
-                    </div>
-                </div>
-            </div><!-- end row -->
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="card explore-box card-animate border">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center mb-3">
-                                <img src="assets/images/users/avatar-2.jpg" alt="" class="avatar-xs rounded-circle">
-                                <div class="ms-2 flex-grow-1">
-                                    <a href="#!"><h6 class="mb-0 fs-15">Nancy Martino</h6></a>
-                                    <p class="mb-0 text-muted fs-13">Owners</p>
-                                </div>
-                                <div class="bookmark-icon">
-                                    <button type="button" class="btn btn-icon active" data-bs-toggle="button" aria-pressed="true"><i class="mdi mdi-cards-heart fs-16"></i></button>
-                                </div>
-                            </div>
-                            <div class="explore-place-bid-img overflow-hidden rounded">
-                                <img src="assets/images/nft/img-05.jpg" alt="" class="explore-img w-100">
-                                <div class="bg-overlay"></div>
-                                <div class="place-bid-btn">
-                                    <a href="#!" class="btn btn-success"><i class="ri-auction-fill align-bottom me-1"></i> Place Bid</a>
-                                </div>
-                            </div>
-                            <div class="mt-3">
-                                <p class="fw-medium mb-0 float-end"><i class="mdi mdi-heart text-danger align-middle"></i> 19.29k </p>
-                                <h5 class="text-success"><i class="mdi mdi-ethereum"></i> 97.8 ETH </h5>
-                                <h6 class="fs-16 mb-0"><a href="apps-nft-item-details.html">Patterns arts &amp; culture</a></h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="card explore-box card-animate border">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center mb-3">
-                                <img src="assets/images/users/avatar-9.jpg" alt="" class="avatar-xs rounded-circle">
-                                <div class="ms-2 flex-grow-1">
-                                    <a href="#!"><h6 class="mb-0 fs-15">Henry Baird</h6></a>
-                                    <p class="mb-0 text-muted fs-13">Creators</p>
-                                </div>
-                                <div class="bookmark-icon">
-                                    <button type="button" class="btn btn-icon" data-bs-toggle="button" aria-pressed="true"><i class="mdi mdi-cards-heart fs-16"></i></button>
-                                </div>
-                            </div>
-                            <div class="explore-place-bid-img overflow-hidden rounded">
-                                <img src="assets/images/nft/img-03.jpg" alt="" class="explore-img w-100">
-                                <div class="bg-overlay"></div>
-                                <div class="place-bid-btn">
-                                    <a href="#!" class="btn btn-success"><i class="ri-auction-fill align-bottom me-1"></i> Place Bid</a>
-                                </div>
-                            </div>
-                            <div class="mt-3">
-                                <p class="fw-medium mb-0 float-end"><i class="mdi mdi-heart text-danger align-middle"></i> 31.64k </p>
-                                <h5 class="text-success"><i class="mdi mdi-ethereum"></i> 475.23 ETH </h5>
-                                <h6 class="fs-16 mb-0"><a href="apps-nft-item-details.html">Evolved Reality</a></h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="card explore-box card-animate border">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center mb-3">
-                                <img src="assets/images/users/avatar-10.jpg" alt="" class="avatar-xs rounded-circle">
-                                <div class="ms-2 flex-grow-1">
-                                    <a href="#!"><h6 class="mb-0 fs-15">Diana Kohler</h6></a>
-                                    <p class="mb-0 text-muted fs-13">Owners</p>
-                                </div>
-                                <div class="bookmark-icon">
-                                    <button type="button" class="btn btn-icon active" data-bs-toggle="button" aria-pressed="true"><i class="mdi mdi-cards-heart fs-16"></i></button>
-                                </div>
-                            </div>
-                            <div class="explore-place-bid-img overflow-hidden rounded">
-                                <img src="https://img.themesbrand.com/velzon/images/img-1.gif" alt="" class="img-fluid explore-img">
-                                <div class="bg-overlay"></div>
-                                <div class="place-bid-btn">
-                                    <a href="#!" class="btn btn-success"><i class="ri-auction-fill align-bottom me-1"></i> Place Bid</a>
-                                </div>
-                            </div>
-                            <div class="mt-3">
-                                <p class="fw-medium mb-0 float-end"><i class="mdi mdi-heart text-danger align-middle"></i> 8.34k </p>
-                                <h5 class="text-success"><i class="mdi mdi-ethereum"></i> 701.38 ETH </h5>
-                                <h6 class="fs-16 mb-0"><a href="apps-nft-item-details.html">Long-tailed macaque</a></h6>
-                            </div>
-                        </div>
-                    </div>
-                </div><!--end col-->
-            </div><!--end row-->
-        </div><!--end container-->
-    </section>
+
     <!--end Discover Items-->
 
     <!-- start Work Process -->
-    <section class="section bg-light" id="creators">
+    <section class="section">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="text-center mb-5">
-                        <h2 class="mb-3 fw-semibold lh-base">Top Creator This Week</h2>
-                        <p class="text-muted">NFTs are valuable because they verify the authenticity of a non-fungible asset. This makes these assets unique and one of a kind.</p>
+                        <h3 class="mb-3 fw-semibold">Perguntas Frequentes</h3>
+                        {{--                        <p class="text-muted mb-4 ff-secondary">If you can not find answer to your question in our FAQ, you can always contact us or email us. We will answer you shortly!</p>--}}
+
+                        {{--                        <div class="hstack gap-2 justify-content-center">--}}
+                        {{--                            <button type="button" class="btn btn-primary btn-label rounded-pill"><i class="ri-mail-line label-icon align-middle rounded-pill fs-16 me-2"></i> Email Us</button>--}}
+                        {{--                            <button type="button" class="btn btn-secondary btn-label rounded-pill"><i class="ri-twitter-line label-icon align-middle rounded-pill fs-16 me-2"></i> Send Us Tweet</button>--}}
+                        {{--                        </div>--}}
                     </div>
                 </div>
-            </div><!-- end row -->
-            <div class="row">
-                <div class="col-xl-4 col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="d-flex">
-                                <div class="flex-shink-0">
-                                    <img src="assets/images/nft/img-01.jpg" alt="" class="avatar-sm object-fit-cover rounded" />
-                                </div>
-                                <div class="ms-3 flex-grow-1">
-                                    <a href="pages-profile.html">
-                                        <h5 class="mb-1">Timothy Smith</h5>
-                                    </a>
-                                    <p class="text-muted mb-0"><i class="mdi mdi-ethereum text-primary fs-14"></i> 4,754 ETH</p>
-                                </div>
-                                <div>
-                                    <div class="dropdown float-end">
-                                        <button class="btn btn-ghost-primary btn-icon dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="ri-more-fill align-middle fs-16"></i>
-                                        </button>
-                                        <ul class="dropdown-menu dropdown-menu-end">
-                                            <li><a class="dropdown-item view-item-btn" href="javascript:void(0);">Share</a></li>
-                                            <li><a class="dropdown-item edit-item-btn" href="#!" data-bs-toggle="modal">Report</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><!--end col-->
-                <div class="col-xl-4 col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="d-flex">
-                                <div class="flex-shink-0">
-                                    <img src="assets/images/users/avatar-5.jpg" alt="" class="avatar-sm object-fit-cover rounded">
-                                </div>
-                                <div class="ms-3 flex-grow-1">
-                                    <a href="pages-profile.html">
-                                        <h5 class="mb-1">Alexis Clarke</h5>
-                                    </a>
-                                    <p class="text-muted mb-0"><i class="mdi mdi-ethereum text-primary fs-14"></i> 81,369 ETH</p>
-                                </div>
-                                <div>
-                                    <div class="dropdown float-end">
-                                        <button class="btn btn-ghost-primary btn-icon dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="ri-more-fill align-middle fs-16"></i>
-                                        </button>
-                                        <ul class="dropdown-menu dropdown-menu-end">
-                                            <li><a class="dropdown-item view-item-btn" href="javascript:void(0);">Share</a></li>
-                                            <li><a class="dropdown-item edit-item-btn" href="#!" data-bs-toggle="modal">Report</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><!--end col-->
-                <div class="col-xl-4 col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="d-flex">
-                                <div class="flex-shink-0">
-                                    <img src="assets/images/nft/img-06.jpg" alt="" class="avatar-sm object-fit-cover rounded">
-                                </div>
-                                <div class="ms-3 flex-grow-1">
-                                    <a href="pages-profile.html">
-                                        <h5 class="mb-1">Glen Matney</h5>
-                                    </a>
-                                    <p class="text-muted mb-0"><i class="mdi mdi-ethereum text-primary fs-14"></i> 13,156 ETH</p>
-                                </div>
-                                <div>
-                                    <div class="dropdown float-end">
-                                        <button class="btn btn-ghost-primary btn-icon dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="ri-more-fill align-middle fs-16"></i>
-                                        </button>
-                                        <ul class="dropdown-menu dropdown-menu-end">
-                                            <li><a class="dropdown-item view-item-btn" href="javascript:void(0);">Share</a></li>
-                                            <li><a class="dropdown-item edit-item-btn" href="#!" data-bs-toggle="modal">Report</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--end col-->
-                <div class="col-xl-4 col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="d-flex">
-                                <div class="flex-shink-0">
-                                    <img src="https://img.themesbrand.com/velzon/images/img-5.gif" alt="" class="avatar-sm object-fit-cover rounded">
-                                </div>
-                                <div class="ms-3 flex-grow-1">
-                                    <a href="pages-profile.html">
-                                        <h5 class="mb-1">Herbert Stokes</h5>
-                                    </a>
-                                    <p class="text-muted mb-0"><i class="mdi mdi-ethereum text-primary fs-14"></i> 34,754 ETH</p>
-                                </div>
-                                <div>
-                                    <div class="dropdown float-end">
-                                        <button class="btn btn-ghost-primary btn-icon dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="ri-more-fill align-middle fs-16"></i>
-                                        </button>
-                                        <ul class="dropdown-menu dropdown-menu-end">
-                                            <li><a class="dropdown-item view-item-btn" href="javascript:void(0);">Share</a></li>
-                                            <li><a class="dropdown-item edit-item-btn" href="#!" data-bs-toggle="modal">Report</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--end col-->
-                <div class="col-xl-4 col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="d-flex">
-                                <div class="flex-shink-0">
-                                    <img src="assets/images/users/avatar-8.jpg" alt="" class="avatar-sm object-fit-cover rounded">
-                                </div>
-                                <div class="ms-3 flex-grow-1">
-                                    <a href="pages-profile.html">
-                                        <h5 class="mb-1">Michael Morris</h5>
-                                    </a>
-                                    <p class="text-muted mb-0"><i class="mdi mdi-ethereum text-primary fs-14"></i> 13,841 ETH</p>
-                                </div>
-                                <div>
-                                    <div class="dropdown float-end">
-                                        <button class="btn btn-ghost-primary btn-icon dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="ri-more-fill align-middle fs-16"></i>
-                                        </button>
-                                        <ul class="dropdown-menu dropdown-menu-end">
-                                            <li><a class="dropdown-item view-item-btn" href="javascript:void(0);">Share</a></li>
-                                            <li><a class="dropdown-item edit-item-btn" href="#!" data-bs-toggle="modal">Report</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--end col-->
-                <div class="col-xl-4 col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="d-flex">
-                                <div class="flex-shink-0">
-                                    <img src="assets/images/nft/img-02.jpg" alt="" class="avatar-sm object-fit-cover rounded">
-                                </div>
-                                <div class="ms-3 flex-grow-1">
-                                    <a href="pages-profile.html">
-                                        <h5 class="mb-1">James Morris</h5>
-                                    </a>
-                                    <p class="text-muted mb-0"><i class="mdi mdi-ethereum text-primary fs-14"></i> 63,710 ETH</p>
-                                </div>
-                                <div>
-                                    <div class="dropdown float-end">
-                                        <button class="btn btn-ghost-primary btn-icon dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="ri-more-fill align-middle fs-16"></i>
-                                        </button>
-                                        <ul class="dropdown-menu dropdown-menu-end">
-                                            <li><a class="dropdown-item view-item-btn" href="javascript:void(0);">Share</a></li>
-                                            <li><a class="dropdown-item edit-item-btn" href="#!" data-bs-toggle="modal">Report</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--end col-->
             </div>
-        </div><!-- end container -->
-    </section><!-- end Work Process -->
+            <!-- end row -->
+
+            <div class="row g-lg-5 g-4">
+                <div class="col-lg-12">
+                    <div class="d-flex align-items-center mb-2">
+                        <div class="flex-shrink-0 me-1">
+                            <i class="ri-question-line fs-24 align-middle text-success me-1"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h5 class="mb-0 fw-semibold">Duvidas Gerais</h5>
+                        </div>
+                    </div>
+                    <div class="accordion custom-accordionwithicon custom-accordion-border accordion-border-box"
+                         id="genques-accordion">
+
+
+                        @forelse($perguntas as $pergunta)
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="genques-headingOne{{$pergunta->id}}">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#genques-collapseOne{{$pergunta->id}}" aria-expanded="false"
+                                            aria-controls="genques-collapseOne">
+                                       {{$pergunta->titulo}}
+                                    </button>
+                                </h2>
+                                <div id="genques-collapseOne{{$pergunta->id}}" class="accordion-collapse collapse"
+                                     aria-labelledby="genques-headingOne{{$pergunta->id}}" data-bs-parent="#genques-accordion" style="">
+                                    <div class="accordion-body ff-secondary">
+                                        {{$pergunta->resposta}}
+                                    </div>
+                                </div>
+                            </div>
+                        @empty
+
+                        @endforelse
+
+                    </div>
+                    <!--end accordion-->
+
+                </div>
+                <!-- end col -->
+
+                <!-- end col -->
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </section>
 
     <!-- start cta -->
-    <section class="py-5 bg-primary position-relative">
+    <section style="background-color: #23B9D6" class="py-5 position-relative">
         <div class="bg-overlay bg-overlay-pattern opacity-50"></div>
         <div class="container">
             <div class="row align-items-center gy-4">
                 <div class="col-sm">
                     <div>
-                        <h4 class="text-white mb-0 fw-semibold">Create and Sell Your NFT's</h4>
+                        <h4 class="text-white mb-0 fw-semibold">Venha fazer Parte da GiftLoves</h4>
                     </div>
                 </div>
                 <!-- end col -->
                 <div class="col-sm-auto">
                     <div>
-                        <a href="apps-nft-create.html" class="btn bg-gradient btn-success">Create NFT</a>
-                        <a href="apps-nft-explore.html" class="btn bg-gradient btn-secondary">Discover More</a>
+                        <a href="apps-nft-create.html" class="btn bg-gradient btn-success">Entre</a>
+                        <a href="apps-nft-explore.html" class="btn bg-gradient btn-secondary">Cadastre-se</a>
                     </div>
                 </div>
                 <!-- end col -->
@@ -836,11 +420,12 @@
                 <div class="col-lg-4 mt-4">
                     <div>
                         <div>
-                            <img src="assets/images/logo-light.png" alt="logo light" height="17">
+                            <img src="{{asset('assets/images/logo.svg')}}" alt="logo light" height="40">
                         </div>
                         <div class="mt-4">
-                            <p>Premium Multipurpose Admin & Dashboard Template</p>
-                            <p>You can build any type of web application like eCommerce, CRM, CMS, Project management apps, Admin Panels, etc using Velzon.</p>
+{{--                            <p>Premium Multipurpose Admin & Dashboard Template</p>--}}
+{{--                            <p>You can build any type of web application like eCommerce, CRM, CMS, Project management--}}
+{{--                                apps, Admin Panels, etc using Velzon.</p>--}}
                         </div>
                     </div>
                 </div>
@@ -889,7 +474,8 @@
 
                     <div>
                         <p class="copy-rights mb-0">
-                            <script> document.write(new Date().getFullYear()) </script> © Velzon - Themesbrand
+                            <script> document.write(new Date().getFullYear()) </script>
+                            © giftloves
                         </p>
                     </div>
                 </div>
