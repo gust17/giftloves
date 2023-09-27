@@ -25,6 +25,19 @@ Route::get('/', function () {
     return view('site.index', compact('categorias', 'categorias_totals', 'perguntas', 'topo', 'parceiras', 'centro'));
 });
 
+
+Route::get('/site2', function () {
+//    dd('aqui');
+    $categorias = \App\Models\Categoria::where('destaque', 1)->get();
+    $categorias_totals = \App\Models\Categoria::all();
+    $perguntas = \App\Models\Perguntas::where('principal', 1)->get();
+    $topo = \App\Models\Topo::first();
+    $parceiras = \App\Models\Parceira::where('ativo', 1)->get();
+    $centro = \App\Models\Centro::first();
+    return view('site.index2', compact('categorias', 'categorias_totals', 'perguntas', 'topo', 'parceiras', 'centro'));
+});
+
+
 Route::get('termos', function () {
     $termos = \App\Models\Termo::all();
 
