@@ -63,6 +63,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#creators">Duvidas</a>
+
                     </li>
                 </ul>
 
@@ -431,40 +432,40 @@
                 </div>
 
                 <div class="col-lg-7 ms-lg-auto">
-                    <div class="row">
-                        <div class="col-sm-4 mt-4">
-                            <h5 class="text-white mb-0">Company</h5>
-                            <div class="text-muted mt-3">
-                                <ul class="list-unstyled ff-secondary footer-list">
-                                    <li><a href="pages-profile.html">About Us</a></li>
-                                    <li><a href="pages-gallery.html">Gallery</a></li>
-                                    <li><a href="apps-projects-overview.html">Projects</a></li>
-                                    <li><a href="pages-timeline.html">Timeline</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 mt-4">
-                            <h5 class="text-white mb-0">Apps Pages</h5>
-                            <div class="text-muted mt-3">
-                                <ul class="list-unstyled ff-secondary footer-list">
-                                    <li><a href="pages-pricing.html">Calendar</a></li>
-                                    <li><a href="apps-mailbox.html">Mailbox</a></li>
-                                    <li><a href="apps-chat.html">Chat</a></li>
-                                    <li><a href="apps-crm-deals.html">Deals</a></li>
-                                    <li><a href="apps-tasks-kanban.html">Kanban Board</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 mt-4">
-                            <h5 class="text-white mb-0">Support</h5>
-                            <div class="text-muted mt-3">
-                                <ul class="list-unstyled ff-secondary footer-list">
-                                    <li><a href="pages-faqs.html">FAQ</a></li>
-                                    <li><a href="pages-faqs.html">Contact</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+{{--                    <div class="row">--}}
+{{--                        <div class="col-sm-4 mt-4">--}}
+{{--                            <h5 class="text-white mb-0">Company</h5>--}}
+{{--                            <div class="text-muted mt-3">--}}
+{{--                                <ul class="list-unstyled ff-secondary footer-list">--}}
+{{--                                    <li><a href="pages-profile.html">About Us</a></li>--}}
+{{--                                    <li><a href="pages-gallery.html">Gallery</a></li>--}}
+{{--                                    <li><a href="apps-projects-overview.html">Projects</a></li>--}}
+{{--                                    <li><a href="pages-timeline.html">Timeline</a></li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-sm-4 mt-4">--}}
+{{--                            <h5 class="text-white mb-0">Apps Pages</h5>--}}
+{{--                            <div class="text-muted mt-3">--}}
+{{--                                <ul class="list-unstyled ff-secondary footer-list">--}}
+{{--                                    <li><a href="pages-pricing.html">Calendar</a></li>--}}
+{{--                                    <li><a href="apps-mailbox.html">Mailbox</a></li>--}}
+{{--                                    <li><a href="apps-chat.html">Chat</a></li>--}}
+{{--                                    <li><a href="apps-crm-deals.html">Deals</a></li>--}}
+{{--                                    <li><a href="apps-tasks-kanban.html">Kanban Board</a></li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-sm-4 mt-4">--}}
+{{--                            <h5 class="text-white mb-0">Support</h5>--}}
+{{--                            <div class="text-muted mt-3">--}}
+{{--                                <ul class="list-unstyled ff-secondary footer-list">--}}
+{{--                                    <li><a href="pages-faqs.html">FAQ</a></li>--}}
+{{--                                    <li><a href="pages-faqs.html">Contact</a></li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                 </div>
 
             </div>
