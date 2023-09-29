@@ -35,11 +35,11 @@
     <nav style="background-color: #E9427D" class="navbar navbar-expand-lg navbar-landing navbar-light fixed-top"
          id="navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="{{asset('assets/images/logo.svg')}}" class="card-logo card-logo-dark" alt="logo dark"
-                     height="17">
-                <img src="{{asset('assets/images/logo.svg')}}" class="card-logo card-logo-light" alt="logo light"
-                     height="17">
+            <a class="navbar-brand" href="{{url('/')}}">
+                <img style="margin: -30px -30px -30px -30px" src="{{asset('logofinal.png')}}" class="card-logo card-logo-dark" alt="logo dark"
+                     height="100">
+                <img style="margin: -30px -30px -30px -30px" src="{{asset('logofinal.png')}}" class="card-logo card-logo-light" alt="logo light"
+                     height="100">
             </a>
             <button class="navbar-toggler py-0 fs-20 text-body" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -49,20 +49,25 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mt-2 mt-lg-0" id="navbar-example">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{url('/')}}">Inicio</a>
+                    <li style="color: white" class="nav-item">
+                        <a style="color: white" class="nav-link active" href="{{url('/')}}">Inicio</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#wallet">Sobre Nós</a>
+                    <li style="color: white" class="nav-item">
+                        <a style="color: white" class="nav-link" href="#wallet">Sobre Nós</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#destaque">Destaques</a>
+                    <li style="color: white" class="nav-item">
+                        <a style="color: white" class="nav-link" href="#destaque">Destaques</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#categories">Categorias</a>
+                    <li style="color: white" class="nav-item">
+                        <a style="color: white" class="nav-link" href="#categories">Categorias</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#duvidas">Duvidas</a>
+                    <li style="color: white" class="nav-item">
+                        <a style="color: white" class="nav-link" href="#duvidas">Duvidas</a>
+
+                    </li>
+
+                    <li style="color: white" class="nav-item">
+                        <a style="color: white" class="nav-link" href="{{url('termos')}}">Termos</a>
 
                     </li>
                 </ul>
@@ -245,13 +250,13 @@
         </div><!-- end container -->
     </section>
 
-    <section class="py-5 bg-primary position-relative">
+    <section style="background-color: #FDC300FF" class="py-5  position-relative">
         <div class="bg-overlay bg-overlay-pattern opacity-50"></div>
         <div class="container">
             <div class="row align-items-center gy-4">
                 <div class="col-sm">
                     <div>
-                        <h4 class="text-white mb-2">Achou o que queria?</h4>
+                        <h4 class="text-white mb-2">Não achou o que precisa?</h4>
                         <p class="text-white-50 mb-0">Faça uma pesquisa</p>
                     </div>
                 </div>
@@ -343,7 +348,7 @@
 
 
                     </div>
-                    <div class="swiper-pagination swiper-pagination-dark"></div>
+                    <div class="swiper-pagination swiper-pagination-ligth"></div>
                 </div>
             </div>
         </div>

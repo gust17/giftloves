@@ -35,11 +35,11 @@
     <nav style="background-color: #E9427D" class="navbar navbar-expand-lg navbar-landing navbar-light fixed-top"
          id="navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="{{asset('assets/images/logo.svg')}}" class="card-logo card-logo-dark" alt="logo dark"
-                     height="17">
-                <img src="{{asset('assets/images/logo.svg')}}" class="card-logo card-logo-light" alt="logo light"
-                     height="17">
+            <a class="navbar-brand" href="{{url('/')}}">
+                <img style="margin: -30px -30px -30px -30px" src="{{asset('logofinal.png')}}" class="card-logo card-logo-dark" alt="logo dark"
+                     height="100">
+                <img style="margin: -30px -30px -30px -30px" src="{{asset('logofinal.png')}}" class="card-logo card-logo-light" alt="logo light"
+                     height="100">
             </a>
             <button class="navbar-toggler py-0 fs-20 text-body" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -64,7 +64,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href={{url('/')}}">Duvidas</a>
 
+                    </li> <li class="nav-item">
+                        <a class="nav-link" href={{url('/termos')}}">Termos</a>
+
                     </li>
+
                 </ul>
 
                 <div class="">
@@ -116,7 +120,7 @@
             <div class="col-lg-4 mt-4">
                 <div>
                     <div>
-                        <img src="{{asset('assets/images/logo.svg')}}" alt="logo light" height="40">
+                        <img src="{{asset('logofinal.png')}}" alt="logo light" height="150">
                     </div>
                     <div class="mt-4">
                         {{--                            <p>Premium Multipurpose Admin & Dashboard Template</p>--}}
