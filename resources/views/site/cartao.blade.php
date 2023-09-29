@@ -1,69 +1,73 @@
-@extends('site.site')
+@extends('site.padrao2')
 
 @section('miolo')
-    <section data-bs-version="5.1" class="article2 cid-tM7banZmvK" id="article02-z">
+    <section class="section" id="">
 
         @include('flash-message2')
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-12 col-lg-5 image-wrapper">
-                    <img class="w-100" src="{{env('URL_IMG').$cartao->caminho}}" alt="Mobirise Website Builder">
+                    <img class="w-100" src="{{env('URL_IMG').$cartao->caminho}}" alt="">
                 </div>
                 <div class="col-12 col-md-12 col-lg">
 
                     <div class="container">
-                        <div class="mbr-section-head mb-5">
-                            <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-                                <strong>{{$cartao->name}}</strong>
-                            </h3>
 
-                        </div>
-                        <div class="row justify-content-center mt-4">
-                            <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
-                                <form action="{{url('visualizar')}}" method="POST" class="mbr-form form-with-styler"
-                                      data-form-title="Form Name">
-                                    @csrf
-                                    <input type="hidden" name="cartao_id" value="{{$cartao->id}}">
-                                    <div class="row">
-                                        <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">
-                                            Thanks for filling out the form!
-                                        </div>
-                                        <div hidden="hidden" data-form-alert-danger=""
-                                             class="alert alert-danger col-12">
-                                            Oops...! some problem!
-                                        </div>
-                                    </div>
-                                    <div class="dragArea row">
-                                        <div class="col-md-12 col-sm-12 form-group mb-3" data-for="name">
-                                            <input type="text" name="name" placeholder="Nome" data-form-field="name"
-                                                   class="form-control" value="" id="name-form02-10">
-                                        </div>
-                                        <div class="col-md col-sm-12 form-group mb-3" data-for="email">
-                                            <input type="text" name="nascimento" placeholder="Nascimento dia/mês"
-                                                   class="form-control" value=""
-                                                   id="nascimento">
-                                        </div>
-                                        <div class="col-12 form-group mb-3" data-for="url">
-                                            <input type="text" name="whatsapp" placeholder="Whatsapp"
-                                                   class="form-control" value=""
-                                                   id="whatsapp">
-                                        </div>
-                                        <div class="col-12 form-group mb-3" data-for="url">
-                                            <input type="text" name="valor" placeholder="R$ Valor do Cartão Presente"
-                                                   class="form-control" id="valor">
-                                        </div>
-                                        <div class="col-12 form-group mb-3" data-for="textarea">
+
+                        <div class="card">
+                            <div class="card-header text-center">
+                                Digite sua Mensagem
+                            </div>
+                            <div class="card-body">
+                                <div class="row justify-content-center mt-4">
+                                    <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
+                                        <form action="{{url('visualizar')}}" method="POST" class="mbr-form form-with-styler"
+                                              data-form-title="Form Name">
+                                            @csrf
+                                            <input type="hidden" name="cartao_id" value="{{$cartao->id}}">
+                                            <div class="row">
+                                                <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">
+                                                    Thanks for filling out the form!
+                                                </div>
+                                                <div hidden="hidden" data-form-alert-danger=""
+                                                     class="alert alert-danger col-12">
+                                                    Oops...! some problem!
+                                                </div>
+                                            </div>
+                                            <div class="dragArea row">
+                                                <div class="col-md-12 col-sm-12 form-group mb-3" data-for="name">
+                                                    <input type="text" name="name" placeholder="Nome" data-form-field="name"
+                                                           class="form-control" value="" id="name-form02-10">
+                                                </div>
+                                                <div class="col-md col-sm-12 form-group mb-3" data-for="email">
+                                                    <input type="text" name="nascimento" placeholder="Nascimento dia/mês"
+                                                           class="form-control" value=""
+                                                           id="nascimento">
+                                                </div>
+                                                <div class="col-12 form-group mb-3" data-for="url">
+                                                    <input type="text" name="whatsapp" placeholder="Whatsapp"
+                                                           class="form-control" value=""
+                                                           id="whatsapp">
+                                                </div>
+                                                <div class="col-12 form-group mb-3" data-for="url">
+                                                    <input type="text" name="valor" placeholder="R$ Valor do Cartão Presente"
+                                                           class="form-control" id="valor">
+                                                </div>
+                                                <div class="col-12 form-group mb-3" data-for="textarea">
                                             <textarea name="textarea" placeholder="Mensagem" data-form-field="textarea"
                                                       class="form-control" id="textarea-form02-10"></textarea>
-                                        </div>
-                                        <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
-                                            <button type="submit" class="btn btn-primary display-7">Visualizar Cartão
-                                            </button>
-                                        </div>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
+                                                    <button type="submit" class="btn btn-primary w-100">Visualizar Cartão
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
                                     </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
+
                     </div>
 
                 </div>

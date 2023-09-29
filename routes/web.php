@@ -408,6 +408,16 @@ Route::get('gerartoken', function (Request $request) {
     return response()->json(['error' => 'Unauthorized'], Response::HTTP_UNAUTHORIZED);
 })->middleware('auth');
 
+Route::post('pesquisar',function (\Illuminate\Http\Request $request){
+    $categorias = \App\Models\Categoria::where('name', 'LIKE', '%' . $request->pesquisa . '%')->get();
+    $parceiras = \App\Models\Parceira::where('name', 'LIKE', '%' . $request->pesquisa . '%')->get();
+    $pesquisa = $request->pesquisa;
+
+    return view('site.pesquisa',compact('categorias','parceiras','pesquisa'));
+
+
+});
+
 
 
 

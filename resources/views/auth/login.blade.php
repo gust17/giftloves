@@ -5,7 +5,7 @@
 <head>
 
     <meta charset="utf-8"/>
-    <title>GIFTLOVES | SiteLogista</title>
+    <title>GIFTLOVES </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Seu presente descomplicado" name="description"/>
     <meta content="Themesbrand" name="author"/>
@@ -125,6 +125,13 @@
                                                     {{ __('Login') }}
                                                 </button>
 
+                                            </div>
+                                            <div style="margin-top: 10px" class="row mb-0">
+
+                                                <a href="{{url('register')}}" style="background-color: #FDC300FF"
+                                                        class="btn btn-secondary w-100">
+                                               Cadastre-se
+                                                </a>
 
                                             </div>
                                         </form>
