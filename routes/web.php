@@ -14,7 +14,7 @@ use CodePhix\Asaas\Asaas;
 |
 */
 
-Route::get('/', function () {
+Route::get('/site2', function () {
 //    dd('aqui');
     $categorias = \App\Models\Categoria::where('destaque', 1)->get();
     $categorias_totals = \App\Models\Categoria::all();
@@ -26,7 +26,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/site2', function () {
+Route::get('/', function () {
 //    dd('aqui');
     $categorias = \App\Models\Categoria::where('destaque', 1)->first();
     $categorias_totals = \App\Models\Categoria::withCount('cartaos')
