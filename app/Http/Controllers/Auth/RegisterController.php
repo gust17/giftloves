@@ -50,11 +50,13 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         $data['whatsapp'] = preg_replace('/[^0-9]/', '', $data['whatsapp']);
-        $data['cpf'] = preg_replace('/[^0-9]/', '', $data['whatsapp']);
+        $data['cpf'] = preg_replace('/[^0-9]/', '', $data['cpf']);
         $data['cpf'] = preg_replace('/[^a-zA-Z0-9\s]/', '', $data['cpf']);
 
         $data['cpf'] = str_pad($data['cpf'], 11, '0', STR_PAD_LEFT);
 
+
+        //dd($data['cpf']);
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
