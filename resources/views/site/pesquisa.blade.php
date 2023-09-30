@@ -84,24 +84,24 @@
                                             href="{{url('categoria',$categoria->id)}}">{{$categoria->name}}</a></h5>
                                     <p class="text-success mb-2">{{url('categoria',$categoria->id)}}</p>
                                     {{--                                        <p class="text-muted mb-2">Velzon admin is super flexible, powerful, clean, modern &amp; responsive admin template based on <span class="fw-bold">bootstrap 5</span> stable with unlimited possibilities. You can simply change to any layout or mode by changing a couple of lines of code. You can start small and large projects or update design in your existing project using Velzon it is very quick and easy as it is beautiful, adroit, and delivers the ultimate user experience.</p>--}}
-                                    <ul class="list-inline d-flex align-items-center g-3 text-muted fs-14 mb-0">
-                                        <li class="list-inline-item me-3"><i
-                                                class="ri-thumb-up-line align-middle me-1"></i>10
-                                        </li>
-                                        <li class="list-inline-item me-3"><i
-                                                class="ri-question-answer-line align-middle me-1"></i>8
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <div class="d-flex align-items-center">
-                                                <div class="flex-shrink-0">
-                                                    <i class="ri-user-line"></i>
-                                                </div>
-                                                <div class="flex-grow-1 fs-13 ms-1">
-                                                    <span class="fw-medium">Themesbrand</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
+{{--                                    <ul class="list-inline d-flex align-items-center g-3 text-muted fs-14 mb-0">--}}
+{{--                                        <li class="list-inline-item me-3"><i--}}
+{{--                                                class="ri-thumb-up-line align-middle me-1"></i>10--}}
+{{--                                        </li>--}}
+{{--                                        <li class="list-inline-item me-3"><i--}}
+{{--                                                class="ri-question-answer-line align-middle me-1"></i>8--}}
+{{--                                        </li>--}}
+{{--                                        <li class="list-inline-item">--}}
+{{--                                            <div class="d-flex align-items-center">--}}
+{{--                                                <div class="flex-shrink-0">--}}
+{{--                                                    <i class="ri-user-line"></i>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="flex-grow-1 fs-13 ms-1">--}}
+{{--                                                    <span class="fw-medium">Themesbrand</span>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </li>--}}
+{{--                                    </ul>--}}
                                 </div>
 
                                 <div class="border border-dashed"></div>

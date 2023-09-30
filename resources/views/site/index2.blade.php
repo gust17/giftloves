@@ -269,8 +269,8 @@
                         <div class="row">
                             <div class="col-md-8"><input type="text" name="pesquisa" class="form-control"></div>
                             <div class="col-md-4">
-                                <a href="#!"
-                                   class="btn bg-gradient btn-secondary">Pesquisar</a>
+                                <button type="submit"
+                                   class="btn bg-gradient btn-secondary">Pesquisar</button>
                             </div>
 
                         </div>
