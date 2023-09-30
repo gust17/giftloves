@@ -19,7 +19,9 @@
                         <tr>
                             <td><img width="50px" class="img img-fluid"
                                      src="{{env('URL_IMG').$recebido->cartao->caminho}}"></td>
-                            <td>{{$recebido->destinatario->name}}</td>
+                            <td>
+                                @if($recebido->destinatario_id)  {{$recebido->destinatario->name}} @else {{$recebido->presenteado}} @endif
+                               </td>
                             <td>R${{$recebido->valor}}</td>
                             <td>{{$recebido->updated_at->format('d/m/Y')}}</td>
                             <td><a class="btn btn-primary" href="{{url('enviados',$recebido->id)}}">Visualizar</a></td>
