@@ -363,7 +363,9 @@ Route::get('enviados/{id}', function ($id) {
     if ($verficar) {
 
         $presente = \App\Models\Presente::find($id);
-        $page = "Enviado para " . $presente->destinatario->name;
+        $page = "Enviado para " . (($presente->destinatario_id) ? $presente->destinatario->name : $presente->presenteado);
+
+
         return view('dashboard.visualizar2', compact('page', 'presente'));
     }
     {
