@@ -56,6 +56,29 @@
                        R$ {{$presente->valor}}
                     </div>
                 </div>
+                @if($presente->status == 0)
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a target="_blank" href="{{url('finalizapagamento/'.$presente->id.'/3')}}"
+                               class="btn btn-primary w-100">PIX</a>
+                        </div>
+                        <div class="col-md-4">
+                            <a target="_blank" href="{{url('finalizapagamento/'.$presente->id.'/2')}}"
+                               class="btn btn-primary w-100">Cartão de Credito</a>
+                        </div>
+                        <div class="col-md-4">
+                            <a target="_blank" href="{{url('finalizapagamento/'.$presente->id.'/1')}}"
+                               class="btn btn-primary w-100">Boleto</a>
+                        </div>
+                    </div>
+                @else
+                    <button class="btn btn-primary w-100">Pagamento Confirmado</button>
+
+
+                    <a href="{{url('enviarwhatsapp',$presente->id)}}" class="btn btn-primary w-100">Enviar
+                        WhatsApp</a>
+                @endif
             </div>
         </div>
     </div>
