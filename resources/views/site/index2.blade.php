@@ -27,6 +27,29 @@
     <link href="{{asset('novo/assets/css/custom.min.css')}}" rel="stylesheet" type="text/css"/>
 
 </head>
+<style>
+    #hero {
+        background-image: url('{{ $topo ? env('URL_IMG') . $topo->img : '' }}');
+        background-size: cover; /* A imagem de fundo cobrirá todo o elemento */
+        background-position: center; /* Centralizar a imagem de fundo */
+    }
+
+    @media (max-width: 767px) {
+        #hero {
+            background-image: url('{{ asset("fundo1.png") }}');
+            background-size: cover; /* A imagem de fundo cobrirá todo o elemento */
+            background-position: center; /* Centralizar a imagem de fundo */
+        }
+    }
+    @media (max-width: 576px) {
+        #hero {
+            background-image: url('{{ asset("375.png") }}');
+            background-size: cover; /* A imagem de fundo cobrirá todo o elemento */
+            background-position: center; /* Centralizar a imagem de fundo */
+        }
+    }
+</style>
+
 
 <body data-bs-spy="scroll" data-bs-target="#navbar-example">
 
@@ -82,18 +105,16 @@
     <div class="bg-overlay bg-overlay-pattern"></div>
     <!-- end navbar -->
 
-    <!-- start hero section -->
-    <section style="background-image: url('{{ $topo ? env('URL_IMG') . $topo->img : '' }}')" class="section nft-hero"
-             id="hero">
-
+    <section id="hero" class="section nft-hero">
         <div class="container">
             <div class="row justify-content-center">
                 <div style="height: 400px" class="col-lg-8 col-sm-10">
+                </div>
+            </div>
+        </div>
+    </section>
 
-                </div><!--end col-->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </section><!-- end hero section -->
+
 
     <!-- start wallet -->
     <section style="background-color: #23B9D6" class="section" id="wallet">
