@@ -37,7 +37,8 @@ Route::get('/', function () {
     $parceiras = \App\Models\Parceira::where('ativo', 1)->get();
     $centro = \App\Models\Centro::first();
     $sobre = \App\Models\Sobre::first();
-    return view('site.index2', compact('categorias', 'categorias_totals', 'perguntas', 'topo', 'parceiras', 'centro','sobre'));
+    $total_cartao = \App\Models\Cartao::count();
+    return view('site.index2', compact('categorias', 'categorias_totals', 'perguntas', 'topo', 'parceiras', 'centro','sobre','total_cartao'));
 });
 
 

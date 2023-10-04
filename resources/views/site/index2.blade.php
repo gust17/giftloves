@@ -41,6 +41,7 @@
             background-position: center; /* Centralizar a imagem de fundo */
         }
     }
+
     @media (max-width: 576px) {
         #hero {
             background-image: url('{{ asset("375.png") }}');
@@ -59,10 +60,8 @@
          id="navbar">
         <div class="container">
             <a class="navbar-brand" href="{{url('/')}}">
-                <img style="margin: -30px -30px -30px -30px" src="{{asset('logofinal.png')}}" class="card-logo card-logo-dark" alt="logo dark"
-                     height="100">
-                <img style="margin: -30px -30px -30px -30px" src="{{asset('logofinal.png')}}" class="card-logo card-logo-light" alt="logo light"
-                     height="100">
+                <img src="{{asset('logo.png')}}" class="card-logo card-logo-dark" alt="logo dark" height="40">
+                <img src="{{asset('logo.png')}}" class="card-logo card-logo-light" alt="logo light" height="40">
             </a>
             <button class="navbar-toggler py-0 fs-20 text-body" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -76,7 +75,7 @@
                         <a style="color: white" class="nav-link active" href="{{url('/')}}">Inicio</a>
                     </li>
                     <li style="color: white" class="nav-item">
-                        <a style="color: white" class="nav-link" href="#wallet">Sobre Nós</a>
+                        <a style="color: white" class="nav-link" href="#about">Sobre Nós</a>
                     </li>
                     <li style="color: white" class="nav-item">
                         <a style="color: white" class="nav-link" href="#destaque">Destaques</a>
@@ -114,27 +113,70 @@
         </div>
     </section>
 
+    <section class="section bg-light py-5" id="about">
+        <div class="container">
+            <div class="row align-items-center gy-4">
+                <div class="col-lg-6 col-sm-7 mx-auto">
+                    <div>
+                        <img src="{{asset('sobre.png')}}" alt="" class="img-fluid mx-auto">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-muted">
+                        <div class="avatar-sm icon-effect mb-4">
 
+                        </div>
+                        <h3 class="mb-3 fs-20">Seja bem-vindo à maior plataforma de presentes do Brasil.</h3>
+                        <p class="mb-4 ff-secondary fs-16 text-justify">
+                            Chegamos para revolucionar sua forma de comprar presentes. <br>
+                            Nós somos apaixonados pela vida e queremos ajudar você a expressar seu amor pelas pessoas
+                            que você ama ou admira da melhor forma possível.
+                            <br>
+                            Nosso objetivo é oferecer aos clientes um ambiente virtual seguro, tornando a compra de
+                            presentes, uma experiência única e inesquecível.
+                            <br>
+                            Fundada pelos sócios Máxima Maia, Gustavo Pantoja, Yam Gomes, Lorran Telles e Sanny Souza, a
+                            Gift Loves nasceu em Macapá-AP com o intuito de atender todo o Brasil.
+                            Aqui você encontrará um universo de possibilidades para presentear.
+                            <br>
+                            Venha explorar todas as possibilidades que disponibilizamos em nossa plataforma de cartões
+                            de presentes online e descubra novas formas de expressar seu amor pelas pessoas que você ama
+                            ou admira. br
+                            Divirta-se!
+
+                        </p>
+
+                        <div class="row pt-3">
+                            <div class="col-3">
+                                <div class="text-center">
+                                    <h4>{{count($categorias_totals)}}</h4>
+                                    <p>Categorias</p>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="text-center">
+                                    <h4>{{$total_cartao}}</h4>
+                                    <p>Cartões</p>
+                                </div>
+                            </div>
+                            {{--                            <div class="col-4">--}}
+                            {{--                                <div class="text-center">--}}
+                            {{--                                    <h4>7+</h4>--}}
+                            {{--                                    <p>Functional Apps</p>--}}
+                            {{--                                </div>--}}
+                            {{--                            </div>--}}
+                        </div>
+                    </div>
+                </div>
+                <!-- end col -->
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </section>
 
     <!-- start wallet -->
-    <section style="background-color: #23B9D6" class="section" id="wallet">
-        <div class="container text-center">
-            <h2 class="mb-3 fw-semibold lh-base">Sobres Nós</h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-4">
-                    <img class="img img-fluid" src="{{env('URL_IMG').$sobre->img}}" alt="">
-                </div>
-                <div class="col-lg-8">
-                    <div class="text-center mb-5">
 
-                        {!! $sobre->texto !!}
-                    </div>
-                </div><!-- end col -->
-            </div><!-- end row -->
-
-
-        </div><!-- end container -->
-    </section><!-- end wallet -->
 
     <section class="section">
         <div class="container">
@@ -291,7 +333,8 @@
                             <div class="col-md-8"><input type="text" name="pesquisa" class="form-control"></div>
                             <div class="col-md-4">
                                 <button type="submit"
-                                   class="btn bg-gradient btn-secondary">Pesquisar</button>
+                                        class="btn bg-gradient btn-secondary">Pesquisar
+                                </button>
                             </div>
 
                         </div>
@@ -537,7 +580,7 @@
             <div class="col-lg-4 mt-4">
                 <div>
                     <div>
-                        <img src="{{asset('assets/images/logo.svg')}}" alt="logo light" height="40">
+                        <img src="{{asset('logo.png')}}" alt="logo light" height="40">
                     </div>
                     <div class="mt-4">
                         {{--                            <p>Premium Multipurpose Admin & Dashboard Template</p>--}}
