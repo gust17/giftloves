@@ -370,9 +370,7 @@
                             <div class="swiper-slide">
                                 <div class="card">
                                     <div class="card-header">
-                                        <a href="{{url('categoria',$categorias_total->id)}}"
-                                           class="btn btn-outline-warning float-end"> Veja Mais! <i
-                                                class="ri-arrow-right-line align-bottom"></i></a>
+
                                         <h2 class="mb-0 fs-16"><a
                                                 href="{{url('categoria',$categorias_total->id)}}">{{$categorias_total->name}}
                                                 <span
@@ -404,6 +402,12 @@
                                             </div><!--end col-->
                                         </div><!--end row-->
 
+                                    </div>
+
+                                    <div class="card-footer">
+                                        <a href="{{url('categoria',$categorias_total->id)}}"
+                                           class="btn btn-outline-warning w-100"> Veja Mais! <i
+                                                class="ri-arrow-right-line align-bottom"></i></a>
                                     </div>
                                 </div>
                             </div>
