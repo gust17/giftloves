@@ -27,29 +27,27 @@ class WebhookController extends Controller
 
     public function recebe(Request $request, WhatsappService $whatsappService)
     {
+        try {
+            $data = $request->json()->all();
 
-        return response()->json(['message'=>'ok'],200);
-//        try {
-//            $data = $request->json()->all();
-//
-//            if ($data['event'] == 'PAYMENT_RECEIVED') {
-//                $paymentId = $data['payment']['id'];
-//
-//                $fatura = Presente::where('asaas_id', $paymentId)->first();
-//
-//                if ($fatura) {
-//                    $whatsappService->enviarMensagem($fatura->id);
-//                    $whatsappService->enviarCode($fatura->id);
-//                } else {
-//                    // Lógica adicional em caso de fatura não encontrada (opcional)
-//                    return response()->json(['message' => 'Fatura não encontrada para o pagamento.'], 404);
-//                }
-//            }
-//
-//            return response()->json(['message' => 'Webhook received and processed'], 200);
-//        } catch (\Exception $e) {
-//            return response()->json(['message' => 'Error processing the webhook'], 500);
-//        }
+            if ($data['event'] == 'PAYMENT_RECEIVED') {
+                $paymentId = $data['payment']['id'];
+
+                $fatura = Presente::where('asaas_id', $paymentId)->first();
+
+                if ($fatura) {
+                    $whatsappService->enviarMensagem($fatura->id);
+                    $whatsappService->enviarCode($fatura->id);
+                } else {
+                    // Lógica adicional em caso de fatura não encontrada (opcional)
+                    return response()->json(['message' => 'Fatura não encontrada para o pagamento.'], 404);
+                }
+            }
+
+            return response()->json(['message' => 'Webhook received and processed'], 200);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Error processing the webhook'], 500);
+        }
     }
 
 
