@@ -40,7 +40,7 @@ class WebhookController extends Controller
                 }
             } else {
                 // 'event' não está definido, retorne um erro 403 Forbidden
-                return response()->json(['error' => 'Event not defined'], 403);
+                return response()->json(['error' => 'Event not defined'], 404);
             }
 
             return response()->json(['message' => 'Webhook received and processed'], 200);
