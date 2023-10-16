@@ -36,4 +36,7 @@ Route::get('/gerartoken', function () {
 })->middleware(['auth:api']);
 
 
-Route::post('/webhook', [\App\Http\Controllers\WebhookController::class,'recebe']);
+//Route::post('/webhook', [\App\Http\Controllers\WebhookController::class,'recebe']);
+Route::post('/webhook', function () {
+    return response()->json('ok', 200);
+});
