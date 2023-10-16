@@ -45,6 +45,7 @@ class WebhookController extends Controller
             }
 
             return response()->json(['message' => 'Webhook received and processed'], 200);
+
         } catch (\Exception $e) {
             return response()->json(['message' => 'Error processing the webhook'], 500);
         }
