@@ -31,7 +31,11 @@ Route::get('/', function () {
     $categorias = \App\Models\Categoria::where('destaque', 1)->first();
     $categorias_totals = \App\Models\Categoria::withCount('cartaos')
         ->having('cartaos_count', '>', 2)
+        ->inRandomOrder()
+        ->limit(6)
         ->get();
+
+    //dd($categorias_totals);
     $perguntas = \App\Models\Perguntas::where('principal', 1)->get();
     $topo = \App\Models\Topo::first();
     $parceiras = \App\Models\Parceira::where('ativo', 1)->get();
@@ -420,6 +424,9 @@ Route::post('pesquisar',function (\Illuminate\Http\Request $request){
 
 
 });
+
+
+
 
 
 

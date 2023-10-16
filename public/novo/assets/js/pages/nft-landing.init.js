@@ -24,7 +24,7 @@ var filterBtns = document.querySelectorAll(".filter-btns .nav-link"),
         autoplay: { delay: 10000, disableOnInteraction: false }, // Aumente o valor de delay
         pagination: { el: ".swiper-pagination", clickable: true },
         navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
-        breakpoints: { 576: { slidesPerView: 2 }, 768: { slidesPerView: 3 }, 1200: { slidesPerView: 4 } }
+        breakpoints: { 576: { slidesPerView: 6 }, 768: { slidesPerView: 6 }, 1200: { slidesPerView: 6 } }
     })), mybutton = document.getElementById("back-to-top");
 
 function scrollFunction() {

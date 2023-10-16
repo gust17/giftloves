@@ -9,9 +9,13 @@ class WhatsappService
 {
     public function enviarMensagem($id)
     {
+        //dd(env('INSTANCIA_WHATSAPP'));
         $presente = Presente::find($id);
         $quemenviou = $presente->user->name;
         $client = new Client();
+
+
+
         $response = $client->post('https://api.z-api.io/instances/' . env('INSTANCIA_WHATSAPP') . '/token/' . env('TOKEN_WHATSAPP') . '/send-text', [
             'json' => [
 
@@ -36,6 +40,9 @@ class WhatsappService
     public function enviarCode($id)
     {
         $presente = Presente::find($id);
+
+
+        //dd($presente);
         $client = new Client();
         $response = $client->post('https://api.z-api.io/instances/' . env('INSTANCIA_WHATSAPP') . '/token/' . env('TOKEN_WHATSAPP') . '/send-text', [
             'json' => [
@@ -46,12 +53,16 @@ class WhatsappService
 
             ],
         ]);
+        //dd($response);
 
         // Trate a resposta como desejar
         $statusCode = $response->getStatusCode();
         $responseData = json_decode($response->getBody(), true);
 
+
+        dd($responseData);
         return $responseData;
+        //
 
     }
 }

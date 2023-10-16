@@ -53,7 +53,108 @@
 
 
 <body data-bs-spy="scroll" data-bs-target="#navbar-example">
+<div id="loginModals" class="modal fade" tabindex="-1" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 overflow-hidden">
+            <div class="modal-body login-modal p-5 text-center">
+                <h5 class="text-white fs-20">Login</h5>
+                <div class="text-center">
+                    <center>
+                        <img src="{{asset('logo.png')}}" class="card-logo card-logo-dark" alt="logo dark" height="80">
+                    </center>
+                </div>
+                {{--                <p class="text-white-50 mb-4">Don't have an account? <a href="javascript:void(0);" class="text-white">Sign--}}
+                {{--                        Up.</a></p>--}}
+                {{--                <div class="vstack gap-2 justify-content-center">--}}
+                {{--                    <button class="btn btn-light"><i class="ri-google-fill align-bottom text-danger"></i> Google--}}
+                {{--                    </button>--}}
+                {{--                    <button class="btn btn-info"><i class="ri-facebook-fill align-bottom"></i> Facebook</button>--}}
+                {{--                </div>--}}
+            </div>
+            <div class="modal-body p-5">
 
+
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">CPF</label>
+
+
+                        <input id="email" type="text"
+                               class="form-control @error('cpf') is-invalid @enderror"
+                               name="cpf" value="{{ old('cpf') }}" required
+                               autocomplete="cpf" placeholder="Digite seu CPF" autofocus>
+
+                        @error('email')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
+                    </div>
+
+
+                    <div class="mb-3">
+
+                        <div class="float-end">
+                            @if (Route::has('password.request'))
+                                <a class="text-muted" href="{{ route('password.request') }}">
+                                    Esqueceu sua senha?
+                                </a>
+                            @endif
+
+                        </div>
+                        <label for="password"
+                               class="form-label">Senha</label>
+
+
+                        <input id="password" type="password"
+                               class="form-control @error('password') is-invalid @enderror"
+                               name="password" required autocomplete="current-password">
+
+                        @error('password')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
+                    </div>
+
+
+                    <div class="mb-3">
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="remember"
+                                   id="remember" {{ old('remember') ? 'checked' : '' }}>
+
+                            <label class="form-check-label" for="remember">
+                                Manter conectado
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="row mb-0">
+
+                        <button type="submit" style="background-color: #23B9D6"
+                                class="btn btn-secondary w-100">
+                            {{ __('Login') }}
+                        </button>
+
+                    </div>
+                    <div style="margin-top: 10px" class="row mb-0">
+
+                        <a href="{{url('register')}}" style="background-color: #FDC300FF"
+                           class="btn btn-secondary w-100">
+                            Cadastre-se
+                        </a>
+
+                    </div>
+                </form>
+
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
 <!-- Begin page -->
 <div class="layout-wrapper landing">
     <nav style="background-color: #E9427D" class="navbar navbar-expand-lg navbar-landing navbar-light fixed-top"
@@ -286,14 +387,15 @@
                                         <div class="card-body">
                                             <div class="row g-1 mb-3">
 
-                                                <div class="col-12">
+                                                <div class="col-12 text-center">
 
                                                     <img src="{{ env('URL_IMG').$cartao->caminho }}" alt=""
-                                                         class="img-fluid rounded">
+                                                         class="img img-fluid">
 
                                                 </div><!--end col-->
                                             </div><!--end row-->
-                                            <a href="{{url('show',$cartao->id)}}" class="btn btn-outline-warning"> Quero
+                                            <a href="{{url('show',$cartao->id)}}" class="btn btn-warning btn-xg w-100">
+                                                Quero
                                                 Esse! <i
                                                     class="ri-arrow-right-line align-bottom"></i></a>
                                             <h5 class="mb-0 fs-16"><a href="{{url('show',$cartao->id)}}"> <span
@@ -346,334 +448,337 @@
             <!-- end col -->
         </div>
         <!-- end row -->
-</div>
-<!-- end container -->
-</section>
-<!-- start plan -->
-<section class="section bg-light" id="categories">
-    <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-lg-5">
-                <div class="text-center mb-5">
-                    <h2 class="mb-3 fw-semibold lh-base">Veja todas Categorias</h2>
-                    {{--                        <p class="text-muted">The process of creating an NFT may cost less than a dollar, but the process of selling it can cost up to a thousand dollars. For example, Allen Gannett, a software developer.</p>--}}
-                </div>
-            </div><!-- end col -->
-        </div><!-- end row -->
-        <div class="row">
-            <div class="col-lg-12">
-                <!-- Swiper -->
-                <div class="swiper mySwiper pb-4">
-                    <div class="swiper-wrapper">
 
-                        @forelse($categorias_totals as $categorias_total)
-                            <div class="swiper-slide">
-                                <div class="card">
-                                    <div class="card-header">
+        <!-- end container -->
+    </section>
+    <!-- start plan -->
+    <section class="section bg-light" id="categories">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-lg-5">
+                    <div class="text-center mb-5">
+                        <h2 class="mb-3 fw-semibold lh-base">Veja todas Categorias</h2>
+                        {{--                        <p class="text-muted">The process of creating an NFT may cost less than a dollar, but the process of selling it can cost up to a thousand dollars. For example, Allen Gannett, a software developer.</p>--}}
+                    </div>
+                </div><!-- end col -->
+            </div><!-- end row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Swiper -->
+                    <div class="swiper mySwiper pb-4">
+                        <div class="swiper-wrapper">
 
-                                        <h2 class="mb-0 fs-16"><a
-                                                href="{{url('categoria',$categorias_total->id)}}">{{$categorias_total->name}}
-                                                <span
-                                                    class="badge bg-success-subtle text-success">{{$categorias_total->cartaos->count()}}</span></a>
-                                        </h2>
-                                    </div>
-                                    <div class="card-body">
+                            @forelse($categorias_totals as $categorias_total)
+                                <div class="swiper-slide">
+                                    <div class="card">
+                                        <div class="card-header">
 
-                                        <div class="row g-1 mb-3">
+                                            <h2 class="mb-0 fs-16"><a
+                                                    href="{{url('categoria',$categorias_total->id)}}">{{$categorias_total->name}}
+                                                    <span
+                                                        class="badge bg-success-subtle text-success">{{$categorias_total->cartaos->count()}}</span></a>
+                                            </h2>
+                                        </div>
+                                        <div class="card-body">
 
-                                            <div class="col-6">
-                                                @php
-                                                    $primeiraMetade = $categorias_total->cartaos->take(2);
-                                                @endphp
-                                                @foreach($primeiraMetade as $cartao)
-                                                    <img src="{{ env('URL_IMG').$cartao->caminho }}" alt=""
-                                                         class="img-fluid rounded">
-                                                @endforeach
-                                            </div><!--end col-->
+                                            <div class="row g-1 mb-3">
 
-                                            <div class="col-6">
-                                                @php
-                                                    $segundaMetade = $categorias_total->cartaos->splice(2, 2); // Pula os 2 primeiros e pega os próximos 2
-                                                @endphp
-                                                @foreach($segundaMetade as $cartao)
-                                                    <img src="{{ env('URL_IMG').$cartao->caminho }}" alt=""
-                                                         class="img-fluid rounded">
-                                                @endforeach
-                                            </div><!--end col-->
-                                        </div><!--end row-->
+                                                <div class="col-6">
+                                                    @php
+                                                        $primeiraMetade = $categorias_total->cartaos->take(2);
+                                                    @endphp
+                                                    @foreach($primeiraMetade as $cartao)
+                                                        <img src="{{ env('URL_IMG').$cartao->caminho }}" alt=""
+                                                             class="img-fluid rounded">
+                                                    @endforeach
+                                                </div><!--end col-->
 
-                                    </div>
+                                                <div class="col-6">
+                                                    @php
+                                                        $segundaMetade = $categorias_total->cartaos->splice(2, 2); // Pula os 2 primeiros e pega os próximos 2
+                                                    @endphp
+                                                    @foreach($segundaMetade as $cartao)
+                                                        <img src="{{ env('URL_IMG').$cartao->caminho }}" alt=""
+                                                             class="img-fluid rounded">
+                                                    @endforeach
+                                                </div><!--end col-->
+                                            </div><!--end row-->
 
-                                    <div class="card-footer">
-                                        <a href="{{url('categoria',$categorias_total->id)}}"
-                                           class="btn btn-outline-warning w-100"> Veja Mais! <i
-                                                class="ri-arrow-right-line align-bottom"></i></a>
+                                        </div>
+
+                                        <div class="card-footer">
+                                            <a href="{{url('categoria',$categorias_total->id)}}"
+                                               class="btn btn-outline-warning w-100"> Veja Mais! <i
+                                                    class="ri-arrow-right-line align-bottom"></i></a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        @empty
-                        @endforelse
+                            @empty
+                            @endforelse
 
 
-                    </div>
-                    <div class="swiper-pagination swiper-pagination-ligth"></div>
-                </div>
-            </div>
-        </div>
-    </div><!-- end container -->
-</section>
-
-
-<section class="section bg-light" id="categories">
-    <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-lg-5">
-                <div class="text-center mb-5">
-                    <h2 class="mb-3 fw-semibold lh-base">Nossas Parceiras</h2>
-                    {{--                        <p class="text-muted">The process of creating an NFT may cost less than a dollar, but the process of selling it can cost up to a thousand dollars. For example, Allen Gannett, a software developer.</p>--}}
-                </div>
-            </div><!-- end col -->
-        </div><!-- end row -->
-        <div class="row">
-            <div class="col-lg-12">
-                <!-- Swiper -->
-                <div class="swiper mySwiper pb-4">
-                    <div class="swiper-wrapper">
-
-                        @forelse($parceiras as $parceira)
-                            <div class="swiper-slide">
-                                <div class="card">
-                                    <div class="card-header">
-                                        {{--                                            <a href="#!" class="btn btn-outline-warning float-end"> Veja Mais! <i--}}
-                                        {{--                                                    class="ri-arrow-right-line align-bottom"></i></a>--}}
-                                        <h2 class="mb-0 fs-16"><a href="#!">{{$parceira->name}} <span
-                                                    class="badge bg-success-subtle text-success"></span></a>
-                                        </h2>
-                                    </div>
-                                    <div class="card-body">
-
-                                        <div class="row g-1 mb-3 text-center">
-
-                                            <div class="col-12">
-
-                                                <img style="height: 150px" src="{{env('URL_IMG').$parceira->logo}}"
-                                                     alt=""
-                                                     class="img-fluid rounded">
-
-                                            </div><!--end col-->
-
-
-                                        </div><!--end row-->
-
-                                    </div>
-                                </div>
-                            </div>
-                        @empty
-                        @endforelse
-
-
-                    </div>
-                    <div class="swiper-pagination swiper-pagination-dark"></div>
-                </div>
-            </div>
-        </div>
-    </div><!-- end container -->
-</section>
-<!-- end plan -->
-
-<!-- start Discover Items-->
-
-<!--end Discover Items-->
-
-<!-- start Work Process -->
-<section class="section" id="duvidas">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="text-center mb-5">
-                    <h3 class="mb-3 fw-semibold">Perguntas Frequentes</h3>
-                    {{--                        <p class="text-muted mb-4 ff-secondary">If you can not find answer to your question in our FAQ, you can always contact us or email us. We will answer you shortly!</p>--}}
-
-                    {{--                        <div class="hstack gap-2 justify-content-center">--}}
-                    {{--                            <button type="button" class="btn btn-primary btn-label rounded-pill"><i class="ri-mail-line label-icon align-middle rounded-pill fs-16 me-2"></i> Email Us</button>--}}
-                    {{--                            <button type="button" class="btn btn-secondary btn-label rounded-pill"><i class="ri-twitter-line label-icon align-middle rounded-pill fs-16 me-2"></i> Send Us Tweet</button>--}}
-                    {{--                        </div>--}}
-                </div>
-            </div>
-        </div>
-        <!-- end row -->
-
-        <div class="row g-lg-5 g-4">
-            <div class="col-lg-12">
-                <div class="d-flex align-items-center mb-2">
-                    <div class="flex-shrink-0 me-1">
-                        <i class="ri-question-line fs-24 align-middle text-success me-1"></i>
-                    </div>
-                    <div class="flex-grow-1">
-                        <h5 class="mb-0 fw-semibold">Duvidas Gerais</h5>
-                    </div>
-                </div>
-                <div class="accordion custom-accordionwithicon custom-accordion-border accordion-border-box"
-                     id="genques-accordion">
-
-
-                    @forelse($perguntas as $pergunta)
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="genques-headingOne{{$pergunta->id}}">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#genques-collapseOne{{$pergunta->id}}" aria-expanded="false"
-                                        aria-controls="genques-collapseOne">
-                                    {{$pergunta->titulo}}
-                                </button>
-                            </h2>
-                            <div id="genques-collapseOne{{$pergunta->id}}" class="accordion-collapse collapse"
-                                 aria-labelledby="genques-headingOne{{$pergunta->id}}"
-                                 data-bs-parent="#genques-accordion" style="">
-                                <div class="accordion-body ff-secondary">
-                                    {{$pergunta->resposta}}
-                                </div>
-                            </div>
                         </div>
-                    @empty
+                        <div class="swiper-pagination swiper-pagination-ligth"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end container -->
+    </section>
 
-                    @endforelse
+
+    <section class="section bg-light" id="categories">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-lg-5">
+                    <div class="text-center mb-5">
+                        <h2 class="mb-3 fw-semibold lh-base">Nossas Parceiras</h2>
+                        {{--                        <p class="text-muted">The process of creating an NFT may cost less than a dollar, but the process of selling it can cost up to a thousand dollars. For example, Allen Gannett, a software developer.</p>--}}
+                    </div>
+                </div><!-- end col -->
+            </div><!-- end row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Swiper -->
+                    <div class="swiper mySwiper pb-4">
+                        <div class="swiper-wrapper">
+
+                            @forelse($parceiras as $parceira)
+                                <div class="swiper-slide">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            {{--                                            <a href="#!" class="btn btn-outline-warning float-end"> Veja Mais! <i--}}
+                                            {{--                                                    class="ri-arrow-right-line align-bottom"></i></a>--}}
+                                            <h2 class="mb-0 fs-16"><a href="#!">{{$parceira->name}} <span
+                                                        class="badge bg-success-subtle text-success"></span></a>
+                                            </h2>
+                                        </div>
+                                        <div class="card-body">
+
+                                            <div class="row g-1 mb-3 text-center">
+
+                                                <div class="col-12">
+
+                                                    <img style="height: 150px" src="{{env('URL_IMG').$parceira->logo}}"
+                                                         alt=""
+                                                         class="img-fluid rounded">
+
+                                                </div><!--end col-->
+
+
+                                            </div><!--end row-->
+
+                                        </div>
+                                    </div>
+                                </div>
+                            @empty
+                            @endforelse
+
+
+                        </div>
+                        <div class="swiper-pagination swiper-pagination-dark"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end container -->
+    </section>
+    <!-- end plan -->
+
+    <!-- start Discover Items-->
+
+    <!--end Discover Items-->
+
+    <!-- start Work Process -->
+    <section class="section" id="duvidas">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="text-center mb-5">
+                        <h3 class="mb-3 fw-semibold">Perguntas Frequentes</h3>
+                        {{--                        <p class="text-muted mb-4 ff-secondary">If you can not find answer to your question in our FAQ, you can always contact us or email us. We will answer you shortly!</p>--}}
+
+                        {{--                        <div class="hstack gap-2 justify-content-center">--}}
+                        {{--                            <button type="button" class="btn btn-primary btn-label rounded-pill"><i class="ri-mail-line label-icon align-middle rounded-pill fs-16 me-2"></i> Email Us</button>--}}
+                        {{--                            <button type="button" class="btn btn-secondary btn-label rounded-pill"><i class="ri-twitter-line label-icon align-middle rounded-pill fs-16 me-2"></i> Send Us Tweet</button>--}}
+                        {{--                        </div>--}}
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+
+            <div class="row g-lg-5 g-4">
+                <div class="col-lg-12">
+                    <div class="d-flex align-items-center mb-2">
+                        <div class="flex-shrink-0 me-1">
+                            <i class="ri-question-line fs-24 align-middle text-success me-1"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h5 class="mb-0 fw-semibold">Duvidas Gerais</h5>
+                        </div>
+                    </div>
+                    <div class="accordion custom-accordionwithicon custom-accordion-border accordion-border-box"
+                         id="genques-accordion">
+
+
+                        @forelse($perguntas as $pergunta)
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="genques-headingOne{{$pergunta->id}}">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#genques-collapseOne{{$pergunta->id}}" aria-expanded="false"
+                                            aria-controls="genques-collapseOne">
+                                        {{$pergunta->titulo}}
+                                    </button>
+                                </h2>
+                                <div id="genques-collapseOne{{$pergunta->id}}" class="accordion-collapse collapse"
+                                     aria-labelledby="genques-headingOne{{$pergunta->id}}"
+                                     data-bs-parent="#genques-accordion" style="">
+                                    <div class="accordion-body ff-secondary">
+                                        {{$pergunta->resposta}}
+                                    </div>
+                                </div>
+                            </div>
+                        @empty
+
+                        @endforelse
+
+                    </div>
+                    <!--end accordion-->
 
                 </div>
-                <!--end accordion-->
+                <!-- end col -->
 
+                <!-- end col -->
             </div>
-            <!-- end col -->
-
-            <!-- end col -->
+            <!-- end row -->
         </div>
-        <!-- end row -->
-    </div>
-    <!-- end container -->
-</section>
+        <!-- end container -->
+    </section>
 
-<!-- start cta -->
-<section style="background-color: #23B9D6" class="py-5 position-relative">
-    <div class="bg-overlay bg-overlay-pattern opacity-50"></div>
-    <div class="container">
-        <div class="row align-items-center gy-4">
-            <div class="col-sm">
-                <div>
-                    <h4 class="text-white mb-0 fw-semibold">Venha fazer Parte da GiftLoves</h4>
-                </div>
-            </div>
-            <!-- end col -->
-            <div class="col-sm-auto">
-                <div>
-                    <a style="background-color: #FDC300FF " href="{{url('login')}}" class="btn bg-gradient btn-success">Entre</a>
-                    <a style="background-color: #E9427D" href="{{url('register')}}"
-                       class="btn bg-gradient btn-secondary">Cadastre-se</a>
-                </div>
-            </div>
-            <!-- end col -->
-        </div>
-        <!-- end row -->
-    </div>
-    <!-- end container -->
-</section>
-<!-- end cta -->
-
-<!-- Start footer -->
-<footer class="custom-footer bg-dark py-5 position-relative">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 mt-4">
-                <div>
+    <!-- start cta -->
+    <section style="background-color: #23B9D6" class="py-5 position-relative">
+        <div class="bg-overlay bg-overlay-pattern opacity-50"></div>
+        <div class="container">
+            <div class="row align-items-center gy-4">
+                <div class="col-sm">
                     <div>
-                        <img src="{{asset('logo.png')}}" alt="logo light" height="40">
-                    </div>
-                    <div class="mt-4">
-                        {{--                            <p>Premium Multipurpose Admin & Dashboard Template</p>--}}
-                        {{--                            <p>You can build any type of web application like eCommerce, CRM, CMS, Project management--}}
-                        {{--                                apps, Admin Panels, etc using Velzon.</p>--}}
+                        <h4 class="text-white mb-0 fw-semibold">Venha fazer Parte da GiftLoves</h4>
                     </div>
                 </div>
+                <!-- end col -->
+                <div class="col-sm-auto">
+                    <div>
+                        {{--                    <a style="background-color: #FDC300FF " href="{{url('login')}}" class="btn bg-gradient btn-success">Entre</a>--}}
+                        <button type="button" class="btn bg-gradient btn-success" data-bs-toggle="modal"
+                                data-bs-target="#loginModals">Login
+                        </button>
+                        <a style="background-color: #E9427D" href="{{url('register')}}"
+                           class="btn bg-gradient btn-secondary">Cadastre-se</a>
+                    </div>
+                </div>
+                <!-- end col -->
             </div>
-
-            <div class="col-lg-7 ms-lg-auto">
-                {{--                    <div class="row">--}}
-                {{--                        <div class="col-sm-4 mt-4">--}}
-                {{--                            <h5 class="text-white mb-0">Company</h5>--}}
-                {{--                            <div class="text-muted mt-3">--}}
-                {{--                                <ul class="list-unstyled ff-secondary footer-list">--}}
-                {{--                                    <li><a href="pages-profile.html">About Us</a></li>--}}
-                {{--                                    <li><a href="pages-gallery.html">Gallery</a></li>--}}
-                {{--                                    <li><a href="apps-projects-overview.html">Projects</a></li>--}}
-                {{--                                    <li><a href="pages-timeline.html">Timeline</a></li>--}}
-                {{--                                </ul>--}}
-                {{--                            </div>--}}
-                {{--                        </div>--}}
-                {{--                        <div class="col-sm-4 mt-4">--}}
-                {{--                            <h5 class="text-white mb-0">Apps Pages</h5>--}}
-                {{--                            <div class="text-muted mt-3">--}}
-                {{--                                <ul class="list-unstyled ff-secondary footer-list">--}}
-                {{--                                    <li><a href="pages-pricing.html">Calendar</a></li>--}}
-                {{--                                    <li><a href="apps-mailbox.html">Mailbox</a></li>--}}
-                {{--                                    <li><a href="apps-chat.html">Chat</a></li>--}}
-                {{--                                    <li><a href="apps-crm-deals.html">Deals</a></li>--}}
-                {{--                                    <li><a href="apps-tasks-kanban.html">Kanban Board</a></li>--}}
-                {{--                                </ul>--}}
-                {{--                            </div>--}}
-                {{--                        </div>--}}
-                {{--                        <div class="col-sm-4 mt-4">--}}
-                {{--                            <h5 class="text-white mb-0">Support</h5>--}}
-                {{--                            <div class="text-muted mt-3">--}}
-                {{--                                <ul class="list-unstyled ff-secondary footer-list">--}}
-                {{--                                    <li><a href="pages-faqs.html">FAQ</a></li>--}}
-                {{--                                    <li><a href="pages-faqs.html">Contact</a></li>--}}
-                {{--                                </ul>--}}
-                {{--                            </div>--}}
-                {{--                        </div>--}}
-                {{--                    </div>--}}
-            </div>
-
+            <!-- end row -->
         </div>
+        <!-- end container -->
+    </section>
+    <!-- end cta -->
 
-        <div class="row text-center text-sm-start align-items-center mt-5">
-            <div class="col-sm-6">
+    <!-- Start footer -->
+    <footer class="custom-footer bg-dark py-5 position-relative">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mt-4">
+                    <div>
+                        <div>
+                            <img src="{{asset('logo.png')}}" alt="logo light" height="40">
+                        </div>
+                        <div class="mt-4">
+                            {{--                            <p>Premium Multipurpose Admin & Dashboard Template</p>--}}
+                            {{--                            <p>You can build any type of web application like eCommerce, CRM, CMS, Project management--}}
+                            {{--                                apps, Admin Panels, etc using Velzon.</p>--}}
+                        </div>
+                    </div>
+                </div>
 
-                <div>
-                    <p class="copy-rights mb-0">
-                        <script> document.write(new Date().getFullYear()) </script>
-                        © giftloves
-                    </p>
+                <div class="col-lg-7 ms-lg-auto">
+                    {{--                    <div class="row">--}}
+                    {{--                        <div class="col-sm-4 mt-4">--}}
+                    {{--                            <h5 class="text-white mb-0">Company</h5>--}}
+                    {{--                            <div class="text-muted mt-3">--}}
+                    {{--                                <ul class="list-unstyled ff-secondary footer-list">--}}
+                    {{--                                    <li><a href="pages-profile.html">About Us</a></li>--}}
+                    {{--                                    <li><a href="pages-gallery.html">Gallery</a></li>--}}
+                    {{--                                    <li><a href="apps-projects-overview.html">Projects</a></li>--}}
+                    {{--                                    <li><a href="pages-timeline.html">Timeline</a></li>--}}
+                    {{--                                </ul>--}}
+                    {{--                            </div>--}}
+                    {{--                        </div>--}}
+                    {{--                        <div class="col-sm-4 mt-4">--}}
+                    {{--                            <h5 class="text-white mb-0">Apps Pages</h5>--}}
+                    {{--                            <div class="text-muted mt-3">--}}
+                    {{--                                <ul class="list-unstyled ff-secondary footer-list">--}}
+                    {{--                                    <li><a href="pages-pricing.html">Calendar</a></li>--}}
+                    {{--                                    <li><a href="apps-mailbox.html">Mailbox</a></li>--}}
+                    {{--                                    <li><a href="apps-chat.html">Chat</a></li>--}}
+                    {{--                                    <li><a href="apps-crm-deals.html">Deals</a></li>--}}
+                    {{--                                    <li><a href="apps-tasks-kanban.html">Kanban Board</a></li>--}}
+                    {{--                                </ul>--}}
+                    {{--                            </div>--}}
+                    {{--                        </div>--}}
+                    {{--                        <div class="col-sm-4 mt-4">--}}
+                    {{--                            <h5 class="text-white mb-0">Support</h5>--}}
+                    {{--                            <div class="text-muted mt-3">--}}
+                    {{--                                <ul class="list-unstyled ff-secondary footer-list">--}}
+                    {{--                                    <li><a href="pages-faqs.html">FAQ</a></li>--}}
+                    {{--                                    <li><a href="pages-faqs.html">Contact</a></li>--}}
+                    {{--                                </ul>--}}
+                    {{--                            </div>--}}
+                    {{--                        </div>--}}
+                    {{--                    </div>--}}
+                </div>
+
+            </div>
+
+            <div class="row text-center text-sm-start align-items-center mt-5">
+                <div class="col-sm-6">
+
+                    <div>
+                        <p class="copy-rights mb-0">
+                            <script> document.write(new Date().getFullYear()) </script>
+                            © giftloves
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-sm-end mt-3 mt-sm-0">
+                        <ul class="list-inline mb-0 footer-social-link">
+                            <li class="list-inline-item">
+                                <a href="https://www.facebook.com/giftloves.oficial/" class="avatar-xs d-block">
+                                    <div class="avatar-title rounded-circle">
+                                        <i class="ri-facebook-fill"></i>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://www.instagram.com/giftloves.oficial/" class="avatar-xs d-block">
+                                    <div class="avatar-title rounded-circle">
+                                        <i class="ri-instagram-fill"></i>
+                                    </div>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class="col-sm-6">
-                <div class="text-sm-end mt-3 mt-sm-0">
-                    <ul class="list-inline mb-0 footer-social-link">
-                        <li class="list-inline-item">
-                            <a href="https://www.facebook.com/giftloves.oficial/" class="avatar-xs d-block">
-                                <div class="avatar-title rounded-circle">
-                                    <i class="ri-facebook-fill"></i>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="https://www.instagram.com/giftloves.oficial/" class="avatar-xs d-block">
-                                <div class="avatar-title rounded-circle">
-                                    <i class="ri-instagram-fill"></i>
-                                </div>
-                            </a>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
         </div>
-    </div>
-</footer>
-<!-- end footer -->
+    </footer>
+    <!-- end footer -->
 
-<!--start back-to-top-->
-<button onclick="topFunction()" class="btn btn-danger btn-icon landing-back-top" id="back-to-top">
-    <i class="ri-arrow-up-line"></i>
-</button>
-<!--end back-to-top-->
+    <!--start back-to-top-->
+    <button onclick="topFunction()" class="btn btn-danger btn-icon landing-back-top" id="back-to-top">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+    <!--end back-to-top-->
 
 </div>
 <!-- end layout wrapper -->
