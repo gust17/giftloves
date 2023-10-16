@@ -60,7 +60,7 @@ class WhatsappService
         $responseData = json_decode($response->getBody(), true);
 
 
-        dd($responseData);
+        //dd($responseData);
         return $responseData;
         //
 
