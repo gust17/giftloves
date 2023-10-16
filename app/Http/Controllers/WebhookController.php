@@ -28,21 +28,28 @@ class WebhookController extends Controller
     public function recebe(Request $request, WhatsappService $whatsappService)
     {
         try {
-            $data = $request->json()->all();
+            // Obtenha os dados brutos da requisição
+            $data = $request->getContent();
 
-            // Verifique se a chave 'event' existe no JSON recebido
-            if (isset($data['event'])) {
-                if ($data['event'] == 'PAYMENT_CREATED') {
-                    // Faça algo específico para 'PAYMENT_CREATED'
-                } else {
-                    // Qualquer outro valor de 'event' retorna um status 200 OK
-                    return response()->json(['message' => 'Event not processed, but webhook received'], 200);
+            // Verifique se os dados não estão vazios
+            if (!empty($data)) {
+                // Decodifique os dados, independentemente do formato
+                $decodedData = json_decode($data, true);
+
+                // Verifique se a decodificação foi bem-sucedida
+                if ($decodedData !== null) {
+                    // Verifique se a chave 'event' existe no JSON decodificado
+                    if (isset($decodedData['event'])) {
+                        if ($decodedData['event'] == 'PAYMENT_RECEIVED') {
+                            // Execute algo específico para 'PAYMENT_RECEIVED'
+                        } elseif ($decodedData['event'] == 'PAYMENT_CREATED') {
+                            // Execute algo específico para 'PAYMENT_CREATED'
+                        }
+                    }
                 }
-            } else {
-                // 'event' não está definido, retorne um erro 403 Forbidden
-                return response()->json(['error' => 'Event not defined'], 404);
             }
 
+            // Qualquer valor de 'event' (ou se 'event' não está definido) retorna um status 200 OK
             return response()->json(['message' => 'Webhook received and processed'], 200);
         } catch (\Exception $e) {
             return response()->json(['message' => 'Error processing the webhook'], 500);
