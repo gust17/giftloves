@@ -36,10 +36,8 @@
          id="navbar">
         <div class="container">
             <a class="navbar-brand" href="{{url('/')}}">
-                <img style="margin: -30px -30px -30px -30px" src="{{asset('logo.png')}}" class="card-logo card-logo-dark" alt="logo dark"
-                     height="50">
-                <img style="margin: -30px -30px -30px -30px" src="{{asset('logo.png')}}" class="card-logo card-logo-light" alt="logo light"
-                     height="50">
+                <img src="{{asset('logo.png')}}" class="card-logo card-logo-dark" alt="logo dark" height="40">
+                <img src="{{asset('logo.png')}}" class="card-logo card-logo-light" alt="logo light" height="40">
             </a>
             <button class="navbar-toggler py-0 fs-20 text-body" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -49,26 +47,27 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mt-2 mt-lg-0" id="navbar-example">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{url('/')}}">Inicio</a>
+                    <li style="color: white" class="nav-item">
+                        <a style="color: white" class="nav-link active" href="{{url('/')}}">Inicio</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{url('/')}}">Sobre Nós</a>
+                    <li style="color: white" class="nav-item">
+                        <a style="color: white" class="nav-link" href="/">Sobre Nós</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{url('/')}}">Destaques</a>
+                    <li style="color: white" class="nav-item">
+                        <a style="color: white" class="nav-link" href="/">Destaques</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{url('/')}}">Categorias</a>
+                    <li style="color: white" class="nav-item">
+                        <a style="color: white" class="nav-link" href="/">Categorias</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href={{url('/')}}">Duvidas</a>
-
-                    </li> <li class="nav-item">
-                        <a class="nav-link" href={{url('/termos')}}">Termos</a>
+                    <li style="color: white" class="nav-item">
+                        <a style="color: white" class="nav-link" href="/">Duvidas</a>
 
                     </li>
 
+                    <li style="color: white" class="nav-item">
+                        <a style="color: white" class="nav-link" href="{{url('termos')}}">Termos</a>
+
+                    </li>
                 </ul>
 
                 <div class="">
