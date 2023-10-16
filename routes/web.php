@@ -332,7 +332,7 @@ Route::get('enviarwhatsapp/{id}', function ($id, \App\Services\WhatsappService $
 
 
 Route::get('categorias', function () {
-    $categorias = \App\Models\Categoria::all();
+    $categorias = \App\Models\Categoria::whereHas('cartaos')->get();
 
     return view('site.categoria', compact('categorias'));
 });

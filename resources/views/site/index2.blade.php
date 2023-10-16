@@ -422,7 +422,7 @@
                 <div class="col-sm">
                     <div>
                         <h4 class="text-white mb-2">Não achou o que precisa?</h4>
-                        <p class="text-white-50 mb-0">Faça uma pesquisa</p>
+                        <p class="text-white mb-0">Faça uma pesquisa</p>
                     </div>
                 </div>
                 <!-- end col -->
@@ -432,10 +432,10 @@
 
                         @csrf
                         <div class="row">
-                            <div class="col-md-8"><input type="text" name="pesquisa" class="form-control"></div>
-                            <div class="col-md-4">
+                            <div style="margin-top: 10px" class="col-md-8 col-sm-12"><input type="text" name="pesquisa" class="form-control"></div>
+                            <div style="margin-top: 10px" class="col-md-4 col-sm-12">
                                 <button type="submit"
-                                        class="btn bg-gradient btn-secondary">Pesquisar
+                                        class="btn bg-gradient btn-secondary w-100">Pesquisar
                                 </button>
                             </div>
 
@@ -457,7 +457,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-5">
                     <div class="text-center mb-5">
-                        <h2 class="mb-3 fw-semibold lh-base">Veja todas Categorias</h2>
+                        <h2 class="mb-3 fw-semibold lh-base">Veja Mais Categorias</h2>
                         {{--                        <p class="text-muted">The process of creating an NFT may cost less than a dollar, but the process of selling it can cost up to a thousand dollars. For example, Allen Gannett, a software developer.</p>--}}
                     </div>
                 </div><!-- end col -->
@@ -525,7 +525,25 @@
         </div><!-- end container -->
     </section>
 
+    <section style="background-color: #FDC300FF" class="py-5  position-relative">
+        <div class="bg-overlay bg-overlay-pattern opacity-50"></div>
+        <div class="container">
+            <div class="row align-items-center gy-4">
+                <div class="col-md-12">
+                    <div>
+                        <h4 class="text-white">Veja todas Categorias</h4>
+                        <a href="{{url('categorias')}}" class="btn btn-primary">Ver todas</a>
+                    </div>
+                </div>
+                <!-- end col -->
 
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+
+        <!-- end container -->
+    </section>
     <section class="section bg-light" id="categories">
         <div class="container-fluid">
             <div class="row justify-content-center">
