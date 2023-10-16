@@ -41,7 +41,17 @@ class WebhookController extends Controller
                     // Verifique se a chave 'event' existe no JSON decodificado
                     if (isset($decodedData['event'])) {
                         if ($decodedData['event'] == 'PAYMENT_RECEIVED') {
-                            // Execute algo específico para 'PAYMENT_RECEIVED'
+
+                            $id = $decodedData['payment']['id'];
+
+                            $fatura = Presente::where("asaas_id", $id)->first();
+                            $fatura->update(['status' => 1]);
+
+
+                            $busca = $whatsappService->enviarMensagem($fatura->id);
+                            $busca = $whatsappService->enviarCode($fatura->id);
+
+
                         } elseif ($decodedData['event'] == 'PAYMENT_CREATED') {
                             // Execute algo específico para 'PAYMENT_CREATED'
                         }
