@@ -25,38 +25,30 @@ class WebhookController extends Controller
         return response()->json(['message' => 'Webhook received and processed']);
     }
 
-    public function recebe(Request $request,WhatsappService $whatsappService)
+    public function recebe(Request $request, WhatsappService $whatsappService)
     {
-//
         try {
-            //$data = $request->json()->all();
             $data = $request->json()->all();
 
-
             if ($data['event'] == 'PAYMENT_RECEIVED') {
+                $paymentId = $data['payment']['id'];
 
+                $fatura = Presente::where('asaas_id', $paymentId)->first();
 
-                $id = ($data['payment']['id']);
-
-                $fatura = Presente::where('asaas_id',$id)->first();
-
-                $busca = $whatsappService->enviarMensagem($fatura->id);
-
-                //dd($busca);
-                $busca = $whatsappService->enviarCode($fatura->id);
-
-
-
+                if ($fatura) {
+                    $whatsappService->enviarMensagem($fatura->id);
+                    $whatsappService->enviarCode($fatura->id);
+                } else {
+                    // Lógica adicional em caso de fatura não encontrada (opcional)
+                    return response()->json(['message' => 'Fatura não encontrada para o pagamento.'], 404);
+                }
             }
-            //dd($data);// Obter o JSON da solicitação e convertê-lo para um array
-            Log::info('Data received from the webhook: ' . json_encode($data));
 
-            // Realize as ações necessárias com os dados do pagamento
-
-            return response()->json(['message' => 'Webhook received and processed'],200);
+            return response()->json(['message' => 'Webhook received and processed'], 200);
         } catch (\Exception $e) {
-            Log::error('Error while processing webhook: ' . $e->getMessage());
             return response()->json(['message' => 'Error processing the webhook'], 500);
         }
     }
+
+
 }
