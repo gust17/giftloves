@@ -40,7 +40,7 @@ class WebhookController extends Controller
                 if ($decodedData !== null) {
                     // Verifique se a chave 'event' existe no JSON decodificado
                     if (isset($decodedData['event'])) {
-                        if ($decodedData['event'] == 'PAYMENT_RECEIVED') {
+                        if ($decodedData['event'] == 'PAYMENT_RECEIVED' || $decodedData['event'] == 'PAYMENT_CONFIRMED') {
 
                             $id = $decodedData['payment']['id'];
 
