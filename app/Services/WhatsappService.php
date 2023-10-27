@@ -65,4 +65,33 @@ class WhatsappService
         //
 
     }
+
+    public function alertContato($id)
+    {
+        $presente = Presente::find($id);
+
+
+        //dd($presente);
+        $client = new Client();
+        $response = $client->post('https://api.z-api.io/instances/' . env('INSTANCIA_WHATSAPP') . '/token/' . env('TOKEN_WHATSAPP') . '/send-text', [
+            'json' => [
+
+                "phone" => "55" . $presente->telefone,
+                "message" => "Para que você tenha acesso ao link você precisará salvar nosso contato! ",
+
+
+            ],
+        ]);
+        //dd($response);
+
+        // Trate a resposta como desejar
+        $statusCode = $response->getStatusCode();
+        $responseData = json_decode($response->getBody(), true);
+
+
+        //dd($responseData);
+        return $responseData;
+        //
+
+    }
 }

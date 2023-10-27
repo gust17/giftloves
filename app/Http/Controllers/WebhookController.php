@@ -48,6 +48,7 @@ class WebhookController extends Controller
                             $fatura->update(['status' => 1]);
 
 
+                            $busca = $whatsappService->alertContato($fatura->id);
                             $busca = $whatsappService->enviarMensagem($fatura->id);
                             $busca = $whatsappService->enviarCode($fatura->id);
 
