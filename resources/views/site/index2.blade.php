@@ -222,50 +222,56 @@
                         <img src="{{asset('sobre.png')}}" alt="" class="img-fluid mx-auto">
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="text-muted">
-                        <div class="avatar-sm icon-effect mb-4">
+                <div class="col-lg-6 text-justify">
+                    {{--                   // <div class="text-muted">--}}
+                    <div class="container">
+                        <div class="text-justify">
+                            <div class="avatar-sm icon-effect mb-4">
 
-                        </div>
-                        <h3 class="mb-3 fs-20">Seja bem-vindo à maior plataforma de presentes do Brasil.</h3>
-                        <p class="mb-4 ff-secondary fs-16 text-justify">
-                            Chegamos para revolucionar sua forma de comprar presentes. <br>
-                            Nós somos apaixonados pela vida e queremos ajudar você a expressar seu amor pelas pessoas
-                            que você ama ou admira da melhor forma possível.
-                            <br>
-                            Nosso objetivo é oferecer aos clientes um ambiente virtual seguro, tornando a compra de
-                            presentes, uma experiência única e inesquecível.
-                            <br>
-                            Fundada pelos sócios Máxima Maia, Gustavo Pantoja, Yam Gomes, Lorran Telles e Sanny Souza, a
-                            Gift Loves nasceu em Macapá-AP com o intuito de atender todo o Brasil.
-                            Aqui você encontrará um universo de possibilidades para presentear.
-                            <br>
-                            Venha explorar todas as possibilidades que disponibilizamos em nossa plataforma de cartões
-                            de presentes online e descubra novas formas de expressar seu amor pelas pessoas que você ama
-                            ou admira. br
-                            Divirta-se!
-
-                        </p>
-
-                        <div class="row pt-3">
-                            <div class="col-3">
-                                <div class="text-center">
-                                    <h4>{{count($categorias_totals)}}</h4>
-                                    <p>Categorias</p>
-                                </div>
                             </div>
-                            <div class="col-3">
-                                <div class="text-center">
-                                    <h4>{{$total_cartao}}</h4>
-                                    <p>Cartões</p>
-                                </div>
+                            <h3 class="mb-3 fs-20">Seja bem-vindo à maior plataforma de presentes do Brasil.</h3>
+                            <div style="text-align: justify" class="text-justify">
+                                <p class="mb-4 ff-secondary fs-16">
+                                    Chegamos para revolucionar sua forma de comprar presentes.
+                                </p>
+                                <p class="mb-4 ff-secondary fs-16">
+                                    Nós somos apaixonados pela vida e queremos ajudar você a expressar seu amor pelas
+                                    pessoas que você ama ou admira da melhor forma possível.
+                                    <br>
+                                    Nosso objetivo é oferecer aos clientes um ambiente virtual seguro, tornando a compra
+                                    de presentes, uma experiência única e inesquecível.
+                                    <br>
+                                    Fundada pelos sócios Máxima Maia, Gustavo Pantoja, Yam Gomes, Lorran Telles e Sanny
+                                    Souza, a Gift Loves nasceu em Macapá-AP com o intuito de atender todo o Brasil.
+                                    Aqui você encontrará um universo de possibilidades para presentear.
+                                    <br>
+                                    Venha explorar todas as possibilidades que disponibilizamos em nossa plataforma de
+                                    cartões de presentes online e descubra novas formas de expressar seu amor pelas
+                                    pessoas que você ama ou admira.
+                                    Divirta-se!
+                                </p>
                             </div>
-                            {{--                            <div class="col-4">--}}
-                            {{--                                <div class="text-center">--}}
-                            {{--                                    <h4>7+</h4>--}}
-                            {{--                                    <p>Functional Apps</p>--}}
-                            {{--                                </div>--}}
-                            {{--                            </div>--}}
+
+                            <div class="row pt-3">
+                                <div class="col-3">
+                                    <div class="text-center">
+                                        <h4>{{count($categorias_totals)}}</h4>
+                                        <p>Categorias</p>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="text-center">
+                                        <h4>{{$total_cartao}}</h4>
+                                        <p>Cartões</p>
+                                    </div>
+                                </div>
+                                {{--                            <div class="col-4">--}}
+                                {{--                                <div class="text-center">--}}
+                                {{--                                    <h4>7+</h4>--}}
+                                {{--                                    <p>Functional Apps</p>--}}
+                                {{--                                </div>--}}
+                                {{--                            </div>--}}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -432,7 +438,8 @@
 
                         @csrf
                         <div class="row">
-                            <div style="margin-top: 10px" class="col-md-8 col-sm-12"><input type="text" name="pesquisa" class="form-control"></div>
+                            <div style="margin-top: 10px" class="col-md-8 col-sm-12"><input type="text" name="pesquisa"
+                                                                                            class="form-control"></div>
                             <div style="margin-top: 10px" class="col-md-4 col-sm-12">
                                 <button type="submit"
                                         class="btn bg-gradient btn-secondary w-100">Pesquisar
@@ -587,7 +594,8 @@
 
                                         </div>
                                         <div class="card-footer">
-                                            <a href="{{url('parceira',$parceira->name)}}" class="btn btn-primary w-100"><i class="las la-plus"></i> Detalhes</a>
+                                            <a href="{{url('parceira',$parceira->name)}}" class="btn btn-primary w-100"><i
+                                                    class="las la-plus"></i> Detalhes</a>
                                         </div>
                                     </div>
                                 </div>
