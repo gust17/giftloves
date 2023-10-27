@@ -42,7 +42,7 @@ Route::get('/', function () {
     $centro = \App\Models\Centro::first();
     $sobre = \App\Models\Sobre::first();
     $total_cartao = \App\Models\Cartao::count();
-    return view('site.index2', compact('categorias', 'categorias_totals', 'perguntas', 'topo', 'parceiras', 'centro','sobre','total_cartao'));
+    return view('site.index2', compact('categorias', 'categorias_totals', 'perguntas', 'topo', 'parceiras', 'centro', 'sobre', 'total_cartao'));
 });
 
 
@@ -143,11 +143,13 @@ Route::get('finalizapagamento/{id}/{tipo}', function ($id, $tipo, \App\Services\
     $presente = \App\Models\Presente::find($id);
 
 
+    //dd($presente);
     $asaas = new Asaas(env('ASAAS_TOKEN'), env('ASAAS_AMBIENTE'));
 
 
     $user = \Illuminate\Support\Facades\Auth::user();
 
+    //dd($user);
     if ($user->asaas_client) {
 
     } else {
@@ -415,14 +417,26 @@ Route::get('gerartoken', function (Request $request) {
     return response()->json(['error' => 'Unauthorized'], Response::HTTP_UNAUTHORIZED);
 })->middleware('auth');
 
-Route::post('pesquisar',function (\Illuminate\Http\Request $request){
+Route::post('pesquisar', function (\Illuminate\Http\Request $request) {
     $categorias = \App\Models\Categoria::where('name', 'LIKE', '%' . $request->pesquisa . '%')->get();
     $parceiras = \App\Models\Parceira::where('name', 'LIKE', '%' . $request->pesquisa . '%')->get();
     $pesquisa = $request->pesquisa;
 
-    return view('site.pesquisa',compact('categorias','parceiras','pesquisa'));
+    return view('site.pesquisa', compact('categorias', 'parceiras', 'pesquisa'));
 
 
+});
+
+Route::get('parceira/{parceira}',function ($parceira){
+    $parceira = \App\Models\Parceira::whereName($parceira)->first();
+
+
+
+    if ($parceira){
+        return view('site.parceirashow',compact('parceira'));
+    }else{
+        return redirect(url('/'));
+    }
 });
 
 

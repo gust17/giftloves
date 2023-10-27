@@ -586,6 +586,9 @@
                                             </div><!--end row-->
 
                                         </div>
+                                        <div class="card-footer">
+                                            <a href="{{url('parceira',$parceira->name)}}" class="btn btn-primary w-100"><i class="las la-plus"></i> Detalhes</a>
+                                        </div>
                                     </div>
                                 </div>
                             @empty
