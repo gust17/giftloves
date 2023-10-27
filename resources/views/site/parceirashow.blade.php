@@ -34,7 +34,8 @@
                                     class="bx bxl-tiktok"></i> Tik-Tok</a>
                         @endcanany
                         <div class="row pt-3">
-                            <p>
+
+                            <p><label  for="">Endereço</label>:
                                 {{$parceira->endereco}}
                             </p>
                         </div>
