@@ -34,7 +34,9 @@ Route::get('/', function () {
         ->inRandomOrder()
         ->limit(6)
         ->get();
-
+    $total_categoria = \App\Models\Categoria::withCount('cartaos')
+        ->having('cartaos_count', '>', 0)
+        ->count();
     //dd($categorias_totals);
     $perguntas = \App\Models\Perguntas::where('principal', 1)->get();
     $topo = \App\Models\Topo::first();
@@ -42,7 +44,7 @@ Route::get('/', function () {
     $centro = \App\Models\Centro::first();
     $sobre = \App\Models\Sobre::first();
     $total_cartao = \App\Models\Cartao::count();
-    return view('site.index2', compact('categorias', 'categorias_totals', 'perguntas', 'topo', 'parceiras', 'centro', 'sobre', 'total_cartao'));
+    return view('site.index2', compact('categorias', 'categorias_totals', 'perguntas', 'topo', 'parceiras', 'centro', 'sobre', 'total_cartao','total_categoria'));
 });
 
 
