@@ -5,9 +5,9 @@
 <head>
 
     <meta charset="utf-8"/>
-    <title>giftloves | </title>
+    <title>gift&love | </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="GiftLoves seu presente descomplicado" name="description"/>
+    <meta content="gift&love seu presente descomplicado" name="description"/>
     <meta content="Themesbrand" name="author"/>
     <!-- App favicon -->
     <link rel="shortcut icon" href="assets/images/favicon.ico">
@@ -242,7 +242,7 @@
                                     de presentes, uma experiência única e inesquecível.
                                     <br>
                                     Fundada pelos sócios Máxima Maia, Gustavo Pantoja, Yam Gomes, Lorran Telles e Sanny
-                                    Souza, a Gift Loves nasceu em Macapá-AP com o intuito de atender todo o Brasil.
+                                    Souza, a Gift&Love nasceu em Macapá-AP com o intuito de atender todo o Brasil.
                                     Aqui você encontrará um universo de possibilidades para presentear.
                                     <br>
                                     Venha explorar todas as possibilidades que disponibilizamos em nossa plataforma de
@@ -255,7 +255,7 @@
                             <div class="row pt-3">
                                 <div class="col-3">
                                     <div class="text-center">
-                                        <h4>{{count($categorias_totals)}}</h4>
+                                        <h4>{{count($total_categoria)}}</h4>
                                         <p>Categorias</p>
                                     </div>
                                 </div>
@@ -290,7 +290,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="text-center mb-5">
-                        <h2 class="mb-3 fw-semibold lh-base">Veja com é fácil enviar o giftloves</h2>
+                        <h2 class="mb-3 fw-semibold lh-base">Veja com é fácil enviar o gift&love</h2>
                         {{--                        <p class="text-muted">The process of creating an NFT may cost less than a dollar, but the process of selling it can cost up to a thousand dollars. For example, Allen Gannett, a software developer.</p>--}}
                     </div>
                 </div><!-- end col -->
@@ -689,7 +689,7 @@
             <div class="row align-items-center gy-4">
                 <div class="col-sm">
                     <div>
-                        <h4 class="text-white mb-0 fw-semibold">Venha fazer Parte da GiftLoves</h4>
+                        <h4 class="text-white mb-0 fw-semibold">Venha fazer Parte da Gift&Love</h4>
                     </div>
                 </div>
                 <!-- end col -->
@@ -773,7 +773,7 @@
                     <div>
                         <p class="copy-rights mb-0">
                             <script> document.write(new Date().getFullYear()) </script>
-                            © giftloves
+                            © gift&love
                         </p>
                     </div>
                 </div>
