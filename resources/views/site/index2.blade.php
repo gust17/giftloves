@@ -788,7 +788,7 @@
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="https://www.instagram.com/giftloves.oficial/" class="avatar-xs d-block">
+                                <a href="https://www.instagram.com/giftloveap/" class="avatar-xs d-block">
                                     <div class="avatar-title rounded-circle">
                                         <i class="ri-instagram-fill"></i>
                                     </div>
