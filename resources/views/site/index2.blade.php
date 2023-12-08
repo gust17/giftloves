@@ -255,7 +255,7 @@
                             <div class="row pt-3">
                                 <div class="col-3">
                                     <div class="text-center">
-                                        <h4>{{count($total_categoria)}}</h4>
+                                        <h4>{{$total_categoria}}</h4>
                                         <p>Categorias</p>
                                     </div>
                                 </div>
