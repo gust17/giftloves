@@ -15,7 +15,6 @@ class WhatsappService
         $client = new Client();
 
 
-
         $response = $client->post('https://api.z-api.io/instances/' . env('INSTANCIA_WHATSAPP') . '/token/' . env('TOKEN_WHATSAPP') . '/send-text', [
             'json' => [
 
@@ -78,6 +77,41 @@ class WhatsappService
 
                 "phone" => "55" . $presente->telefone,
                 "message" => "Para que você tenha acesso ao link você precisará salvar nosso contato! ",
+
+
+            ],
+        ]);
+        //dd($response);
+
+        // Trate a resposta como desejar
+        $statusCode = $response->getStatusCode();
+        $responseData = json_decode($response->getBody(), true);
+
+
+        //dd($responseData);
+        return $responseData;
+        //
+
+    }
+
+    public function alertaGus($id)
+    {
+        $responsavel = \App\Models\ResponsavelLoja::find($id);
+
+
+        $loja = \App\Models\Parceira::find($responsavel->parceira_id);
+
+
+        //dd($presente);
+        $client = new Client();
+        $response = $client->post('https://api.z-api.io/instances/' . env('INSTANCIA_WHATSAPP') . '/token/' . env('TOKEN_WHATSAPP') . '/send-text', [
+            'json' => [
+
+                "phone" => "55" . '47988439543',
+                "message" => "Novo Cadastro o lojista " . $responsavel->user->name . " se cadastrou com a loja  $loja->name! o contato dele é ",
+                "contactName" => $responsavel->user->name.'-'.$loja->name,
+                "contactPhone" => "55"+$responsavel->user->whatsapp,
+                "contactBusinessDescription" => "Fale com nossos atendentes."
 
 
             ],

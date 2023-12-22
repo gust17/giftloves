@@ -636,7 +636,7 @@
 
                     </div>
                     <div style="margin-top: 50px" class="text-center">
-{{--                        <a href="{{url('seja-parceiro')}}" class="btn btn-xs btn-primary">QUERO SER PARCEIRO!</a>--}}
+                        <a href="{{url('seja-parceiro')}}" class="btn btn-xs btn-primary">QUERO SER PARCEIRO!</a>
                     </div>
                 </div>
 

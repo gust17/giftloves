@@ -449,64 +449,92 @@ Route::get('seja-parceiro', function () {
 });
 
 Route::post('seja-parceiro', function (\Illuminate\Http\Request $request) {
-   // dd($request->all());
+    //dd($request->all());
 
-    $loja =
-        [
-            'name' => $request['name_loja'],
-            'site' => $request['site'],
-            'endereco' => $request['endereco'],
-            'facebook' => $request['facebook'],
-            'instagram' => $request['instagram'],
-            'tiktok' => $request['tiktok'],
 
+    $request['whatsapp'] = preg_replace('/[^0-9]/', '', $request['whatsapp']);
+    $request['cpf'] = preg_replace('/[^0-9]/', '', $request['cpf']);
+    $request['cpf'] = preg_replace('/[^a-zA-Z0-9\s]/', '', $request['cpf']);
+
+    $request['cpf'] = str_pad($request['cpf'], 11, '0', STR_PAD_LEFT);
+    $validated = $request->validate([
+
+        'name_loja' => 'required',
+        'endereco' => 'required',
+        'name_loja' => 'required',
+        'endereco' => 'required',
+        'name_user' => 'required',
+        'whatsapp' => 'required',
+        'email' => 'required',
+        'cpf' => 'required|cpf',
+        'plano_id' => 'required'
+    ]);
+
+    $teste = \App\Models\UserLoja::where('cpf', $request->cpf)->exists();
+    //dd($teste);
+
+    if (!$teste) {
+        $loja =
+            [
+                'name' => $request['name_loja'],
+                'site' => $request['site'],
+                'endereco' => $request['endereco'],
+                'facebook' => $request['facebook'],
+                'instagram' => $request['instagram'],
+                'tiktok' => $request['tiktok'],
+
+
+            ];
+
+        $loja = \App\Models\Parceira::create($loja);
+
+
+        $user = [
+            'name' => $request['name_user'],
+            'whatsapp' => $request['whatsapp'],
+            'email' => $request['email'],
+            'cpf' => $request['cpf'],
+            'password' => bcrypt($request['cpf'])
 
         ];
 
-    $loja = \App\Models\Parceira::create($loja);
+        $user = \App\Models\UserLoja::create($user);
 
 
-    $user = [
-        'name' => $request['name_user'],
-        'whatsapp' => $request['whatsapp'],
-        'email' => $request['email'],
-        'cpf' => $request['cpf'],
-        'password' => bcrypt($request['cpf'])
+        $responsavel = [
+            'parceira_id' => $loja->id,
+            'user_id' => $user->id,
+            'adminstrador' => 1,
 
-    ];
+        ];
+        $responsavel = \App\Models\ResponsavelLoja::create($responsavel);
 
-    $user = \App\Models\UserLoja::create($user);
+        $contrato = [
+            'parceira_id' => $loja->id,
+            'plano_id' => $request['plano_id']
+        ];
 
-
-    $responsavel = [
-        'parceira_id' => $loja->id,
-        'user_id' => $user->id,
-        'adminstrador' => 1,
-
-    ];
-    $responsavel = \App\Models\ResponsavelLoja::create($responsavel);
-
-    $contrato = [
-        'parceira_id' => $loja->id,
-        'plano_id' => $request['plano_id']
-    ];
-
-    \App\Models\Contrato::create($contrato);
+        \App\Models\Contrato::create($contrato);
 
 
-    return redirect(url('obrigado',$responsavel->id));
+        return redirect(url('obrigado', $responsavel->id));
+    }else{
+        return redirect()->back()->with('error','Seu usuário já consta em nosso sistema!');
+    }
 });
 
-Route::get('obrigado/{id}',function ($id){
+Route::get('obrigado/{id}', function ($id, \App\Services\WhatsappService $whatsappService) {
 
 
-    $responsavel =  \App\Models\ResponsavelLoja::find($id);
+    $responsavel = \App\Models\ResponsavelLoja::find($id);
 
 
     $loja = \App\Models\Parceira::find($responsavel->parceira_id);
 
 
-    return view('obrigado',compact('responsavel','loja'));
+    $whatsappService->alertaGus($id);
+
+    return view('obrigado', compact('responsavel', 'loja'));
 });
 
 

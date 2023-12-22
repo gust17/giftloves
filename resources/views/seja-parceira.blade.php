@@ -1,7 +1,7 @@
 @extends('site.padrao2')
 @section('miolo')
     <section class="section bg-light">
-
+        @include('flash-message')
         <form action="{{url('seja-parceiro')}}" method="post">
             @csrf
             <div style="margin-top: 30px" class="container">
