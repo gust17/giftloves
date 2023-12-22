@@ -61,7 +61,7 @@
                 <h5 class="text-white fs-20">Login</h5>
                 <div class="text-center">
                     <center>
-                        <img src="{{asset('logo.png')}}" class="card-logo card-logo-dark" alt="logo dark" height="80">
+                        <img src="{{asset('logo2.png')}}" class="card-logo card-logo-dark" alt="logo dark" height="80">
                     </center>
                 </div>
                 {{--                <p class="text-white-50 mb-4">Don't have an account? <a href="javascript:void(0);" class="text-white">Sign--}}
@@ -162,8 +162,8 @@
          id="navbar">
         <div class="container">
             <a class="navbar-brand" href="{{url('/')}}">
-                <img src="{{asset('logo.png')}}" class="card-logo card-logo-dark" alt="logo dark" height="40">
-                <img src="{{asset('logo.png')}}" class="card-logo card-logo-light" alt="logo light" height="40">
+                <img src="{{asset('logo2.png')}}" class="card-logo card-logo-dark" alt="logo dark" height="40">
+                <img src="{{asset('logo2.png')}}" class="card-logo card-logo-light" alt="logo light" height="40">
             </a>
             <button class="navbar-toggler py-0 fs-20 text-body" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -753,7 +753,7 @@
                 <div class="col-lg-4 mt-4">
                     <div>
                         <div>
-                            <img src="{{asset('logo.png')}}" alt="logo light" height="40">
+                            <img src="{{asset('logo2.png')}}" alt="logo light" height="40">
                         </div>
                         <div class="mt-4">
                             {{--                            <p>Premium Multipurpose Admin & Dashboard Template</p>--}}
