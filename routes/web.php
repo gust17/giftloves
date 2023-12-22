@@ -44,7 +44,7 @@ Route::get('/', function () {
     $centro = \App\Models\Centro::first();
     $sobre = \App\Models\Sobre::first();
     $total_cartao = \App\Models\Cartao::count();
-    return view('site.index2', compact('categorias', 'categorias_totals', 'perguntas', 'topo', 'parceiras', 'centro', 'sobre', 'total_cartao','total_categoria'));
+    return view('site.index2', compact('categorias', 'categorias_totals', 'perguntas', 'topo', 'parceiras', 'centro', 'sobre', 'total_cartao', 'total_categoria'));
 });
 
 
@@ -429,18 +429,56 @@ Route::post('pesquisar', function (\Illuminate\Http\Request $request) {
 
 });
 
-Route::get('parceira/{parceira}',function ($parceira){
+Route::get('parceira/{parceira}', function ($parceira) {
     $parceira = \App\Models\Parceira::whereName($parceira)->first();
 
 
-
-    if ($parceira){
-        return view('site.parceirashow',compact('parceira'));
-    }else{
+    if ($parceira) {
+        return view('site.parceirashow', compact('parceira'));
+    } else {
         return redirect(url('/'));
     }
 });
+Route::get('seja-parceiro', function () {
+    $planos = \App\Models\Plano::where('ativo', 1)->get();
+    //dd($planos);
+    return view('seja-parceira', compact('planos'));
+});
 
+Route::post('seja-parceiro', function (\Illuminate\Http\Request $request) {
+    //dd($request->all());
+
+    $loja =
+        [
+            'name' => $request['name_loja'],
+            'site' => $request['site'],
+            'logo' => $request['logo'],
+            'facebook' => $request['facebook'],
+            'instagram' => $request['instagram'],
+            'tiktok' => $request['tiktok'],
+            'pix' => $request['pix'],
+
+        ];
+
+    $user = [
+        'name' => $request['user_name'],
+        'whatsapp' => $request['whatsapp'],
+        'email' => $request['email'],
+        'cpf' => $request['cpf'],
+
+    ];
+
+
+    $responsavel = [
+        'parceira_id' => $loja->id,
+        'user_id' => $user->id,
+    ];
+
+    $contrato = [
+        'parceira_id' => $loja->id,
+        'plano_id' => $request['plano_id']
+    ];
+});
 
 
 

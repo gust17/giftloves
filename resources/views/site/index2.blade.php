@@ -610,6 +610,40 @@
             </div>
         </div><!-- end container -->
     </section>
+    <section class="section" style='background-image: url("{{asset('camada0.png')}}")'>
+        <div class="row">
+            <div class="col-md-6">
+
+                <div style="margin-top: 40px" class="text-center">
+                    <img width="90%" src="{{asset('sejaparceiro.png')}}" alt="">
+                </div>
+
+                <div style="margin-top: 30px" class="container">
+                    <div class="row">
+                        <div style="margin-top: 10px" class="col-md-4  text-center">
+                            <img width="50%" src="{{asset('vendas.png')}}" alt=""><br>
+                            <img width="40%" src="{{asset('texto-vendas.png')}}" alt="">
+                        </div>
+                        <div style="margin-top: 10px" class="col-md-4  text-center">
+                            <img width="50%" src="{{asset('clientes.png')}}" alt=""><br>
+                            <img width="40%" src="{{asset('texto-clientes.png')}}" alt="">
+                        </div>
+                        <div style="margin-top: 10px" class="col-md-4  text-center">
+                            <img width="50%" src="{{asset('financeiro.png')}}" alt=""><br>
+                            <img width="40%" src="{{asset('texto-financeiro.png')}}" alt="">
+                        </div>
+
+                    </div>
+                    <div style="margin-top: 50px" class="text-center">
+{{--                        <a href="{{url('seja-parceiro')}}" class="btn btn-xs btn-primary">QUERO SER PARCEIRO!</a>--}}
+                    </div>
+                </div>
+
+            </div>
+            <div style="margin-bottom: -70px" class="col-md-6"><img style="margin-bottom: -20px" width="60%"
+                                                                    src="{{asset('camada1.png')}}" alt=""></div>
+        </div>
+    </section>
     <!-- end plan -->
 
     <!-- start Discover Items-->
