@@ -32,7 +32,7 @@
         background-image: url('{{ $topo ? env('URL_IMG') . $topo->img : '' }}');
         background-size: 100% auto; /* Ajusta a largura da imagem para cobrir 100% do contêiner e ajusta a altura automaticamente */
         background-position: center;
-        height: 300px; /* Defina a altura desejada para o contêiner */
+        height: 500px; /* Defina a altura desejada para o contêiner */
     }
 
     @media (max-width: 767px) {
