@@ -5,10 +5,10 @@
 <head>
 
     <meta charset="utf-8"/>
-    <title>giftloves | </title>
+    <title>Gift&Love | </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="GiftLoves seu presente descomplicado" name="description"/>
-    <meta content="Themesbrand" name="author"/>
+    <meta content="Gift&Love seu presente descomplicado" name="description"/>
+    <meta content="CodeGus" name="author"/>
     <!-- App favicon -->
     <link rel="shortcut icon" href="assets/images/favicon.ico">
 
@@ -93,7 +93,7 @@
         <div class="row align-items-center gy-4">
             <div class="col-sm">
                 <div>
-                    <h4 class="text-white mb-0 fw-semibold">Venha fazer Parte da GiftLoves</h4>
+                    <h4 class="text-white mb-0 fw-semibold">Venha fazer Parte da Gift&Love</h4>
                 </div>
             </div>
             <!-- end col -->
@@ -174,7 +174,7 @@
                 <div>
                     <p class="copy-rights mb-0">
                         <script> document.write(new Date().getFullYear()) </script>
-                        © giftloves
+                        © gift&love
                     </p>
                 </div>
             </div>

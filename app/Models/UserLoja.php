@@ -5,17 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Parceira extends Model
+class UserLoja extends Model
 {
     use HasFactory;
 
+    protected $connection ='loja';
+
+    protected $table = 'users';
     protected $fillable = [
         'name',
-        'site',
-        'endereco',
-        'facebook',
-        'instagram',
-        'tiktok',
-        'pix',
+        'email',
+        'password',
+        'parceira_selecionada',
+        'whatsapp',
+        'cpf'
     ];
 }

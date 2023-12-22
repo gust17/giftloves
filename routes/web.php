@@ -440,46 +440,74 @@ Route::get('parceira/{parceira}', function ($parceira) {
     }
 });
 Route::get('seja-parceiro', function () {
+
+
+    //return $lojas;
     $planos = \App\Models\Plano::where('ativo', 1)->get();
     //dd($planos);
     return view('seja-parceira', compact('planos'));
 });
 
 Route::post('seja-parceiro', function (\Illuminate\Http\Request $request) {
-    //dd($request->all());
+   // dd($request->all());
 
     $loja =
         [
             'name' => $request['name_loja'],
             'site' => $request['site'],
-            'logo' => $request['logo'],
+            'endereco' => $request['endereco'],
             'facebook' => $request['facebook'],
             'instagram' => $request['instagram'],
             'tiktok' => $request['tiktok'],
-            'pix' => $request['pix'],
+
 
         ];
 
+    $loja = \App\Models\Parceira::create($loja);
+
+
     $user = [
-        'name' => $request['user_name'],
+        'name' => $request['name_user'],
         'whatsapp' => $request['whatsapp'],
         'email' => $request['email'],
         'cpf' => $request['cpf'],
+        'password' => bcrypt($request['cpf'])
 
     ];
+
+    $user = \App\Models\UserLoja::create($user);
 
 
     $responsavel = [
         'parceira_id' => $loja->id,
         'user_id' => $user->id,
+        'adminstrador' => 1,
+
     ];
+    $responsavel = \App\Models\ResponsavelLoja::create($responsavel);
 
     $contrato = [
         'parceira_id' => $loja->id,
         'plano_id' => $request['plano_id']
     ];
+
+    \App\Models\Contrato::create($contrato);
+
+
+    return redirect(url('obrigado',$responsavel->id));
 });
 
+Route::get('obrigado/{id}',function ($id){
+
+
+    $responsavel =  \App\Models\ResponsavelLoja::find($id);
+
+
+    $loja = \App\Models\Parceira::find($responsavel->parceira_id);
+
+
+    return view('obrigado',compact('responsavel','loja'));
+});
 
 
 
